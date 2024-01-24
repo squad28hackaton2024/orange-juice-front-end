@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="\orange-juice-front-end\src\pages\TelaLogin\TelaLogin.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Tela de Login</title>
+  </head>
+  <body>
+    <main>
+      <div class="img-login">
+        <img
+          src="\orange-juice-front-end\src\pages\TelaLogin\assets\img_login.png"
+          alt="imagem-telaLogin"
+        />
+      </div>
+      <div class="container-login">
+        <h3>Entre no Orange Portifólio</h3>
+        <button class="btn-google">
+          <img
+            src="/public/images/official-buttons-sign-in-with-google-white-logo-googleg-48-dp.svg"
+            alt="btn-google"
+          />
+          <h4>Entrar com o Google</h4>
+        </button>
+
+        <div class="forms-login">
+          <h5>Faça Login com email</h5>
+          <form action="/caminho/do/processamento" method="post">
+            <!-- Campo de E-mail -->
+            <label for="email"> E-mail adress</label>
+            <input type="email" id="email" name="email" required />
+
+            <!-- Campo de Senha -->
+            <label for="senha">Password</label>
+            <input type="password" id="senha" name="senha" required />
+            <!-- Botão de Envio -->
+            <button type="submit" class="btn-entrar-login"><h4 class="text-enviar-btn">Enviar</h4></button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
