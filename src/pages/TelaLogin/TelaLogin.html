@@ -3,51 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="responsive.css" media="screen and (max-width:360px)">
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="\orange-juice-front-end\src\pages\TelaLogin\TelaLogin.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <title>Tela de Login</title>
+    <link rel="stylesheet" href="teste.css" />
+    <title>teste</title>
   </head>
   <body>
+    <header></header>
     <main>
-      <div class="img-login">
+        <!-- container imagem -->
+      <div class="container-img">
         <img
           src="\orange-juice-front-end\src\pages\TelaLogin\assets\img_login.png"
           alt="imagem-telaLogin"
         />
       </div>
+       <!-- container login -->
       <div class="container-login">
-        <h3>Entre no Orange Portifólio</h3>
-        <button class="btn-google">
+        <h3 class="text-begin my-4">Entre no Orange Portifólio</h3>
+        <button class="btn mb-4
+         button-google-sign-in " type="button">
           <img
             src="/public/images/official-buttons-sign-in-with-google-white-logo-googleg-48-dp.svg"
             alt="btn-google"
           />
-          <h4>Entrar com o Google</h4>
+          Entrar com Google
         </button>
+        
+        <form class="my-4 form-login ">
 
-        <div class="forms-login">
-          <h5>Faça Login com email</h5>
-          <form action="/caminho/do/processamento" method="post">
-            <!-- Campo de E-mail -->
-            <label for="email"> E-mail adress</label>
-            <input type="email" id="email" name="email" required />
+          <div class="w-100">
+            <h5 class="my-4 text-login">Faça login com email</h5>
+            <label for="exampleInputEmail1" class="form-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+          <div class="w-100 input-password">
+            <label for="exampleInputPassword1" class="form-label"
+              >Password</label
+            >
+            
 
-            <!-- Campo de Senha -->
-            <label for="senha">Password</label>
-            <input type="password" id="senha" name="senha" required />
-            <!-- Botão de Envio -->
-            <button type="submit" class="btn-entrar-login"><h4 class="text-enviar-btn">Enviar</h4></button>
-          </form>
-        </div>
+            <div class="input-group">
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+              />
+              <button class="btn btn-outline-secondary btn-visibility" type="button"  >
+                <img src="/public/images/visibility.svg" alt="" />
+              </button>
+            </div>
+          </div>
+          <div class="mb-3 form-check">
+            <p>
+              <a class="link-opacity-75 link-cadastro" href="#">Cadastre-se</a>
+            </p>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">
+            Entrar
+          </button>
+        </form>
       </div>
     </main>
+    <footer></footer>
   </body>
 </html>
