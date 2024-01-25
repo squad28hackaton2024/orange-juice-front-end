@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="responsive.css" media="screen and (max-width:360px)">
+    <link
+      rel="stylesheet"
+      href="responsive.css"
+      media="screen and (max-width:360px)"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,35 +18,33 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="teste.css" />
+    <link rel="stylesheet" href="TelaLogin.css" />
     <title>teste</title>
   </head>
   <body>
-    <header></header>
     <main>
-        <!-- container imagem -->
+      <!-- container imagem -->
       <div class="container-img">
         <img
           src="\orange-juice-front-end\src\pages\TelaLogin\assets\img_login.png"
           alt="imagem-telaLogin"
         />
       </div>
-       <!-- container login -->
+      <!-- container login -->
       <div class="container-login">
         <h3 class="text-begin my-4">Entre no Orange Portifólio</h3>
-        <button class="btn mb-4
-         button-google-sign-in " type="button">
+        <button class="btn mb-4 button-google-sign-in" type="button">
           <img
             src="/public/images/official-buttons-sign-in-with-google-white-logo-googleg-48-dp.svg"
             alt="btn-google"
           />
           Entrar com Google
         </button>
-        
-        <form class="my-4 form-login ">
-
-          <div class="w-100">
-            <h5 class="my-4 text-login">Faça login com email</h5>
+        <!--INICIO FORMULARIO-->
+        <form class="my-4 form-login">
+          <!--LABEL EMAIL-->
+          <h5 class="my-4 text-login">Faça login com email</h5>
+          <div class="w-100 input-field">
             <label for="exampleInputEmail1" class="form-label"
               >Email address</label
             >
@@ -50,38 +52,43 @@
               type="email"
               class="form-control"
               id="exampleInputEmail1"
+              autocomplete="off"
               aria-describedby="emailHelp"
+              spellcheck="false"
             />
             <div id="emailHelp" class="form-text"></div>
-          </div>
-          <div class="w-100 input-password">
-            <label for="exampleInputPassword1" class="form-label"
-              >Password</label
-            >
-            
 
+            <!--LABEL SENHA-->
+            <div class="w-100 input-field">
+              <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+              >
+            </div>
             <div class="input-group">
               <input
+                spellcheck="false"
                 type="password"
+                required
                 class="form-control"
                 id="exampleInputPassword1"
               />
-              <button class="btn btn-outline-secondary btn-visibility" type="button"  >
+              <button
+                class="btn btn-outline-secondary btn-visibility"
+                type="button"
+              >
                 <img src="/public/images/visibility.svg" alt="" />
               </button>
             </div>
           </div>
-          <div class="mb-3 form-check">
-            <p>
-              <a class="link-opacity-75 link-cadastro" href="#">Cadastre-se</a>
-            </p>
-          </div>
+          <p>
+            <a class="link-opacity-75 link-cadastro" href="#">Cadastre-se</a>
+          </p>
+
           <button type="submit" class="btn btn-primary btn-submit">
             Entrar
           </button>
         </form>
       </div>
     </main>
-    <footer></footer>
   </body>
 </html>

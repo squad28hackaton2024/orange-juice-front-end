@@ -1,3 +1,4 @@
+/* Import Google font - Poppins */
 html {
   /* a cada 1rem sera considerado 10px*/
   font-size: 62.5%;
@@ -9,6 +10,7 @@ html {
   font-family: "Roboto", sans-serif;
   align-items: center;
 }
+
 body {
   display: flex;
   height: 100%;
@@ -98,6 +100,7 @@ main {
   gap: 18px;
   flex-shrink: 0;
 }
+
 .text-begin {
   color: var(
     --Color-Brand-Primria-Primary-90,
@@ -110,6 +113,11 @@ main {
   line-height: 4rem;
   text-align: center;
 }
+.form-label:focus + .form-group,
+.filled {
+  position: relative;
+  top: -10px;
+}
 .text-login {
   align-self: stretch;
   color: var(--Neutral-Colors-Neutral-110, #515255);
@@ -119,6 +127,7 @@ main {
   font-weight: 400;
   line-height: 2.4rem;
 }
+
 .link-cadastro {
   color: var(--Neutral-Colors-Neutral-100, #818388);
   font-family: Roboto;
@@ -134,16 +143,70 @@ main {
   border: var(--none, 1px) solid
     var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
 }
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-.legend-border {
-  text-align: left !important;
-  width: auto;
-  padding: 0 10px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.input-field {
+  position: relative;
+}
+
+.input-field input {
+  height: 60px;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 0 15px;
+  border-radius: var(--borderRadius, 4px);
+  border: var(--none, 1px) solid var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
+  color: #fff;
+  outline: none;
+}
+
+.input-field label {
+  position: absolute;
+  top: -10px; /* Ajuste o valor conforme necessário para posicionar acima da borda */
+  left: 15px;
+  font-size: 16px;
+  padding: 0 2px;
+  background: #fff;
+  color: var(--Neutral-Colors-Neutral-110, #515255);
+  transition: 0.3s;
+}
+
+input:focus {
+  border: 2px solid #18ffff;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -10px; /* Mantenha o mesmo valor ajustado para o foco ou input válido */
+  left: 15px;
+  font-size: 16px;
+  padding: 0 2px;
+  background: #060b23;
+}
+
+
 /*Parte da responsividade*/
 @media (max-width: 640px) {
   body {
+    display: flex;
     height: 100vh;
+    align-items: center;
   }
   html {
     border-radius: var(--none, 0px);
@@ -160,6 +223,7 @@ main {
   .container-img {
     display: none;
   }
+
   .text-begin {
     color: var(
       --Color-Brand-Primria-Primary-90,
@@ -174,6 +238,15 @@ main {
     font-weight: 400;
     line-height: 2.4rem; /* 100% */
   }
+  .form-label {
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    transition: all 0.3s;
+    z-index: 1;
+    max-height: 56px;
+  }
+
   .form-login {
     width: 80%;
     height: 50%;
