@@ -1,0 +1,116 @@
+.container_imagem {
+    display: none;
+}
+
+.container_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_login_titulo {
+    color: var(--Color-Brand-Primria-Primary-90);
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 100px 0 32px 0;
+}
+
+.container_login_botao {
+    display: flex;
+    justify-content: center;
+}
+
+.container_login_btn-google {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 11px;
+    background-color: var(--White);
+    border: none;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.17), 0px 0px 1px 0px rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    margin-bottom: 35px;
+}
+
+.container_login_titulo_form {
+    color: var(--Neutral-Colors-Neutral-110);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; 
+    letter-spacing: 0.15px;
+    margin-bottom: 24px;
+}
+
+.fomulario_login_fieldset {
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+.fomulario_login_legend {
+    color: var(--Neutral-Colors-Neutral-110);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+}
+
+.formulario_login_input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 12px;
+}
+
+.fomulario_login_btn_enviar {
+    width: 100%;
+    background-color: var(--Color-Brand-Secundria-Secondary-100);
+    color: var(--Neutral-Colors-Neutral-60);
+    border: none;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.20), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; /* 173.333% */
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+
+    padding: 8px 0;
+
+    margin-bottom: 18px;
+}
+
+.container_login_link_cadastre {
+    color: var(--Neutral-Colors-Neutral-100);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; 
+    letter-spacing: 0.15px;
+    text-decoration: none;
+}
+
+@media (min-width: 1200px) {
+
+    main {
+        display: flex;
+        align-items: start;
+        gap: 103px;
+    }
+
+    .container_imagem {
+        display: flex;
+        height: 100vh;
+    }
+
+
+}
