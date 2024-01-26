@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus projetos</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="cabecalho">
+
+        <div class="cabecalho__links">
+            <div class="cabecalho__links-icones">
+                <img src="./assets/_Icon_.svg" alt="ícone menu hamburguer" class="cabecalho__links-hamburguer" id="menu-hamburguer">
+                <nav class="cabecalho__links-dropdown" id="dropdown">
+                    <ul class="cabecalho__lista-dropdown">
+                        <li><a href="projetos.html">Meus Projetos</a></li>
+                        <li><a href="#">Descobrir</a></li>
+                        <li><a href="#">Configurações</a></li>
+                    </ul>
+                </nav>
+                
+                <a href="projetos.html">
+                    <img src="./assets/Logo orange.svg" alt="logo com uma laranja e escrita orange portfólio" />
+                </a>
+            </div>
+
+            <nav>
+                <ul class="cabecalho__lista">
+                    <li><a href="#">Meus Projetos</a></li>
+                    <li><a href="#">Descobrir</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="cabecalho__imagens">
+            <img src="./assets/Image.svg" alt="foto de perfil mulher com óculos e cabelos escuros" class="cabecalho__imagens__perfil">
+            <img src="./assets/_IconButton_.svg" alt="ícone de sino">
+        </div>
+    </header>
+
+    <main>
+        <section class="card-menu">
+          <div class="card-menu__card">
+            <img src="./assets/perfil-maior.svg" alt="">
+
+            <div class="card-menu__info">
+                <h2>Camila Soares</h2>
+
+                <p>Brasil</p>
+
+                <button>Adicionar Projeto</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="meus-projetos">
+            <p>Meus Projetos</p>
+
+            <input type="text" name="tags" id="tags" placeholder="Buscar tags">
+
+            <div class="meus-projetos__cards">
+                <div class="meus-projetos__card--ativado meus-projetos__card">
+                    <img src="./assets/collections.svg" alt="ícone arquivo">
+
+                    <p>Adicione seu primeiro projeto</p>
+
+                    <p>Compartilhe seu talento com milhares de pessoas</p>
+                </div>
+
+                <div class="meus-projetos__card"></div>
+
+                <div class="meus-projetos__card"></div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+</html>
