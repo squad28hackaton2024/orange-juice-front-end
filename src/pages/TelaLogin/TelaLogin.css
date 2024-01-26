@@ -13,7 +13,8 @@ html {
 
 body {
   display: flex;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
   border-radius: var(--none, 0px);
   background: #fff;
 }
@@ -26,14 +27,13 @@ main {
 .container-img {
   display: flex;
   width: 41.02%;
-  max-width: 525px;
   height: 100vh;
-  border-radius: var(--none, 0px);
-  background:
-    url("\orange-juice-front-end\src\pages\TelaLogin\assets\img_login.png"),
-    lightgray 50% / cover no-repeat;
-  flex-shrink: 0;
 }
+
+.container-img {
+  height: 100%;
+}
+
 .btn-submit {
   display: flex;
   width: 100%;
