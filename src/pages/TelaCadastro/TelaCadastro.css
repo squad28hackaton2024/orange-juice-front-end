@@ -163,7 +163,6 @@ body {
 .input-field {
   position: relative;
   width: 100%;
-  
 }
 
 .input-field input {
@@ -203,4 +202,14 @@ a {
 }
 input:hover {
   border-color: var(--components-input-standard-hoverBorder, #000);
+}
+title {
+  color: var(--Color-Brand-Primria-Primary-90, #224);
+  text-align: center;
+  /* [Orange P] Style Guide/H3 */
+  font-family: Roboto;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
 }

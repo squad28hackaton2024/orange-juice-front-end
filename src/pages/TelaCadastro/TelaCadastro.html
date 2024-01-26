@@ -33,65 +33,76 @@
       <!-- container formulário -->
 
       <div class="container-form">
-        <h5 class="mb-4 title">Cadastre-se</h5>
+        <div class="row"><h5 class="mb-4 title">Cadastre-se</h5></div>
+
         <form action="" class="w-100 form-sign-in">
-           <!-- nome -->
-          <div class="mb-4 input-field">
-            <label for="name-user" class="form-label">Nome</label>
-            <input
-              type="text"
-              class="w-100 form-control"
-              aria-label="first-name"
-              aria-describedby="basic-addon1"
-              spellcheck="false"
-              autocomplete="off"
-              required
-            />
+          <!-- nome -->
+          <div class="w-100 row">
+            <div class="col mb-4 input-field">
+              <label for="name-user" class="form-label">Nome</label>
+              <input
+                type="text"
+                class="w-100 form-control"
+                aria-label="first-name"
+                aria-describedby="basic-addon1"
+                spellcheck="false"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <!-- sobrenome -->
+            <div class="col mb-4 input-field">
+              <label for="last-name-user" class="form-label">Sobrenome</label>
+              <input
+                type="text"
+                class="w-100 form-control"
+                aria-label="last-name"
+                aria-describedby="basic-addon1"
+                spellcheck="false"
+                autocomplete="off"
+                required
+              />
+            </div>
           </div>
- <!-- sobrenome -->
-          <div class="mb-4 input-field">
-            <label for="last-name-user" class="form-label">Sobrenome</label>
-            <input
-              type="text"
-              class="w-100 form-control"
-              aria-label="last-name"
-              aria-describedby="basic-addon1"
-              spellcheck="false"
-              autocomplete="off"
-              required
-            />
+          <!-- email -->
+          <div class="w-100 row">
+            <div class="mb-4 input-field">
+              <label for="exampleInputEmail1" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                spellcheck="false"
+                autocomplete="off"
+                required
+              />
+              <div id="emailHelp" class="form-text"></div>
+            </div>
           </div>
-          <div class="mb-4 input-field">
-            <label for="exampleInputEmail1" class="form-label"
-              >Email address</label
-            >
-            <input
-              type="email"
-              class="w-100 form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              spellcheck="false"
-              autocomplete="off"
-              required
-            />
-            <div id="emailHelp" class="form-text"></div>
+          <!-- senha -->
+          <div class="w-100 row">
+            <div class="mb-3 input-field">
+              <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="input-password"
+                spellcheck="false"
+                autocomplete="off"
+                required
+              />
+            </div>
           </div>
-          <div class="mb-3 input-field">
-            <label for="exampleInputPassword1" class="form-label"
-              >Password</label
-            >
-            <input
-              type="password"
-              class="w-100 form-control"
-              id="input-password"
-              spellcheck="false"
-              autocomplete="off"
-              required
-            />
+          <div class="w-100 row">
+            <button type="submit" class="btn btn-primary btn-submit">
+              CADASTRAR
+            </button>
           </div>
-          <button type="submit" class="btn btn-primary btn-submit">
-            CADASTRAR
-          </button>
         </form>
       </div>
     </main>
