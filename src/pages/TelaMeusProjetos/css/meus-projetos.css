@@ -74,3 +74,17 @@
     line-height: 1.4rem; /* 100% */
     letter-spacing: 0.5px;
 }
+
+@media (max-width: 800px) {
+    .meus-projetos input {
+        width: 100%;
+    }
+
+    .meus-projetos__cards {
+        gap: 2.7rem;
+    }
+
+    .meus-projetos__card--ativado {
+        padding: 0 2.1rem;
+    }
+}

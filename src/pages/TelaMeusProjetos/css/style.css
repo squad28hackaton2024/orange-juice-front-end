@@ -12,3 +12,11 @@
     --color-neutral-70:#E6E9F2;
     --color-neutral-60:#FCFDFF;
 }
+
+.esconder {
+    display: none;
+}
+
+.aparecer {
+    display: inline-block;
+}

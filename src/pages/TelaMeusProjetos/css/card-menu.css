@@ -53,3 +53,9 @@
     border: none;
     border: 2px;
 }
+
+@media (max-width: 450px) {
+    .card-menu__card {
+        flex-direction: column;
+    }
+}
