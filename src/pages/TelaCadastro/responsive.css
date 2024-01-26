@@ -50,12 +50,10 @@ main {
   line-height: 2.4rem; /* 100% */
 }
 
-
-
 .form-login {
   display: flex;
   /*width: 517px;
-      height: 271px; */
+            height: 271px; */
   width: 80%;
   max-width: 517px;
   padding-bottom: 3px;
