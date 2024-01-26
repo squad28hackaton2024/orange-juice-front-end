@@ -25,7 +25,7 @@
 }
 
 .card-menu__info p {
-    color: var(--color-neutral-130);
+    color: var(--color-principal-130);
 
     font-family: Roboto;
     font-size: 1.6rem;
