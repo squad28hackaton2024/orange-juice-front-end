@@ -27,46 +27,56 @@
       <div class="img-responsive container-img">
         <img
           src="/orange-juice-front-end/src/pages/TelaCadastro/assets/img-cadastro.png"
-          alt="imagem-telaLogin"
+          alt="imagem-tela-cadastro"
         />
       </div>
       <!-- container formulário -->
 
       <div class="container-form">
-        <h5 class="mb-4">Cadastre-se</h5>
+        <h5 class="mb-4 title">Cadastre-se</h5>
         <form action="" class="w-100 form-sign-in">
-          <div class="input-group mb-3">
+           <!-- nome -->
+          <div class="mb-4 input-field">
             <label for="name-user" class="form-label">Nome</label>
             <input
               type="text"
               class="w-100 form-control"
               aria-label="first-name"
               aria-describedby="basic-addon1"
+              spellcheck="false"
+              autocomplete="off"
+              required
             />
           </div>
-
-          <div class="input-group mb-3 ">
+ <!-- sobrenome -->
+          <div class="mb-4 input-field">
             <label for="last-name-user" class="form-label">Sobrenome</label>
             <input
               type="text"
               class="w-100 form-control"
               aria-label="last-name"
               aria-describedby="basic-addon1"
+              spellcheck="false"
+              autocomplete="off"
+              required
             />
           </div>
-          <div class="input-group mb-3">
+          <div class="mb-4 input-field">
             <label for="exampleInputEmail1" class="form-label"
               >Email address</label
             >
             <input
               type="email"
-              class=" w-100 form-control"
+              class="w-100 form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
+              spellcheck="false"
+              autocomplete="off"
+              required
             />
             <div id="emailHelp" class="form-text"></div>
           </div>
-          <div class="input-group mb-3 ">
+          <div class="mb-3 input-field">
             <label for="exampleInputPassword1" class="form-label"
               >Password</label
             >
@@ -74,6 +84,9 @@
               type="password"
               class="w-100 form-control"
               id="input-password"
+              spellcheck="false"
+              autocomplete="off"
+              required
             />
           </div>
           <button type="submit" class="btn btn-primary btn-submit">

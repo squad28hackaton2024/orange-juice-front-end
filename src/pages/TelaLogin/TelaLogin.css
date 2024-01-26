@@ -22,21 +22,189 @@ main {
   width: 100%;
   height: 100%;
 }
-@media only screen and (max-width: 640px) {
-  h5 {
-    color: var(
-      --Color-Brand-Primria-Primary-90,
-      var(--Color-Brand-Primria-Primary-90, #224)
-    );
-    text-align: center;
+/*Container imagem*/
+.container-img {
+  display: flex;
+  width: 41.02%;
+  max-width: 525px;
+  height: 100vh;
+  border-radius: var(--none, 0px);
+  background:
+    url("\orange-juice-front-end\src\pages\TelaLogin\assets\img_login.png"),
+    lightgray 50% / cover no-repeat;
+  flex-shrink: 0;
+}
+.btn-submit {
+  display: flex;
+  width: 100%;
+  height: 4.2rem;
+  overflow: hidden;
+  padding: 8px 22px;
+  border: none;
+  border-radius: var(--borderRadius, 4px);
+  box-shadow:
+    0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  background: var(--Color-Brand-Secundria-Secondary-100, #f52);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.btn-submit:hover {
+  border-radius: var(--borderRadius, 4px);
+  background: var(--Color-Brand-Secundria-Secondary-110, #c40);
+  /* elevation/4 */
+  box-shadow:
+    0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
 
-    /* [Orange P] Style Guide/H5 */
-    font-family: Roboto;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 100% */
-  }
+.button-google-sign-in {
+  display: flex;
+  padding: 11px var(--1, 8px);
+  border-radius: 2px;
+  box-shadow:
+    0px 1px 1px 0px rgba(0, 0, 0, 0.17),
+    0px 0px 1px 0px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  align-items: center;
+  gap: var(--3, 24px);
+}
+.button-google-sign-in:hover {
+  border-radius: 2px;
+  background: rgba(66, 133, 244, 0.1);
+}
+/*Container login*/
+.container-login {
+  display: flex;
+  max-width: 755px;
+  width: 60%;
+  height: 100%;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-login {
+  display: flex;
+  /*width: 517px;
+  height: 271px; */
+  width: 80%;
+  max-width: 517px;
+  padding-bottom: 3px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.text-begin {
+  color: var(
+    --Color-Brand-Primria-Primary-90,
+    var(--Color-Brand-Primria-Primary-90, #224)
+  );
+  font-family: Roboto;
+  font-size: 4.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 4rem;
+  text-align: center;
+}
+.form-label:focus + .form-group {
+  position: relative;
+  top: -10px;
+}
+.text-login {
+  align-self: stretch;
+  color: var(--Neutral-Colors-Neutral-110, #515255);
+  font-family: Roboto;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.4rem;
+}
+
+.link-cadastro {
+  color: var(--Neutral-Colors-Neutral-100, #818388);
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6rem;
+  letter-spacing: 0.15px;
+}
+#input-password {
+  justify-self: flex-end;
+  display: flex;
+  background-position: 95% center;
+  background-image: url(/public/images/visibility.svg);
+  background-repeat: no-repeat;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.input-field {
+  position: relative;
+}
+
+.input-field input {
+  height: 60px;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 0 15px;
+  border-radius: var(--borderRadius, 4px);
+  border: var(--none, 1px) solid
+    var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
+  color: #fff;
+  outline: none;
+}
+
+.input-field .form-label {
+  position: absolute;
+  top: -10px; /* Ajuste o valor conforme necessário para posicionar acima da borda */
+  left: 15px;
+  font-size: 16px;
+  padding: 0 2px;
+  background: #fff;
+  color: var(--Neutral-Colors-Neutral-110, #515255);
+  transition: 0.3s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -10px; /* Mantenha o mesmo valor ajustado para o foco ou input válido */
+  left: 15px;
+  font-size: 16px;
+  padding: 0 2px;
+  background: #060b23;
+}
+
+a {
+  text-decoration: none;
+}
+input:hover {
+  border-color: var(--components-input-standard-hoverBorder, #000);
+}
+
+/*Parte da responsividade*/
+@media (max-width: 640px) {
   body {
     display: flex;
     height: 100vh;
@@ -55,19 +223,32 @@ main {
     flex-direction: column;
   }
   .container-img {
-    height: 100%;
     display: none;
   }
-  img {
-    object-fit: contain;
+
+  .text-begin {
+    color: var(
+      --Color-Brand-Primria-Primary-90,
+      var(--Color-Brand-Primria-Primary-90, #224)
+    );
+    text-align: center;
+
+    /* [Orange P] Style Guide/H5 */
+    font-family: Roboto;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.4rem; /* 100% */
   }
-  #input-password {
-    justify-self: flex-end;
-    display: flex;
-    background-position: 95% center;
-    background-image: url(/public/images/visibility.svg);
-    background-repeat: no-repeat;
+  .form-label {
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    transition: all 0.3s;
+    z-index: 1;
+    max-height: 56px;
   }
+
   .form-login {
     width: 80%;
     height: 50%;
@@ -92,105 +273,10 @@ main {
     line-height: 1.6rem;
     letter-spacing: 0.015rem;
   }
-  /*Container imagem*/
-  .btn-submit {
-    display: flex;
-    width: 100%;
-    height: 4.2rem;
-    overflow: hidden;
-    padding: 8px 22px;
-    border: none;
-    border-radius: var(--borderRadius, 4px);
-    box-shadow:
-      0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-      0px 2px 2px 0px rgba(0, 0, 0, 0.14),
-      0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-    background: var(--Color-Brand-Secundria-Secondary-100, #f52);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-  }
-  .btn-submit:hover {
-    border-radius: var(--borderRadius, 4px);
-    background: var(--Color-Brand-Secundria-Secondary-110, #c40);
-    /* elevation/4 */
-    box-shadow:
-      0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-      0px 4px 5px 0px rgba(0, 0, 0, 0.14),
-      0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-  }
-  .container-login {
-    display: flex;
-    max-width: 755px;
-    width: 60%;
-    height: 100%;
-    flex-shrink: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .form-login {
-    display: flex;
-    /*width: 517px;
-  height: 271px; */
-    width: 80%;
-    max-width: 517px;
-    padding-bottom: 3px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 18px;
-    flex-shrink: 0;
-  }
-
-  .text-begin {
-    color: var(
-      --Color-Brand-Primria-Primary-90,
-      var(--Color-Brand-Primria-Primary-90, #224)
-    );
-    font-family: Roboto;
-    font-size: 4.8rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 4rem;
-    text-align: center;
-  }
-  .form-label:focus + .form-group {
-    position: relative;
-    top: -10px;
-  }
-  .text-login {
-    align-self: stretch;
-    color: var(--Neutral-Colors-Neutral-110, #515255);
-    font-family: Roboto;
-    font-size: 2.4rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 2.4rem;
-  }
-
-  .link-cadastro {
-    color: var(--Neutral-Colors-Neutral-100, #818388);
-    font-family: Roboto;
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.6rem;
-    letter-spacing: 0.15px;
-  }
-  #input-password {
-    justify-self: flex-end;
-    display: flex;
-    background-position: 95% center;
-    background-image: url(/public/images/visibility.svg);
-    background-repeat: no-repeat;
-  }
-  .btn-visibility {
-    border-left: none;
-    border-radius: var(--borderRadius, 4px);
-    border: var(--none, 1px) solid
-      var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
+  .button-google-sign-in {
+    display: inline-flex;
+    padding: 3px;
+    flex-direction: row;
+    gap: 8px;
   }
 }
-
