@@ -194,3 +194,21 @@ textarea {
   border: var(--none, 1px) solid
     var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
 }
+
+@media (max-width: 800px) {
+  .meus-projetos input {
+      width: 100%;
+  }
+
+  .meus-projetos__cards {
+      gap: 2.7rem;
+  }
+
+  .meus-projetos__card--ativado {
+      padding: 0 2.1rem;
+  }
+  .modal-adc-img{
+      width: 26.6rem;
+      height: 80.3rem;
+  }
+}
