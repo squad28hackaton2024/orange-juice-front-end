@@ -4,6 +4,7 @@
 @import url(./card-menu.css);
 @import url(./meus-projetos.css);
 @import url(./modal.css);
+@import url(./visualizar-projetos.css);
 
 :root {
     --color-principal-130:#303133;

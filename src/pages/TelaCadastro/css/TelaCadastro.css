@@ -13,10 +13,10 @@
 }
 .btn-submit {
   display: flex;
-  width: 100%;
+  width:  51.7rem;
   height: 4.2rem;
   overflow: hidden;
-  padding: 8px 22px;
+  padding: 0.8rem 2.2rem;
   border: none;
   border-radius: var(--borderRadius, 4px);
   box-shadow:
