@@ -1,0 +1,13 @@
+#modal-visualizar-projeto {
+    flex-direction: column;
+    margin-left: 16%;
+    justify-content: center;
+    padding: 2.4rem 3.2rem;
+    width: 89rem;
+    height: 52.2rem;
+    overflow: hidden;
+    border-radius: var(--none, 0px);
+    background: #fefefe;
+    flex-shrink: 0;
+    border: none;
+  }

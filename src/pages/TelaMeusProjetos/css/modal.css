@@ -1,16 +1,13 @@
-dialog {
-  display: flex;
-  flex-direction: column;
-  margin-left: 16%;
-  justify-content: center;
-  padding: 2.4rem 3.2rem;
-}
 .container {
   display: flex;
   flex-direction: row;
   gap: 2.4rem;
 }
-#modal {
+#modal-adc-img {
+  flex-direction: column;
+  margin-left: 16%;
+  justify-content: center;
+  padding: 2.4rem 3.2rem;
   width: 89rem;
   height: 52.2rem;
   overflow: hidden;
@@ -19,7 +16,7 @@ dialog {
   flex-shrink: 0;
   border: none;
 }
-#modal::backdrop {
+#modal-adc-img::backdrop {
   background: var(--components-backdrop-fill, rgba(0, 0, 0, 0.5));
 }
 .container-img {
@@ -113,6 +110,9 @@ input {
   text-transform: uppercase;
 }
 form {
+  position: relative;
+  top: -3.1rem;
+  height: 33.6rem;
   display: flex;
   width: 41.3rem;
   padding: var(--none, 0px);
@@ -137,11 +137,14 @@ form {
   padding-bottom: 2.4rem;
 }
 .texto-visualizar {
-  margin-bottom: 0.2rem;
-  width: 83.8rem;
+  position: relative;
+  top: -2rem;
+  display: flex;
+  padding: 2rem;
+  align-items: center;
   height: var(--2, 1.6rem);
   color: var(--Neutral-Colors-Neutral-110, #515255);
-
+  padding: 0.2rem;
   /* [Orange P] Style Guide/Subtitle 1 */
   font-family: Roboto;
   font-size: 1.6rem;
@@ -163,16 +166,16 @@ form {
   line-height: 1.6rem;
   letter-spacing: 0.15px;
 }
-.texto-compartilhe{
-    width: 27rem;
-    opacity: 0.6;
-    color: var(--Neutral-Colors-Neutral-120, #303133);
-    font-family: Roboto;
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height:  1.4rem;
-    letter-spacing: 0.25px;
+.texto-compartilhe {
+  width: 27rem;
+  opacity: 0.6;
+  color: var(--Neutral-Colors-Neutral-120, #303133);
+  font-family: Roboto;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4rem;
+  letter-spacing: 0.25px;
 }
 textarea {
   padding: 2rem;
@@ -190,4 +193,22 @@ textarea {
   border-radius: var(--borderRadius, 4px);
   border: var(--none, 1px) solid
     var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
+}
+
+@media (max-width: 800px) {
+  .meus-projetos input {
+      width: 100%;
+  }
+
+  .meus-projetos__cards {
+      gap: 2.7rem;
+  }
+
+  .meus-projetos__card--ativado {
+      padding: 0 2.1rem;
+  }
+  .modal-adc-img{
+      width: 26.6rem;
+      height: 80.3rem;
+  }
 }

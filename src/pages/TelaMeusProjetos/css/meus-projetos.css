@@ -1,90 +1,89 @@
 .meus-projetos {
-    padding: 0 3.2rem;
-    margin-bottom: 7.9rem;
+  padding: 0 3.2rem;
+  margin-bottom: 7.9rem;
 }
 
 .meus-projetos p {
-    color: var(--color-neutral-130);
+  color: var(--color-neutral-130);
 
-    font-family: Roboto;
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 2rem; /* 100% */
-    letter-spacing: 0.15px;
+  font-family: Roboto;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2rem; /* 100% */
+  letter-spacing: 0.15px;
 }
 
 .meus-projetos input {
-    width: 48.9rem;
+  width: 48.9rem;
 
-    font-family: Roboto;
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 2.4rem; /* 150% */
-    letter-spacing: 0.15px;
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.4rem; /* 150% */
+  letter-spacing: 0.15px;
 
-    margin: 1.6rem 0 4rem 0;
-    padding: 1.6rem 1.2rem;
-    border-radius: 5px;
-    border: 1px solid var(--color-neutral-100);
+  margin: 1.6rem 0 4rem 0;
+  padding: 1.6rem 1.2rem;
+  border-radius: 5px;
+  border: 1px solid var(--color-neutral-100);
 }
 
 .meus-projetos__cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .meus-projetos__card {
-    height: 25.8rem;
-    width: 39rem;
-    background-color: var(--color-neutral-70);
-    opacity: .8;
+  height: 25.8rem;
+  width: 39rem;
+  background-color: var(--color-neutral-70);
+  opacity: 0.8;
 }
 
 .meus-projetos__card--ativado {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.6rem;
-    padding: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  padding: 6rem;
 }
 
-.meus-projetos__card--ativado p:nth-child(2){
-    color: var(--color-principal-130);
+.meus-projetos__card--ativado p:nth-child(2) {
+  color: var(--color-principal-130);
 
-    font-family: Roboto;
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.6rem; /* 100% */
-    letter-spacing: 0.5px;
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6rem; /* 100% */
+  letter-spacing: 0.5px;
 }
 
-.meus-projetos__card--ativado p:nth-child(3){
-    color: var(--color-principal-130);
+.meus-projetos__card--ativado p:nth-child(3) {
+  color: var(--color-principal-130);
 
-    font-family: Roboto;
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.4rem; /* 100% */
-    letter-spacing: 0.5px;
+  font-family: Roboto;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4rem; /* 100% */
+  letter-spacing: 0.5px;
 }
 
 @media (max-width: 800px) {
-    .meus-projetos input {
-        width: 100%;
-    }
+  .meus-projetos input {
+    width: 100%;
+  }
 
-    .meus-projetos__cards {
-        gap: 2.7rem;
-    }
+  .meus-projetos__cards {
+    gap: 2.7rem;
+  }
 
-    .meus-projetos__card--ativado {
-        padding: 0 2.1rem;
-    }
+  .meus-projetos__card--ativado {
+    padding: 0 2.1rem;
+  }
 }
