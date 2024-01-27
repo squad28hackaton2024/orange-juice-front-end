@@ -1,0 +1,193 @@
+dialog {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16%;
+  justify-content: center;
+  padding: 2.4rem 3.2rem;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 2.4rem;
+}
+#modal {
+  width: 89rem;
+  height: 52.2rem;
+  overflow: hidden;
+  border-radius: var(--none, 0px);
+  background: #fefefe;
+  flex-shrink: 0;
+  border: none;
+}
+#modal::backdrop {
+  background: var(--components-backdrop-fill, rgba(0, 0, 0, 0.5));
+}
+.container-img {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  bottom: 0px;
+  width: 38.9rem;
+  height: 30.4rem;
+  padding: var(--none, 91px) var(--none, 59px) var(--none, 91px)
+    var(--none, 60px);
+  border-radius: var(--borderRadius, 4px);
+  background: var(--Neutral-Colors-Neutral-70, #e6e9f2);
+  justify-content: center;
+  align-items: center;
+  color: var(--Neutral-Colors-Neutral-120, #303133);
+
+  /* [Orange P] Style Guide/Body 2 */
+  font-family: Roboto;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4rem; /* 100% */
+  letter-spacing: 0.25px;
+}
+img {
+  padding: 0.2rem;
+}
+
+input {
+  width: 38.9rem;
+  height: 5.6rem;
+  display: flex;
+  padding: var(--none, 0px) 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--none, 0px);
+  align-self: stretch;
+  border-radius: var(--borderRadius, 4px);
+  border: var(--none, 1px) solid
+    var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
+}
+.button-salvar {
+  border: none;
+  display: flex;
+  overflow: hidden;
+  padding: 8px 22px;
+  border-radius: var(--borderRadius, 4px);
+  box-shadow:
+    0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  background: var(--Color-Brand-Secundria-Secondary-100, #f52);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--Neutral-Colors-Neutral-60, #fcfdff);
+  font-feature-settings:
+    "clig" off,
+    "liga" off;
+
+  /* [Orange P] Style Guide/Button */
+  font-family: Roboto;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.6rem; /* 173.333% */
+  letter-spacing: 0.46px;
+  text-transform: uppercase;
+}
+.button-cancelar {
+  border: none;
+  display: flex;
+  overflow: hidden;
+  padding: 0.8rem 2.2rem;
+  border-radius: var(--borderRadius, 4px);
+  background: var(--action-disabledBackground, rgba(0, 0, 0, 0.12));
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--action-disabled, rgba(0, 0, 0, 0.38));
+  font-feature-settings:
+    "clig" off,
+    "liga" off;
+  font-family: Roboto;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.6rem; /* 173.333% */
+  letter-spacing: 0.46px;
+  text-transform: uppercase;
+}
+form {
+  display: flex;
+  width: 41.3rem;
+  padding: var(--none, 0px);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--2, 16px);
+  align-self: stretch;
+  border-radius: var(--none, 0px);
+}
+.buttons {
+  display: inline-flex;
+  gap: 1.6rem;
+}
+.texto-adicionar {
+  width: 82.6rem;
+  color: var(--Neutral-Colors-Neutral-110, #515255);
+  font-family: Roboto;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.4rem; /* 100% */
+  padding-bottom: 2.4rem;
+}
+.texto-visualizar {
+  margin-bottom: 0.2rem;
+  width: 83.8rem;
+  height: var(--2, 1.6rem);
+  color: var(--Neutral-Colors-Neutral-110, #515255);
+
+  /* [Orange P] Style Guide/Subtitle 1 */
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6rem; /* 100% */
+  letter-spacing: 0.15px;
+}
+.texto-selecione {
+  padding-bottom: 1.6rem;
+  width: 38.9rem;
+  flex-shrink: 0;
+  align-self: stretch;
+  color: var(--Neutral-Colors-Neutral-110, #515255);
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6rem;
+  letter-spacing: 0.15px;
+}
+.texto-compartilhe{
+    width: 27rem;
+    opacity: 0.6;
+    color: var(--Neutral-Colors-Neutral-120, #303133);
+    font-family: Roboto;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height:  1.4rem;
+    letter-spacing: 0.25px;
+}
+textarea {
+  padding: 2rem;
+  display: flex;
+  resize: none;
+  display: flex;
+  width: 38.9rem;
+  height: 12rem;
+  padding: var(--none, 0px) 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--none, 0px);
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: var(--borderRadius, 4px);
+  border: var(--none, 1px) solid
+    var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
+}
