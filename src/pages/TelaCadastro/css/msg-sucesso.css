@@ -1,0 +1,35 @@
+.msg-sucesso .toast {
+  background-color: #28a745; /* Cor de fundo verde para sucesso */
+  display: flex;
+  width: 32rem;
+  overflow: hidden;
+  padding: 0.6rem 1.6rem;
+  border-radius: var(--borderRadius, 4px);
+  background: var(--success-main, #2e7d32);
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.msg-sucesso .toast-body {
+  color: #fff; /* Cor do texto branco para melhor contraste */
+}
+
+.text-toast {
+  color: var(--success-contrast, #fff);
+  font-feature-settings:
+    "clig" off,
+    "liga" off;
+
+  /* alert/title */
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  letter-spacing: 0.15px;
+}
+.msg-sucesso {
+  display: flex;
+  align-items: center;
+}
