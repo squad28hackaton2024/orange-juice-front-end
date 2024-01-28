@@ -123,7 +123,7 @@
           </p>
         </div>
         <div class="buttons">
-          <button class="button-salvar">SALVAR</button>
+          <button class="button-salvar" id="salvar-projeto">SALVAR</button>
           <button class="button-cancelar" id="button-cancelar">CANCELAR</button>
         </div>
       </dialog>
@@ -179,9 +179,18 @@
           </div>
         </footer>
       </dialog>
+
+      <dialog id="modal-mensagem-sucesso" class="dialog-add-projeto">
+        <p>Projeto adicionado com sucesso!</p>
+
+        <div><img src="./assets/Text input.svg" alt="ícone de ok"></div>
+
+        <button><a href="./projetos.html">Voltar para projetos</a></button>
+      </dialog>
     </main>
-    <script src="./js/modal.js"></script>
-    <script src="./js/script.js"></script>
-    <script src="./js/visualizar-projetos.js"></script>
+    <script src="./js/dropdown.js"></script>
+    <script src="./js/modal-adicionar-projetos.js"></script>
+    <script src="./js/modal-visualizar-projetos.js"></script>
+    <script src="./js/modal-mensagem-sucesso.js"></script>
   </body>
 </html>

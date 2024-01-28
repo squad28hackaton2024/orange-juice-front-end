@@ -18,6 +18,7 @@ async function consomeApiAuth(email, password) {
     })
 
     const resposta = await dados.json()
+    console.log(resposta)
 
     if(resposta.message === 'Usuário Logado') {
         armazernaToken(resposta.token)
@@ -37,6 +38,8 @@ function armazernaToken(token) {
 
 botaoLogin.addEventListener('click', async (e) => {
     e.preventDefault()
+
+    console.log("botao")
 
     const valueEmail = emailLogin.value.toLowerCase()
     const valuePassword = passwordLogin.value 
