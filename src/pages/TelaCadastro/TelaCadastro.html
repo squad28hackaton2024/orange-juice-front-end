@@ -30,16 +30,12 @@
       </div>
       <!-- Mensagem concluido com sucesso -->
   
-      <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3 msg-sucesso">
-        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        
-            <img src="./assets/CheckCircleOutlined.svg" class="rounded me-2" alt="..." />
-        
-          <div class="toast-body text-toast">Cadastro feito com sucesso</div>
-        </div>
-      </div>
-
-
+      <section>
+       <div class="mensagem-sucesso mensagem-desaparecer" id="mensagem-sucesso">
+        <img src="./assets/CheckCircleOutlined.svg" alt="">
+        <p id="mensagem"></p>
+       </div>
+      </section>
 
       <!-- container formulário -->
 
@@ -55,6 +51,7 @@
                 type="text"
                 class="form-control"
                 aria-label="first-name"
+                id="first-name"
                 aria-describedby="basic-addon1"
                 spellcheck="false"
                 autocomplete="off"
@@ -67,6 +64,7 @@
               <input
                 type="text"
                 class="form-control"
+                id="last-name"
                 aria-label="last-name"
                 aria-describedby="basic-addon1"
                 spellcheck="false"
@@ -84,7 +82,7 @@
               <input
                 type="email"
                 class="form-control"
-                id="exampleInputEmail1"
+                id="email"
                 aria-describedby="emailHelp"
                 spellcheck="false"
                 autocomplete="off"
@@ -102,7 +100,7 @@
               <input
                 type="password"
                 class="form-control"
-                id="input-password"
+                id="password"
                 spellcheck="false"
                 autocomplete="off"
                 required
@@ -110,12 +108,12 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-submit" id="liveToastBtn">
+          <button type="submit" class="btn btn-primary btn-submit" id="botao-cadastrar">
             CADASTRAR
           </button>
     
           </div>
-          <script src="./js/TelaCadastro.js"></script>
+          <script src="./js/api-cadastro.js"></script>
         </form>
       </div>
     </main>

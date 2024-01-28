@@ -107,7 +107,7 @@
     .form-control {
       width: 100%;
     }
-    #input-password {
+    #password {
       justify-self: flex-end;
       display: flex;
       background-position: 95% center;
