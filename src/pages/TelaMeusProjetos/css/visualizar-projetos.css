@@ -1,9 +1,75 @@
-.visualizar-imagem {
+* {
+  font-family: Roboto;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 104.2rem;
   height: 98.0815rem;
   flex-shrink: 0;
-  background: #f00707;
-  flex-shrink: 0;
+  border-radius: var(--none, 0px);
+  background: #fff;
   border: none;
   margin: auto;
+  padding: 5.6rem 10.2rem 8.2rem 10.2rem;
+  gap:3.2rem;
+}
+.header-modal-visualizar {
+  display: flex;
+  width: 83.8rem;
+  padding: var(--none, 0px);
+  border-radius: var(--none, 0px);
+  justify-content: center;
+  align-items: center;
+  gap: 17.5rem;
+  border-radius: var(--none, 0px);
+}
+
+.main-ver-img {
+  gap: 6.4rem;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title-modal-visualizar-projeto {
+  color: var(--Neutral-Colors-Neutral-120, #303133);
+
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.4rem;
+  text-align: center;
+}
+
+.container-img-visualizar {
+  width: 838px;
+  height: 585px;
+  flex-shrink: 0;
+}
+
+.close-page {
+  width: 2.4rem;
+  height: 2.4rem;
+  background-image: url(/orange-juice-front-end/src/pages/TelaMeusProjetos/assets/close.svg);
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+}
+
+.icon-perfil {
+  display: flex;
+  gap: 0.8rem;
+}
+.text-name {
+  display: flex;
+  flex-direction: column;
+}
+.text-download{
+  text-align: left;
+}
+.footer-ver-img{
+  width: 100%;
 }

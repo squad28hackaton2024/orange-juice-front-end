@@ -221,7 +221,7 @@ textarea {
     flex-direction: column;
   }
   #modal-adc-img {
-    padding: 2.5rem;
+    padding: 2rem;
     flex-direction: column;
     justify-content: center;
     width: 100%;
