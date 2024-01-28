@@ -1,16 +1,15 @@
-const modal = document.getElementById("modal-adc-img")
-const img = document.querySelector("#abrir-modal")
+const modalAdicionarProjeto = document.getElementById("modal-adc-img");
+const img = document.querySelector("#abrir-modal");
 
-const botao = document.getElementById("button-cancelar")
-function abrirModal(params) {
-    modal.showModal()
+const botao = document.getElementById("button-cancelar");
+function abrirModalAdicionarProjeto(params) {
+  modalAdicionarProjeto.showModal();
 }
 
-function fecharModal(params) {
-    modal.close()
+function fecharModalAdicionarProjeto(params) {
+  modalAdicionarProjeto.close();
 }
 
-img.addEventListener('click',abrirModal)
+img.addEventListener("click", abrirModalAdicionarProjeto);
 
-
-botao.addEventListener('click',fecharModal)
+botao.addEventListener("click", fecharModalAdicionarProjeto);
