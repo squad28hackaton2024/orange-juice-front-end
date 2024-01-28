@@ -1,4 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
 /*Container imagem*/
 .container-img {
   display: flex;
@@ -13,7 +26,7 @@
 }
 .btn-submit {
   display: flex;
-  width:  51.7rem;
+  width: 51.7rem;
   height: 4.2rem;
   overflow: hidden;
   padding: 0.8rem 2.2rem;
@@ -38,7 +51,6 @@
     0px 4px 5px 0px rgba(0, 0, 0, 0.14),
     0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
-
 /*Container login*/
 .container-form {
   display: flex;
@@ -107,20 +119,6 @@
   background-repeat: no-repeat;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-}
 
 .input-field {
   position: relative;
@@ -135,7 +133,6 @@ body {
   border-radius: var(--borderRadius, 4px);
   border: var(--none, 1px) solid
     var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
-  color: #fff;
   outline: none;
 }
 
@@ -176,4 +173,3 @@ input:hover {
   line-height: 40px;
   margin-bottom: 32px;
 }
-

@@ -1,15 +1,13 @@
-const modal = document.getElementById("modal-visualizar-projeto")
-const texto = document.querySelector("#text")
+// Adicione este bloco de código ao seu arquivo JavaScript
+const modalVisualizarProjeto = document.getElementById("modal-ver-img");
+const textoVisualizarProjeto = document.querySelector("#openModalText");
 
-
-function abrirModal(params) {
-    modal.showModal()
+function abrirModalVisualizarProjeto() {
+  modalVisualizarProjeto.showModal();
+  console.log("Funcionou");
 }
 
-function fecharModal(params) {
-    modal.close()
+function fecharModalVisualizarProjeto(params) {
+  modalVisualizarProjeto.close();
 }
-
-texto.addEventListener('click',abrirModal)
-
-
+textoVisualizarProjeto.addEventListener("click", abrirModalVisualizarProjeto);
