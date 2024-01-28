@@ -60,7 +60,7 @@
 
             <p>Brasil</p>
 
-            <button>Adicionar Projeto</button>
+            <button id="botao-abrir-modal">Adicionar Projeto</button>
           </div>
         </div>
       </section>
@@ -92,7 +92,10 @@
       <dialog id="modal-adc-img" class="adicionar-imagem">
         <div class="texto-adicionar">Adicionar Projetos</div>
         <div class="texto-selecione">
-          <p>Selecione o conteúdo que você <br> deseja fazer upload</p>
+          <p>
+            Selecione o conteúdo que você <br />
+            deseja fazer upload
+          </p>
         </div>
         <div class="container">
           <div class="container-img">
@@ -124,9 +127,46 @@
           <button class="button-cancelar" id="button-cancelar">CANCELAR</button>
         </div>
       </dialog>
-
-      <dialog id="modal-ver-img" class="visualizar-imagem">
-        <section class=""></section>
+      <!-- MODAL VISUALIZAR IMAGEM-->
+      <dialog id="modal-ver-img" class="preview">
+        <header class="header-modal-visualizar">
+          <div class="icon-perfil">
+            <img src="./assets/Circle-camila-soares.svg" alt="" />
+            <div class="text-name">
+              <p>Camila Soares</p>
+              <p>12/12</p>
+            </div>
+          </div>
+          <div class="title-modal-visualizar-projeto">
+            <p>Ecommerce One Page</p>
+          </div>
+          <div class="chip-container">
+            <div class="chip"></div>
+            <div class="chip"></div>
+          </div>
+          <div class="exit-modal-visualizar">
+            <button class="close-page"></button>
+          </div>
+        </header>
+        <main class="main-ver-img">
+          <div class="container-img-visualizar">
+            <img src="./assets/Image-preview.svg" alt="imagem preview" />
+          </div>
+          <div class="text-modal-visualizar-projeto">
+            <p>
+              Temos o prazer de compartilhar com vocês uma variação da nosso
+              primeiro recurso gratuito, Monoceros. É um modelo de uma página
+              para mostrar seus produtos. Tentamos redesenhar uma versão mais
+              B2C e minimalista do nosso primeiro template de e-commerce.
+            </p>
+          </div>
+        </main>
+        <footer class="footer-ver-img">
+          <div class="text-download">
+            <p>Download</p>
+            <a href="#">https://gumroad.com/products/wxCSL</a>
+          </div>
+        </footer>
       </dialog>
     </main>
     <script src="./js/modal.js"></script>

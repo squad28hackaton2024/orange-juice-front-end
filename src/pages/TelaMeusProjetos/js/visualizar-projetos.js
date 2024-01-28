@@ -4,7 +4,6 @@ const textoVisualizarProjeto = document.querySelector("#openModalText");
 
 function abrirModalVisualizarProjeto() {
   modalVisualizarProjeto.showModal();
-  console.log("Funcionou");
 }
 
 function fecharModalVisualizarProjeto(params) {
