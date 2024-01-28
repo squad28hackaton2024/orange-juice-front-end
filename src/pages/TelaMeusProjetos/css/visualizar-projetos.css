@@ -2,29 +2,28 @@
   font-family: Roboto;
 }
 
+.icone-close {
+  text-align: right;
+}
+
 .preview {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 104.2rem;
   height: 98.0815rem;
   flex-shrink: 0;
-  border-radius: var(--none, 0px);
   background: #fff;
   border: none;
   margin: auto;
   padding: 5.6rem 10.2rem 8.2rem 10.2rem;
   gap:3.2rem;
+  overflow-x: hidden;
 }
+
 .header-modal-visualizar {
   display: flex;
-  width: 83.8rem;
-  padding: var(--none, 0px);
-  border-radius: var(--none, 0px);
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
   gap: 17.5rem;
-  border-radius: var(--none, 0px);
+  margin: 2.5rem 0 3.4rem 0;
 }
 
 .main-ver-img {
@@ -34,6 +33,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .title-modal-visualizar-projeto {
   color: var(--Neutral-Colors-Neutral-120, #303133);
 
@@ -44,19 +44,40 @@
   text-align: center;
 }
 
-.container-img-visualizar {
-  width: 838px;
-  height: 585px;
-  flex-shrink: 0;
+.text-modal-visualizar-projeto {
+  color: var(--Neutral-Colors-Neutral-120, #303133);
+/* [Orange P] Style Guide/Body 1 */
+  font-family: Roboto;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6rem; /* 100% */
+  letter-spacing: 0.5px;
+
+  margin-bottom: 6rem ;
 }
 
-.close-page {
-  width: 2.4rem;
-  height: 2.4rem;
-  background-image: url(/orange-juice-front-end/src/pages/TelaMeusProjetos/assets/close.svg);
-  background-repeat: no-repeat;
-  border: none;
-  background-color: transparent;
+.tag-container {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.tag {
+  font-family: Roboto;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.16px;
+  padding: 0.7rem;
+
+  border-radius: 10rem;
+  background: var(--action-selected, rgba(0, 0, 0, 0.08));
+}
+
+.container-img-visualizar {
+  width: 100%;
+  height: 585px;
 }
 
 .icon-perfil {
