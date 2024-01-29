@@ -34,8 +34,8 @@
 
         <nav>
           <ul class="cabecalho__lista">
-            <li><a href="#">Meus Projetos</a></li>
-            <li><a href="#">Descobrir</a></li>
+            <li><a href="../TelaMeusProjetos/projetos.html">Meus Projetos</a></li>
+            <li><a href="../TelaDescobrir/TelaDescobrir.html">Descobrir</a></li>
           </ul>
         </nav>
       </div>
@@ -84,7 +84,6 @@
 
           <div class="meus-projetos__card"></div>
 
-          <div class="meus-projetos__card"></div>
         </div>
       </section>
       <!--MODAL-->
@@ -104,18 +103,19 @@
               <p>Compartilhe seu talento com milhares de pessoas</p>
             </div>
           </label>
-          <form action="#" enctype="multipart/form-data" class="formulario-projeto">
-            <input type="file" name="imagens" id="imagens-file" accept="image/*" class="imagens"/>
+          <form action="#" enctype="multipart/form-data" id="formulario-projeto">
+            <input type="file" name="imagens" id="imagens-file" accept=".png, .jpg, .jpeg" class="imagens" required/>
 
-            <input type="text" placeholder="Titulo" id="titulo-projeto" />
-            <input type="text" placeholder="Tags" id="tag-projeto" />
-            <input type="text" placeholder="Link" id="link-projeto" />
+            <input type="text" placeholder="Titulo" id="titulo-projeto" required/>
+            <input type="text" placeholder="Tags" id="tag-projeto" required />
+            <input type="text" placeholder="Link" id="link-projeto" required />
             <textarea
               name="descricao"
               id="descricao-projeto"
               cols="30"
               rows="10"
               placeholder="Descrição"
+              required
             ></textarea>
           </form>
         </div>
@@ -125,7 +125,7 @@
           </p>
         </div>
         <div class="buttons">
-          <button class="button-salvar" id="salvar-projeto">SALVAR</button>
+          <button class="button-salvar" id="salvar-projeto" form="formulario-projeto">SALVAR</button>
           <button class="button-cancelar" id="button-cancelar">CANCELAR</button>
         </div>
       </dialog>
@@ -184,6 +184,7 @@
         <button><a href="./projetos.html">Voltar para projetos</a></button>
       </dialog>
     </main>
+    <script src="./js/api/api-adicionar-projeto.js"></script>
     <script src="./js/dropdown.js"></script>
     <script src="./js/imagem-arquivo.js"></script>
     <script src="./js/formulario-add-projeto.js"></script>
