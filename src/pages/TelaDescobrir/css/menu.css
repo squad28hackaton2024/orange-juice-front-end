@@ -7,7 +7,7 @@
     left: 0px;
     box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.247);
     border-radius: 5px;
-    /* display: block; */
+    display: block; 
     padding-top: 5px;
     display: none;
 }
@@ -57,4 +57,10 @@
 /* configuração do icone do Botão de sair*/
 .sair > img{
     width: 24px;
+}
+
+@media (min-width: 651px){
+    .menu > img{
+        display: none;
+    }
 }
