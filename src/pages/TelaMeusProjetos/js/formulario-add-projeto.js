@@ -29,7 +29,6 @@ botaoVizualizar.addEventListener('click', () => {
     descricaoVizualizar.innerHTML = inputDescricao.value
     dataVizualizar.innerHTML = dataFormatada
 
-    limpaInput()
 })
 
 function formataMesEDia() {
@@ -42,14 +41,6 @@ function formataMesEDia() {
 
     return `${dataDia}/${dataMes}`
 }
-
-function limpaInput () {
-    inputDescricao.value = ''
-    inputTitulo.value = ''
-    inputTag.value = ''
-    inputLink.value = ''
-}
-
 
 
 
