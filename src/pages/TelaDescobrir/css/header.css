@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+header{
+    background-color: #111133;
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    padding: 16px 30px; /* verificar tamanho do padding da tela visualizar projetos, pois no figma está 16px por 30px e o dela está 16px por 32px */
+    height: 73px;
+    justify-content: space-between;
+}
+
+/* configuração da div que possui os elementos do início do header*/
+.inicioheader{
+    display: flex;
+    column-gap: 0px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 24px;
+    color: white;
+    height: 41px;
+}
+
+/* configuração da div que possui o logo do header*/
+.logo{
+    width: 111px;
+    height: 41px;
+    margin-right: 100px;
+}
+
+/* configuração da imagem da logo*/
+.logo > img{
+    width: 111px;
+    height: 41px;
+}
+
+/* configuração do botao meus projetos exposto no header*/
+.botaoprojetos{
+    margin-right: 24px;
+    text-align: center;
+    font-size: 20px; /*verificar o tamanho da fonte da tela visualizar projetos, pois no figma está 20px */
+}
+
+/* configuração do botao de Descobrir exposto no header*/
+.descobrir{
+    text-align: center;
+    font-size: 20px;
+}
+
+/* configuração  da div que fica no fim do header*/
+.fimheader{
+    display: flex;
+    column-gap: 10px;
+    height: 41px;
+}
+
+/* configuração da imagem do perfil do usuario*/
+.foto > img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+/* configuração do icone de notificação*/
+.notificacao > img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+
+@media (max-width: 650px){
+
+    .descobrir{
+        text-align: center;
+        display: none;
+    }
+
+    .botaoprojetos{
+        margin-right: 24px;
+        text-align: center;
+        display: none;
+    }
+
+    header{
+        width: 100%;
+        border-radius: 0px 0px 5px 5px;
+    }
+
+    .logo{
+        width: 111px;
+        height: 41px;
+        margin-right: 50px;
+    }
+
+}
