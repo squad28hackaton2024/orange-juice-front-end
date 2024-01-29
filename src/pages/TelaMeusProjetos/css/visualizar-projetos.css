@@ -80,6 +80,10 @@
   height: 585px;
 }
 
+.imagem-vizualizar {
+  width: 100%;
+}
+
 .icon-perfil {
   display: flex;
   gap: 0.8rem;
