@@ -1,0 +1,66 @@
+/* div Menu */
+#menu{
+    position: absolute;
+    width: 220px;
+    background-color: rgb(255, 255, 255);
+    top: 73px;
+    left: 0px;
+    box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.247);
+    border-radius: 5px;
+    display: block; 
+    padding-top: 5px;
+    display: none;
+}
+
+/* configuração do icone de menu*/
+.menu > img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* configuração dos botoes do menu*/
+.butinfoMenu{
+    margin-bottom: 8px;
+    padding: 6px 16px;
+}
+
+/* configuração dos links que envolvem os botões do menu*/
+.infoMenu > a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+/*div que possui os dois botes do menu, o de Meus projetos e o Descobrir */
+.infoMenu{
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+/* espaço que mostra as informações do usuário dentro do menu*/
+.informacoes{
+    padding: 6px 16px;
+    height: 68px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+    margin-bottom: 10px;
+}
+
+/* configuração da div do botão de sair que fica no menu*/
+.sair{
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    height: 50px;
+}
+
+/* configuração do icone do Botão de sair*/
+.sair > img{
+    width: 24px;
+}
+
+@media (min-width: 651px){
+    .menu > img{
+        display: none;
+    }
+}
