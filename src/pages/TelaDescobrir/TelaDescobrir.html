@@ -18,6 +18,7 @@
     <header>
         <!-- parte inicial do header -->
         <div class="inicioheader">
+            <div class="menu" onclick="menu()"> <img src="assets/menu.png" alt=""> </div>
             <div class="logo"> <img src="assets/logo.png" alt=""> </div>
             <!-- botão de projetos -->
             <a href="#">
@@ -33,5 +34,33 @@
             <div class="foto"> <img src="assets/perfil.png" alt=""> </div>
             <div class="notificacao"><img src="assets/sino_notificacao.png" alt=""></div>
         </div>
+
+        <!-- menu da pagina mobile -->
+        <div id="menu">
+            <!-- exibe as informações do usuario -->
+            <div class="informacoes">
+                <p>Nome</p>
+                <p style="color: rgb(185, 185, 185); font-size: 14px; margin-top: 4px;">Email</p>
+            </div>
+            <!-- botões do menu -->
+            <div class="infoMenu">
+                <a href="#">
+                    <div class="butinfoMenu">Meus Projetos</div>
+                </a>
+                <a href="#">
+                    <div class="butinfoMenu">Descobrir</div>
+                </a>
+            </div>
+            <!-- botão de sair -->
+            <a href="#">
+                <div class="sair">
+                    <img src="assets/_Icon_sair.png" alt=""><p style="color: black;">Sair</p>
+                </div>
+            </a>
+        </div>
+
+    <!-- código JS -->
+    <script src="./js/menu.js"> </script>
+
     </header>
 </body>
