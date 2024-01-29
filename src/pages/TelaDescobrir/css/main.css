@@ -1,0 +1,47 @@
+/* configuração do da tag main da página*/
+main{
+    padding: 112px 20px 30px 20px;
+}
+
+/* configuração do texto principal do main*/
+.texto{
+    padding: 0px 20px;
+    font-size: 34px;
+    color: #222244;
+    font-weight: 400;
+    max-width: 744px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+@media (max-width: 650px){
+    .texto{
+        padding: 0px 20px;
+        font-size: 24px;
+        color: #222244;
+        font-weight: 400;
+        max-width: 744px;
+        margin: auto;
+        
+        text-align: center;
+        margin-bottom: 35px;
+        
+    }
+}
+
+/* configuração configuração da div que possui o input de buscar tag*/
+.buscatag{
+    margin-bottom: 25px;
+}
+
+/* configuração do input de buscar tag*/
+.buscatag > input{
+    padding: 10px 5px;
+    outline: none;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 5px;
+    max-width: 723px; 
+    width: 50%;
+    
+}
