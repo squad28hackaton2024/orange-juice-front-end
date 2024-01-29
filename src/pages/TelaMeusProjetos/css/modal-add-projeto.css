@@ -15,8 +15,6 @@
   height: 52.2rem;
   overflow: hidden;
   border-radius: var(--none, 0px);
-  background: #fefefe;
-  flex-shrink: 0;
   border: none;
 }
 #modal-adc-img::backdrop {
@@ -31,7 +29,7 @@
   height: 30.4rem;
   padding: var(--none, 91px) var(--none, 59px) var(--none, 91px)
     var(--none, 60px);
-  border-radius: var(--borderRadius, 4px);
+  border-radius: 4px;
   background: var(--Neutral-Colors-Neutral-70, #e6e9f2);
   justify-content: center;
   align-items: center;
@@ -45,6 +43,16 @@
   line-height: 1.4rem; /* 100% */
   letter-spacing: 0.25px;
 }
+
+.imagens {
+  display: none;
+}
+
+.imagem-arquivo {
+  width: 38.9rem;
+  height: 30.4rem;
+}
+
 img {
   padding: 0.2rem;
 }

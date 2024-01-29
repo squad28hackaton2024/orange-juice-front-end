@@ -98,19 +98,21 @@
           </p>
         </div>
         <div class="container">
-          <div class="container-img">
-            <img src="./assets/collections.svg" alt="ícone arquivo" />
-            <div class="texto-compartilhe">
+          <label class="container-img" for="imagens-file" id="container-img">
+            <img src="./assets/collections.svg" alt="ícone arquivo" id="icone-img" />
+            <div class="texto-compartilhe" id="texto-compartilhe">
               <p>Compartilhe seu talento com milhares de pessoas</p>
             </div>
-          </div>
-          <form action="">
-            <input type="text" placeholder="Titulo" />
-            <input type="text" placeholder="Tags" />
-            <input type="text" placeholder="Link" />
+          </label>
+          <form action="#" enctype="multipart/form-data" class="formulario-projeto">
+            <input type="file" name="imagens" id="imagens-file" accept="image/*" class="imagens"/>
+
+            <input type="text" placeholder="Titulo" id="titulo-projeto" />
+            <input type="text" placeholder="Tags" id="tag-projeto" />
+            <input type="text" placeholder="Link" id="link-projeto" />
             <textarea
               name="descricao"
-              id="descricao"
+              id="descricao-projeto"
               cols="30"
               rows="10"
               placeholder="Descrição"
@@ -141,41 +143,35 @@
             <img src="./assets/Circle-camila-soares.svg" alt="" />
             <div class="text-name">
               <p>Camila Soares</p>
-              <p>12/12</p>
+              <p id="data-vizualizar"></p>
             </div>
 
           </div>
 
           <div class="title-modal-visualizar-projeto">
-            <p>Ecommerce One Page</p>
+            <p id="titulo-vizualizar"></p>
           </div>
 
-          <div class="tag-container">
-            <div class="tag">Tag</div>
-            <div class="tag">Tag</div>
+          <div class="tag-container" id="tag-vizualizar">
+        
           </div>
         </header>
 
         <main class="main-ver-img">
 
           <div class="container-img-visualizar">
-            <img src="./assets/Image-preview.svg" alt="imagem preview" />
+            <img src="" alt="" id="imagem-vizualizar">
           </div>
 
           <div class="text-modal-visualizar-projeto">
-            <p>
-              Temos o prazer de compartilhar com vocês uma variação da nosso
-              primeiro recurso gratuito, Monoceros. É um modelo de uma página
-              para mostrar seus produtos. Tentamos redesenhar uma versão mais
-              B2C e minimalista do nosso primeiro template de e-commerce.
-            </p>
+            <p id="descricao-vizualizar"></p>
           </div>
 
         </main>
         <footer class="footer-ver-img">
           <div class="text-download">
             <p>Download</p>
-            <a href="#">https://gumroad.com/products/wxCSL</a>
+            <a href="#" id="link-vizualizar"></a>
           </div>
         </footer>
       </dialog>
@@ -189,6 +185,8 @@
       </dialog>
     </main>
     <script src="./js/dropdown.js"></script>
+    <script src="./js/imagem-arquivo.js"></script>
+    <script src="./js/formulario-add-projeto.js"></script>
     <script src="./js/modal-adicionar-projetos.js"></script>
     <script src="./js/modal-visualizar-projetos.js"></script>
     <script src="./js/modal-mensagem-sucesso.js"></script>
