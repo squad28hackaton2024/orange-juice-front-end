@@ -4,6 +4,9 @@ const tags = document.querySelector('#tag-projeto')
 const link = document.querySelector('#link-projeto')
 const formulario = document.querySelector('#formulario-projeto')
 
+const modalMensagemSucesso = document.querySelector('#modal-mensagem-sucesso')
+const modalAddProjeto = document.querySelector('#modal-adc-img')
+
 formulario.addEventListener('submit', (e) => {
 
     e.preventDefault()
@@ -24,6 +27,22 @@ formulario.addEventListener('submit', (e) => {
         body: formData
     })
     .then(res => res.json())
+    .then(dados => {
+        fecharEAbrirModal()   
+    })
     .catch((e) => console.log(e))
 
 })
+
+function abrirModalMensagemSucesso() {
+    modalMensagemSucesso.showModal()
+}
+
+function fecharAdicionarProjeto() {
+    modalAddProjeto.close()
+}
+
+function fecharEAbrirModal() {
+    fecharAdicionarProjeto()
+    abrirModalMensagemSucesso()
+}
