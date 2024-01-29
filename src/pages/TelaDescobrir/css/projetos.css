@@ -1,0 +1,21 @@
+.container{
+    max-width: 1800px;
+    margin: auto;
+}
+
+/* configuração da div que e pai das divs que vão exibir os projetos*/
+.exibirprojetos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 15px;
+    column-gap: 15px;
+    justify-content: space-between;
+}
+
+/* configuração da div que vai receber os projetos*/
+.projeto{
+    background-color: rgb(204, 204, 204);
+    height: 290px;
+    width: 389px;
+}
