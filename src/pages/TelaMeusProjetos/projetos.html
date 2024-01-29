@@ -98,13 +98,15 @@
           </p>
         </div>
         <div class="container">
-          <div class="container-img">
-            <img src="./assets/collections.svg" alt="ícone arquivo" />
-            <div class="texto-compartilhe">
+          <label class="container-img" for="imagens-file" id="container-img">
+            <img src="./assets/collections.svg" alt="ícone arquivo" id="icone-img" />
+            <div class="texto-compartilhe" id="texto-compartilhe">
               <p>Compartilhe seu talento com milhares de pessoas</p>
             </div>
-          </div>
-          <form action="">
+          </label>
+          <form action="#" enctype="multipart/form-data">
+            <input type="file" name="imagens" id="imagens-file" accept="image/*" class="imagens"/>
+
             <input type="text" placeholder="Titulo" />
             <input type="text" placeholder="Tags" />
             <input type="text" placeholder="Link" />
@@ -189,6 +191,7 @@
       </dialog>
     </main>
     <script src="./js/dropdown.js"></script>
+    <script src="./js/imagem-arquivo.js"></script>
     <script src="./js/modal-adicionar-projetos.js"></script>
     <script src="./js/modal-visualizar-projetos.js"></script>
     <script src="./js/modal-mensagem-sucesso.js"></script>
