@@ -16,6 +16,7 @@
   padding: 5.6rem 10.2rem 8.2rem 10.2rem;
   gap:3.2rem;
   overflow-x: hidden;
+  overflow-y: visible
 }
 
 .header-modal-visualizar {
