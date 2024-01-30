@@ -70,21 +70,7 @@
 
         <input type="text" name="tags" id="tags" placeholder="Buscar tags" />
 
-        <div class="meus-projetos__cards">
-          <div
-            class="meus-projetos__card--ativado meus-projetos__card"
-            id="abrir-modal"
-          >
-            <img src="./assets/collections.svg" alt="ícone arquivo" />
-
-            <p>Adicione seu primeiro projeto</p>
-
-            <p>Compartilhe seu talento com milhares de pessoas</p>
-          </div>
-
-          <div class="meus-projetos__card"></div>
-
-        </div>
+        <div class="meus-projetos__cards" id="container-projetos-usuario"></div>
       </section>
       <!--MODAL-->
 
@@ -185,11 +171,13 @@
       </dialog>
     </main>
     <script src="./js/api/api-adicionar-projeto.js"></script>
+    <script src="./js/api/api-encontrar-projetos.js"></script>
     <script src="./js/dropdown.js"></script>
     <script src="./js/imagem-arquivo.js"></script>
     <script src="./js/formulario-add-projeto.js"></script>
     <script src="./js/modal-adicionar-projetos.js"></script>
     <script src="./js/modal-visualizar-projetos.js"></script>
     <script src="./js/modal-mensagem-sucesso.js"></script>
+    <script src="./js/dropdown-excluir-editar.js"></script>
   </body>
 </html>
