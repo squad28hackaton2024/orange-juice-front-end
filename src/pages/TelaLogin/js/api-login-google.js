@@ -1,5 +1,14 @@
 function handleCredentialResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential);
+  // decodeJwtResponse() is a custom function defined by you
+  // to decode the credential response.
+  const responsePayload = jwt_decode(response.credential);
+
+  console.log("ID: " + responsePayload.sub);
+  console.log("Full Name: " + responsePayload.name);
+  console.log("Given Name: " + responsePayload.given_name);
+  console.log("Family Name: " + responsePayload.family_name);
+  console.log("Image URL: " + responsePayload.picture);
+  console.log("Email: " + responsePayload.email);
 }
 
 window.onload = function () {
@@ -12,15 +21,14 @@ window.onload = function () {
   google.accounts.id.renderButton(
     document.getElementById("buttonDiv"),
     {
-        type:"standard",
-        shape:"rectangular",
-        theme:"outline",
-        text:"signin_with",
-       size:"large",
-        locale:"pt-BR",
-       logo_alignment:"center",
-        width:"159"
-
+      type: "standard",
+      shape: "rectangular",
+      theme: "outline",
+      text: "signin_with",
+      size: "large",
+      locale: "pt-BR",
+      logo_alignment: "center",
+      width: "159",
     } // customization attributes
   );
 
