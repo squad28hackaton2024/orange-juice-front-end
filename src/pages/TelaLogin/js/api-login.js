@@ -9,7 +9,7 @@ async function consomeApiAuth(email, password) {
         senha: password
     }
 
-    const dados = await fetch('http://localhost:8080/usuarios/login', {
+    const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/usuarios/login', {
         method: "POST",
         headers: {
             "Content-type": "application/json"

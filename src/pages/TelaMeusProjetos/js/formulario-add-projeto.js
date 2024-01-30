@@ -2,15 +2,15 @@ const inputTitulo = document.querySelector('#titulo-projeto')
 const inputTag = document.querySelector('#tag-projeto')
 const inputLink = document.querySelector('#link-projeto')
 const inputDescricao= document.querySelector('#descricao-projeto')
-const botaoVizualizar = document.querySelector('#openModalText')
+const botaoVisualizar = document.querySelector('#openModalText')
 
-const tituloVizualizar = document.querySelector('#titulo-vizualizar')
-const linkVizualizar = document.querySelector('#link-vizualizar')
-const descricaoVizualizar = document.querySelector('#descricao-vizualizar')
-const tagVizualizar = document.querySelector('#tag-vizualizar')
-const dataVizualizar = document.querySelector('#data-vizualizar')
+const tituloVisualizar = document.querySelector('#titulo-vizualizar')
+const linkVisualizar = document.querySelector('#link-vizualizar')
+const descricaoVisualizar = document.querySelector('#descricao-vizualizar')
+const tagVisualizar = document.querySelector('#tag-vizualizar')
+const dataVisualizar = document.querySelector('#data-vizualizar')
 
-botaoVizualizar.addEventListener('click', () => {
+botaoVisualizar.addEventListener('click', () => {
 
     const tagValue = inputTag.value
     const transformandoTagArray = tagValue.split(',')
@@ -21,13 +21,13 @@ botaoVizualizar.addEventListener('click', () => {
     transformandoTagArray.map(tag => {
         divTag.innerHTML += tag
         divTag.classList.add('tag')
-        tagVizualizar.append(divTag)
+        tagVisualizar.append(divTag)
     })
 
-    tituloVizualizar.innerHTML = inputTitulo.value
-    linkVizualizar.innerHTML = inputLink.value
-    descricaoVizualizar.innerHTML = inputDescricao.value
-    dataVizualizar.innerHTML = dataFormatada
+    tituloVisualizar.innerHTML = inputTitulo.value
+    linkVisualizar.innerHTML = inputLink.value
+    descricaoVisualizar.innerHTML = inputDescricao.value
+    dataVisualizar.innerHTML = dataFormatada
 
 })
 

@@ -7,7 +7,7 @@ const cardData = document.querySelector('#card-data')
 async function consomeApiEncontrarProjeto() {
     const token = sessionStorage.getItem('token')
     
-    const dados = await fetch('http://localhost:8080/projetos/usuarios', {
+    const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/projetos/usuarios', {
         headers: {
             'Authorization': `Bearer ${token}`
         }
