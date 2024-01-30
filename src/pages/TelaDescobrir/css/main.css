@@ -1,3 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
 /* configuração do da tag main da página*/
 main{
     padding: 112px 20px 30px 20px;
@@ -44,4 +51,26 @@ main{
     max-width: 723px; 
     width: 50%;
     
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 20px;
+}
+
+@media (max-width: 1256px){
+    .container{
+        padding-left: 0px;
+        max-width: 795px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 832px){
+    .container{
+        padding-left: 0px;
+        max-width: 430px;
+        margin: auto;
+    }
 }
