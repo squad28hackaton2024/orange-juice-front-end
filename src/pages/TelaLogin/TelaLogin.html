@@ -25,20 +25,13 @@
     <main>
       <!-- container imagem -->
       <div class="container-img">
-        <img
-          src="./assets/img_login.png"
-          alt="imagem-telaLogin"
-        />
+        <img src="./assets/img_login.png" alt="imagem-telaLogin" />
       </div>
       <!-- container login -->
       <div class="container-login">
         <h3 class="text-begin my-4">Entre no Orange Portifólio</h3>
-        <button class="btn mb-4 button-google-sign-in" type="button">
-          <img
-            src="./assets/logo googleg 48dp.svg"
-            alt="btn-google"
-          />
-         <div class="btn-google-title">Entrar com Google</div> 
+        <button class="button-google-sign-in" id="buttonDiv" type="button">
+          <div>Entrar com Google</div>
         </button>
         <!--INICIO FORMULARIO-->
         <form class="my-4 form-login">
@@ -59,7 +52,7 @@
             <div id="emailHelp" class="form-text"></div>
 
             <!--LABEL SENHA-->
-            <div class="mt-4 w-100 input-field" >
+            <div class="mt-4 w-100 input-field">
               <label for="exampleInputPassword1" class="form-label"
                 >Password</label
               >
@@ -71,19 +64,29 @@
                 class="form-control input-password"
                 id="password-login"
               />
-          
             </div>
           </div>
           <p>
-            <a class="link-opacity-75 link-cadastro" href="../TelaCadastro/TelaCadastro.html">Cadastre-se</a>
+            <a
+              class="link-opacity-75 link-cadastro"
+              href="../TelaCadastro/TelaCadastro.html"
+              >Cadastre-se</a
+            >
           </p>
 
-          <button type="submit" class="btn btn-primary btn-submit " id="botao-login">
+          <button
+            type="submit"
+            class="btn btn-primary btn-submit"
+            id="botao-login"
+          >
             ENTRAR
           </button>
         </form>
       </div>
     </main>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+    <script src="./js/api-login-google.js"></script>
     <script src="./js/api-login.js"></script>
   </body>
 </html>
