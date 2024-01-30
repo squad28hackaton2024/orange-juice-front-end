@@ -15,9 +15,33 @@
     justify-content: start;
 }
 
-/* configuração da div que vai receber os projetos*/
+/* configuração da div que vai receber os projetos */
 .projeto{
-    background-color: rgb(204, 204, 204);
-    height: 290px;
     width: 389px;
+    background-color: #ffffff;
+}
+
+
+/* imagem dentro da div projeto*/
+.projeto > img{
+    width: 100%;
+
+}
+
+.rodapeProjeto{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    column-gap: 8px;
+    align-items: center;
+
+}
+
+.rodapeProjeto > img{
+    width: 24px;
+    border-radius: 50%;
+}
+
+.rodapeProjeto > p{
+    color: #515255;
 }
