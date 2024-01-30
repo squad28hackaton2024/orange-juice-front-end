@@ -34,7 +34,9 @@
 
         <nav>
           <ul class="cabecalho__lista">
-            <li><a href="../TelaMeusProjetos/projetos.html">Meus Projetos</a></li>
+            <li>
+              <a href="../TelaMeusProjetos/projetos.html">Meus Projetos</a>
+            </li>
             <li><a href="../TelaDescobrir/TelaDescobrir.html">Descobrir</a></li>
           </ul>
         </nav>
@@ -70,7 +72,34 @@
 
         <input type="text" name="tags" id="tags" placeholder="Buscar tags" />
 
+
+        <div class="meus-projetos__cards">
+          <div
+            class="meus-projetos__card--ativado meus-projetos__card"
+            id="abrir-modal"
+          >
+            <button class="button-lapis">
+              <div class="icon-lapis">
+                <img src="./assets/button-lapis-elipse.svg" alt="" />
+                <img src="./assets/button-lapis-icon.svg" alt="" />
+              </div>
+            </button>
+            <img
+              src="./assets/collections.svg"
+              alt="ícone arquivo"
+              id="img-abrir-modal"
+            />
+
+            <p>Adicione seu primeiro projeto</p>
+
+            <p>Compartilhe seu talento com milhares de pessoas</p>
+          </div>
+
+          <div class="meus-projetos__card"></div>
+        </div>
+
         <div class="meus-projetos__cards" id="container-projetos-usuario"></div>
+
       </section>
       <!--MODAL-->
 
@@ -84,15 +113,35 @@
         </div>
         <div class="container">
           <label class="container-img" for="imagens-file" id="container-img">
-            <img src="./assets/collections.svg" alt="ícone arquivo" id="icone-img" />
+            <img
+              src="./assets/collections.svg"
+              alt="ícone arquivo"
+              id="icone-img"
+            />
             <div class="texto-compartilhe" id="texto-compartilhe">
               <p>Compartilhe seu talento com milhares de pessoas</p>
             </div>
           </label>
-          <form action="#" enctype="multipart/form-data" id="formulario-projeto">
-            <input type="file" name="imagens" id="imagens-file" accept=".png, .jpg, .jpeg" class="imagens" required/>
+          <form
+            action="#"
+            enctype="multipart/form-data"
+            id="formulario-projeto"
+          >
+            <input
+              type="file"
+              name="imagens"
+              id="imagens-file"
+              accept=".png, .jpg, .jpeg"
+              class="imagens"
+              required
+            />
 
-            <input type="text" placeholder="Titulo" id="titulo-projeto" required/>
+            <input
+              type="text"
+              placeholder="Titulo"
+              id="titulo-projeto"
+              required
+            />
             <input type="text" placeholder="Tags" id="tag-projeto" required />
             <input type="text" placeholder="Link" id="link-projeto" required />
             <textarea
@@ -111,48 +160,46 @@
           </p>
         </div>
         <div class="buttons">
-          <button class="button-salvar" id="salvar-projeto" form="formulario-projeto">SALVAR</button>
+          <button
+            class="button-salvar"
+            id="salvar-projeto"
+            form="formulario-projeto"
+          >
+            SALVAR
+          </button>
           <button class="button-cancelar" id="button-cancelar">CANCELAR</button>
         </div>
       </dialog>
       <!-- MODAL VISUALIZAR IMAGEM-->
       <dialog id="modal-ver-img" class="preview">
-
         <p class="icone-close" id="icone-close">
           <img src="./assets/close.svg" alt="ícone close" />
         </p>
 
         <header class="header-modal-visualizar">
-
           <div class="icon-perfil">
-
             <img src="./assets/Circle-camila-soares.svg" alt="" />
             <div class="text-name">
               <p>Camila Soares</p>
               <p id="data-vizualizar"></p>
             </div>
-
           </div>
 
           <div class="title-modal-visualizar-projeto">
             <p id="titulo-vizualizar"></p>
           </div>
 
-          <div class="tag-container" id="tag-vizualizar">
-        
-          </div>
+          <div class="tag-container" id="tag-vizualizar"></div>
         </header>
 
         <main class="main-ver-img">
-
           <div class="container-img-visualizar">
-            <img src="" alt="" id="imagem-vizualizar">
+            <img src="" alt="" id="imagem-vizualizar" />
           </div>
 
           <div class="text-modal-visualizar-projeto">
             <p id="descricao-vizualizar"></p>
           </div>
-
         </main>
         <footer class="footer-ver-img">
           <div class="text-download">
@@ -165,7 +212,7 @@
       <dialog id="modal-mensagem-sucesso" class="dialog-add-projeto">
         <p>Projeto adicionado com sucesso!</p>
 
-        <div><img src="./assets/Text input.svg" alt="ícone de ok"></div>
+        <div><img src="./assets/Text input.svg" alt="ícone de ok" /></div>
 
         <button><a href="./projetos.html">Voltar para projetos</a></button>
       </dialog>
