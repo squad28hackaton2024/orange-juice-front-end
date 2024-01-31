@@ -1,0 +1,67 @@
+.modal-excluir-projeto {
+    margin: auto;
+    width: 42.1rem;
+    height: 24.2rem;
+    padding: 4rem 4.2rem;
+    border: none;
+    overflow: hidden;
+}
+
+.modal-excluir-projeto p:first-child {
+    color: var(--neutral-colors-neutral-110);
+
+    font-family: Roboto;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.4rem; 
+}
+
+.modal-excluir-projeto p:nth-child(2) {
+    margin: 3.2rem 0;
+    color: var(--neutral-colors-neutral-110);
+    /* [Orange P] Style Guide/Body 1 */
+    font-family: Roboto;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6rem; /* 100% */
+    letter-spacing: 0.5px;
+}
+
+
+
+.botao-excluir {
+    padding: .8rem 2.2rem;
+    background: var(--color-brand-secundria-secondary-100);
+    color: #fff;
+
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.6rem; /* 173.333% */
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.20), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.botao-cancelar {
+    padding: .8rem 2.2rem;
+
+    color: rgba(0, 0, 0, 0.38);
+
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.6rem; 
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+
+    border-radius: 4px;
+    border: none;
+    background: rgba(0, 0, 0, 0.12);
+}

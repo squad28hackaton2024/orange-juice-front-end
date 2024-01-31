@@ -7,6 +7,9 @@
 @import url(./visualizar-projetos.css);
 @import url(./mensagem-sucesso.css);
 @import url(./icon-lapis.css);
+@import url(./modal-excluir-projeto.css);
+
+
 :root {
     --color-principal-130:#303133;
     --color-principal-100: #111133;
