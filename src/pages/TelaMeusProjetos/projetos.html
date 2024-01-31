@@ -192,6 +192,29 @@
         <button><a href="./projetos.html">Voltar para projetos</a></button>
       </dialog>
 
+      <dialog id="modal-excluir-projeto" class="modal-excluir-projeto">
+        <p>Deseja Excluir?</p>
+
+        <p>Se você prosseguir irá excluir o projeto do seu portfólio</p>
+
+        <div class="modal-excluir-projeto__botoes">
+          <button class="botao-excluir" id="botao-excluir">Excluir</button>
+          <button id="botao-cancelar-modal-excluir" class="botao-cancelar">Cancelar</button>
+        </div>
+      </dialog>
+
+      <dialog class="dialog-add-projeto" id="modal-mensagem-sucesso-excluir">
+        <p>Projeto deletado com sucesso!</p>
+
+        <div><img src="./assets/Text input.svg" alt="ícone de ok" /></div>
+
+        <button><a href="./projetos.html">Voltar para projetos</a></button>
+      </dialog>
+
+      <dialog id="modal-editar-projeto">
+        <p>entrou no modal editar</p>
+      </dialog>
+
     </main>
     <script src="./js/api/api-adicionar-projeto.js"></script>
     <script src="./js/api/api-encontrar-projetos.js"></script>
@@ -200,7 +223,6 @@
     <script src="./js/formulario-add-projeto.js"></script>
     <script src="./js/modal-adicionar-projetos.js"></script>
     <script src="./js/modal-visualizar-projetos.js"></script>
-    <script src="./js/modal-mensagem-sucesso.js"></script>
-    <script src="./js/dropdown-excluir-editar.js"></script>
+
   </body>
 </html>
