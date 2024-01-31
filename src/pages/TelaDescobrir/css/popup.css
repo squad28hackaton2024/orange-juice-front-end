@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+#pop{
+    width: 1042px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    padding: 45px 90px;
+}
+
+div.imgprojeto{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#imagempopProjeto{
+    width: 838px;
+}
+.fechar{
+    position: absolute;
+    top: 0px; 
+    right: 0px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.headerpop{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.fotoEnome{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 5px;
+}
+
+#imagemperfilpop{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.popfooter{
+    background-color: #ffffff;
+}
+
+.popfooter > p{
+    margin-bottom: 20px;
+}
+
+#telaescura{
+    background-color: rgba(0, 0, 0, 0.43);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    display: none;
+}
