@@ -1,12 +1,9 @@
-const triangulo = document.querySelector('#triangulo')
-const modalExcluirOProjeto = document.querySelector("#modal-excluir-projeto")
-const modalEditarOProjeto = document.querySelector("#modal-editar-projeto")
-const botaoExcluirProjeto = document.querySelector("#botao-excluir")
-const modalMensagemSucessoExcluirProjeto = document.querySelector("#modal-mensagem-sucesso-excluir")
+const containerEncontrarProjeto = document.querySelector('#container-projetos')
+const cardImagem = document.querySelector('#card-imagem')
+const cardNome = document.querySelector('#card-nome')
+const cardData = document.querySelector('#card-data')
 const token = sessionStorage.getItem('token')
 
-//https://orangeporfolio-fcfy.onrender.com
-//http://localhost:8080
 
 async function consomeApiEncontrarProjeto() {
     // retirei /usuarios
@@ -17,14 +14,10 @@ async function consomeApiEncontrarProjeto() {
     })
     
     const resposta = await dados.json()
-    
-    if(resposta.projeto.length === 0) {
-        const placeholder = placeholderCardProjetos()
-        containerEncontrarProjeto.innerHTML = placeholder
-        return
-    }
-    
-    resposta.projeto.forEach(pj => {
+    console.log(resposta)
+
+
+    resposta.projetos.forEach(pj => {
         const data = formataDataApi(pj.createdAt)
         
         const criarProjetos = secaoCardProjetos(
@@ -37,6 +30,7 @@ async function consomeApiEncontrarProjeto() {
                 pj.link,
                 pj.descricao
             )
+            console.log(pj)
             
         containerEncontrarProjeto.innerHTML += criarProjetos
 
@@ -46,20 +40,7 @@ async function consomeApiEncontrarProjeto() {
 
 }
 
-// function placeholderCardProjetos() {
-//     return `
-//         <div
-//         class="meus-projetos__card--ativado meus-projetos__card"
-//         >
-//         <img src="./assets/collections.svg" alt="ícone arquivo" />
-        
-//         <p>Adicione seu primeiro projeto</p>
-        
-//         <p>Compartilhe seu talento com milhares de pessoas</p>
-//         </div>
-    
-//     `
-// }
+
 
 function formataDataApi(dataBancoDeDados) {
     const data = new Date(dataBancoDeDados)
@@ -73,7 +54,6 @@ function formataDataApi(dataBancoDeDados) {
 }
 
 function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descricao) {
-    // src="https://orangeporfolio-fcfy.onrender.com/uploads/${imagens}"
     const htmlCard = `
     <div class="projeto">
         <img src="https://orangeporfolio-fcfy.onrender.com/uploads/${imagens}" alt="">
@@ -84,20 +64,6 @@ function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descr
     </div>
     `
     return htmlCard
-}
-
-async function consomeApiDeletarProjeto(id) {
-
-    const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos/${id}`, {
-        method: 'DELETE',
-        headers: {
-            'Authorization': `Bearer ${token}`
-        }
-    })
-
-    const resposta = dados.json()
-    
-    return resposta
 }
 
 consomeApiEncontrarProjeto()
