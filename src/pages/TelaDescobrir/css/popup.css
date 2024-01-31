@@ -6,7 +6,8 @@
 }
 
 #pop{
-    width: 1042px;
+    width: 90%;
+    max-width: 1042px;
     background-color: rgb(255, 255, 255);
     position: absolute;
     z-index: 2;
@@ -23,8 +24,10 @@ div.imgprojeto{
 }
 
 #imagempopProjeto{
-    width: 838px;
+    width: 100%;
+    max-width: 838px;
 }
+
 .fechar{
     position: absolute;
     top: 0px; 
@@ -75,4 +78,23 @@ div.imgprojeto{
     transform: translate(-50%,-50%);
     z-index: 1;
     display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    #pop{
+        padding: 20px 40px;
+    }
+
+    #imagempopProjeto{
+        width: 100%;
+    }
+
+    .headerpop, .fotoEnome{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #imagemperfilpop{
+        width: 30px;
+    }
 }
