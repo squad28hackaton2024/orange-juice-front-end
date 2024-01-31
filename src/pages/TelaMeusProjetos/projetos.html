@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-signin-client_id" content="414036471424-i2accnpsbjitfiji6b177eqgthr9mm2n.apps.googleusercontent.com">
+    <meta
+      name="google-signin-client_id"
+      content="414036471424-i2accnpsbjitfiji6b177eqgthr9mm2n.apps.googleusercontent.com"
+    />
     <title>Meus projetos</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
@@ -74,18 +77,13 @@
         <input type="text" name="tags" id="tags" placeholder="Buscar tags" />
 
         <div class="meus-projetos__cards" id="container-projetos-usuario"></div>
-
-
       </section>
       <!--MODAL-->
 
       <dialog id="modal-adc-img" class="adicionar-imagem">
         <div class="texto-adicionar">Adicionar Projetos</div>
         <div class="texto-selecione">
-          <p>
-            Selecione o conteúdo que você <br />
-            deseja fazer upload
-          </p>
+          <p>Selecione o conteúdo que você deseja fazer upload</p>
         </div>
         <div class="container">
           <label class="container-img" for="imagens-file" id="container-img">
@@ -136,10 +134,7 @@
           </p>
         </div>
         <div class="buttons">
-          <button
-            class="button-salvar"
-            form="formulario-projeto"
-          >
+          <button class="button-salvar" form="formulario-projeto">
             SALVAR
           </button>
           <button class="button-cancelar" id="button-cancelar">CANCELAR</button>
@@ -199,7 +194,9 @@
 
         <div class="modal-excluir-projeto__botoes">
           <button class="botao-excluir" id="botao-excluir">Excluir</button>
-          <button id="botao-cancelar-modal-excluir" class="botao-cancelar">Cancelar</button>
+          <button id="botao-cancelar-modal-excluir" class="botao-cancelar">
+            Cancelar
+          </button>
         </div>
       </dialog>
 
@@ -211,10 +208,80 @@
         <button><a href="./projetos.html">Voltar para projetos</a></button>
       </dialog>
 
-      <dialog id="modal-editar-projeto">
-        <p>entrou no modal editar</p>
-      </dialog>
+      <!-- modal editar projetos -->
+      <dialog id="modal-editar-projeto" class="adicionar-imagem">
+        <div class="texto-adicionar">Editar Projetos</div>
+        <div class="texto-selecione">
+          <p>
+            Selecione o conteúdo que você deseja fazer upload
+          </p>
+        </div>
+        <div class="container">
+          <label
+            class="container-img"
+            for="imagens-file-editar"
+            id="container-img-editar"
+          >
+            <img
+              src="./assets/collections.svg"
+              alt="ícone arquivo"
+              id="icone-img-editar"
+            />
+            <div class="texto-compartilhe" id="texto-compartilhe-editar">
+              <p>Compartilhe seu talento com milhares de pessoas</p>
+            </div>
+          </label>
+          <form action="#" enctype="multipart/form-data" id="formulario-editar">
+            <input
+              type="file"
+              name="imagens"
+              id="imagens-file-editar"
+              accept=".png, .jpg, .jpeg"
+              class="imagens"
+            />
 
+            <input
+              type="text"
+              placeholder="Titulo"
+              id="titulo-projeto-editar"
+            />
+            <input type="text" placeholder="Tags" id="tag-projeto-editar" />
+            <input type="text" placeholder="Link" id="link-projeto-editar" />
+            <textarea
+              name="descricao"
+              id="descricao-projeto-editar"
+              cols="30"
+              rows="10"
+              placeholder="Descrição"
+            ></textarea>
+          </form>
+        </div>
+        <div class="texto-visualizar">
+          <p class="open-dialog-text" id="texto-visualizar-editar">
+            Visualizar publicação
+          </p>
+        </div>
+        <div class="buttons">
+          <button
+            class="button-salvar"
+            form="formulario-editar"
+            id="button-salvar-editar"
+          >
+            SALVAR
+          </button>
+          <button class="button-cancelar" id="button-cancelar-editar">
+            CANCELAR
+          </button>
+        </div>
+        
+      </dialog>
+      <dialog id="modal-mensagem-sucesso-editar" class="dialog-add-projeto">
+        <p>Edição concluida com sucesso!</p>
+
+        <div><img src="./assets/Text input.svg" alt="ícone de ok" /></div>
+
+        <button><a href="./projetos.html">Voltar para projetos</a></button>
+      </dialog>
     </main>
     <script src="./js/api/api-adicionar-projeto.js"></script>
     <script src="./js/api/api-encontrar-projetos.js"></script>
@@ -224,5 +291,7 @@
     <script src="./js/modal-adicionar-projetos.js"></script>
     <script src="./js/modal-visualizar-projetos.js"></script>
     <script src="./js/modal-excluir-projeto.js"></script>
+    <script src="./js/modal-editar-projeto.js"></script>
+    <script src="./js/imagem-arquivo-editar.js"></script>
   </body>
 </html>

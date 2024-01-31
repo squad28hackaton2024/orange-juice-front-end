@@ -6,7 +6,7 @@
 .open-dialog-text {
   cursor: pointer;
 }
-#modal-adc-img {
+.adicionar-imagem {
   margin: auto;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +17,7 @@
   border-radius: var(--none, 0px);
   border: none;
 }
-#modal-adc-img::backdrop {
+.adicionar-imagem::backdrop {
   background: var(--components-backdrop-fill, rgba(0, 0, 0, 0.5));
 }
 .container-img {
@@ -190,7 +190,6 @@ form {
 }
 textarea {
   padding: 2rem;
-  display: flex;
   resize: none;
   display: flex;
   width: 38.9rem;
@@ -204,6 +203,10 @@ textarea {
   border-radius: var(--borderRadius, 0.4rem);
   border: var(--none, 0.1rem) solid
     var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
+  
+}
+textarea::placeholder{
+  padding-top: 1rem;
 }
 
 @media (max-width: 800px) {
@@ -228,7 +231,7 @@ textarea {
     height: 100%;
     flex-direction: column;
   }
-  #modal-adc-img {
+  .adicionar-imagem {
     padding: 2rem;
     flex-direction: column;
     justify-content: center;
