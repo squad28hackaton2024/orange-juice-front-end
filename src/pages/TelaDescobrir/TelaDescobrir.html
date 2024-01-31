@@ -21,7 +21,7 @@
             <div class="menu" onclick="menu()"> <img src="assets/menu.png" alt=""> </div>
             <div class="logo"> <img src="assets/logo.png" alt=""> </div>
             <!-- botão de projetos -->
-            <a href="#">
+            <a href="../TelaMeusProjetos/projetos.html">
                 <div class="botaoprojetos"><h6>Meus Projetos</h6></div>
             </a>
             <!-- botão de Descobrir -->
@@ -79,7 +79,7 @@
                     <img src="assets/foto_projeto_teste.png" alt="">
                     <div class="rodapeProjeto">
                         <img src="assets/perfil.png" alt="">
-                        <p>Gabriel Mazer 30/01</p>
+                        <p>Gabriel Mazer</p>
                     </div>
                 </div>
              </div>
@@ -88,10 +88,25 @@
 
     <!-- -- janela que abre ao clicar no projeto -- -->
     <div id="pop">
-        <img src="" alt="" id="imagempop">
-         <p></p> 
-         <div class="fechar" onclick="fecharpop()">X</div>
+        <div class="headerpop">
+            <div class="fotoEnome">
+                <img src="" alt="imagemperfil" id="imagemperfilpop">
+                <p id="nomepop">nome</p>
+            </div>
+            <p id="titulopop">titulo</p>
+            <div class="tag">tags</div>
+        </div> 
+         <div class="imgprojeto">
+            <img src="" alt="" id="imagempopProjeto">
+        </div>
+         <div class="popfooter">
+             <p id="descri">descriçao: Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quas facere aspernatur saepe repudiandae officiis blanditiis dolorem minima voluptate. Omnis cupiditate assumenda nemo sit facilis nulla, quae sunt modi! Facilis?</p>
+             <a href="#">link</a>
+         </div>
+         <div class="fechar" onclick="fecharpop()"><img src="./assets/remover.png" alt="" style="width: 24px;"></div>
     </div>
+
+    <div id="telaescura" onclick="fecharpop()"></div>
 
     <!-- código JS -->
     <script src="./js/menu.js"> </script>
