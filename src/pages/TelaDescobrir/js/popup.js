@@ -20,11 +20,17 @@ function abrirpop(ele){
     let nomeProjeto = ele.children[1].children[1];
     let nomepop = document.getElementById('nomepop');
     let telaescura = document.getElementById('telaescura');
+    let descricaoProjeto = ele.children[2];
+    let descricaoPop = document.getElementById('descri');
+    let linkProjeto = ele.children[3];
+    let linkPop = document.getElementById('linkPop');
     pop.style.display = 'block';
     imagemperfilpop.src = imagemPerfilProjeto.src;
     imagempop.src = imagemProjeto.src;
     nomepop.innerText = nomeProjeto.innerText;
     telaescura.style.display = 'block';
+    descricaoPop.innerText = descricaoProjeto.innerText;
+    linkPop.href = linkProjeto.href;
 
 }
 
