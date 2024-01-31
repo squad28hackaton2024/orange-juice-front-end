@@ -25,9 +25,6 @@ body {
   flex-shrink: 0;
 }
 
-.mensagem-desaparecer {
-  display: none;
-}
 
 .btn-submit {
   display: flex;
@@ -179,6 +176,3 @@ input:hover {
   margin-bottom: 32px;
 }
 
-#toast {
-  display: block;
-}

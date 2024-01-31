@@ -2,6 +2,9 @@ const botaoLogin = document.querySelector('#botao-login')
 const emailLogin = document.querySelector('#email-login')
 const passwordLogin = document.querySelector('#password-login')
 
+//https://orangeporfolio-fcfy.onrender.com
+//http://localhost:8080
+
 async function consomeApiAuth(email, password) {
 
     const dadosAuth = {
@@ -9,7 +12,7 @@ async function consomeApiAuth(email, password) {
         senha: password
     }
 
-    const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/usuarios/login', {
+    const dados = await fetch('http://localhost:8080/usuarios/login', {
         method: "POST",
         headers: {
             "Content-type": "application/json"

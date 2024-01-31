@@ -1,35 +1,31 @@
-.msg-sucesso .toast {
-  background-color: #28a745; /* Cor de fundo verde para sucesso */
+.container-mensagem-sucesso {
   display: flex;
-  width: 32rem;
-  overflow: hidden;
-  padding: 0.6rem 1.6rem;
-  border-radius: var(--borderRadius, 4px);
-  background: var(--success-main, #2e7d32);
   align-items: center;
-  justify-content: center;
-  margin-top: 3rem;
+  background-color: #28a745;
+  gap: 1.2rem; 
+  border-radius: 2px;
+  padding: .7rem 1.6rem;
+  margin-bottom: 14rem;
 }
 
-.msg-sucesso .toast-body {
-  color: #fff; /* Cor do texto branco para melhor contraste */
+.container-mensagem-sucesso img {
+  display: inline-block;
 }
 
-.text-toast {
-  color: var(--success-contrast, #fff);
-  font-feature-settings:
-    "clig" off,
-    "liga" off;
-
-  /* alert/title */
+.mensagem-sucesso {
+  color: #fff;
   font-family: Roboto;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 24px */
-  letter-spacing: 0.15px;
 }
-.msg-sucesso {
-  display: flex;
-  align-items: center;
+
+.mensagem-desaparecer {
+  display: none;
+}
+
+@media (max-width:100px) {
+  .container-mensagem-sucesso {
+    width: 100%;
+  }
 }
