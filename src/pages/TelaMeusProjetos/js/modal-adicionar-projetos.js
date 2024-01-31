@@ -9,14 +9,12 @@ function abrirModalAdicionarProjeto(params) {
 function fecharModalAdicionarProjeto(params) {
   modalAdicionarProjeto.close();
 }
-botaoSalvar.addEventListener("click", fecharModalAdicionarProjeto);
 
 function teste(params) {
   modalAdicionarProjeto.close();
-
 }
 
-
 img.addEventListener("click", abrirModalAdicionarProjeto);
-botaoCancelar.addEventListener("click", fecharModalAdicionarProjeto);
 botaoAdicionarProjeto.addEventListener("click", abrirModalAdicionarProjeto);
+botaoCancelar.addEventListener("click", fecharModalAdicionarProjeto);
+botaoSalvar.addEventListener("click", fecharModalAdicionarProjeto);

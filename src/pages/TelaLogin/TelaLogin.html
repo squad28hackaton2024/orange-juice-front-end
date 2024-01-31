@@ -30,7 +30,7 @@
       <!-- container login -->
       <div class="container-login">
         <h3 class="text-begin my-4">Entre no Orange Portifólio</h3>
-        <button class="button-google-sign-in" id="buttonDiv" type="button">
+        <button class="g-signin2" data-onsuccess="onSignIn" type="button">
           <div>Entrar com Google</div>
         </button>
         <!--INICIO FORMULARIO-->
@@ -85,7 +85,9 @@
       </div>
     </main>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+
+   <script src="https://cdn.jsdelivr.net/npm/jsonwebtoken@4.0.0"></script> 
+  
     <script src="./js/api-login-google.js"></script>
     <script src="./js/api-login.js"></script>
   </body>
