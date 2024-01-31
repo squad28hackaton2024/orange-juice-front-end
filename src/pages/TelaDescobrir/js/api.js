@@ -41,7 +41,6 @@ async function consomeApiEncontrarProjeto() {
 }
 
 
-
 function formataDataApi(dataBancoDeDados) {
     const data = new Date(dataBancoDeDados)
     const mes = data.getMonth() + 1
@@ -53,9 +52,10 @@ function formataDataApi(dataBancoDeDados) {
     return `${formatandoMes}/${formatandoAno}`
 }
 
+
 function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descricao) {
     const htmlCard = `
-    <div class="projeto">
+    <div class="projeto" onclick="abrirpop(this)">
         <img src="https://orangeporfolio-fcfy.onrender.com/uploads/${imagens}" alt="">
         <div class="rodapeProjeto">
             <img src="assets/perfil.png" alt="">
@@ -65,5 +65,6 @@ function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descr
     `
     return htmlCard
 }
+
 
 consomeApiEncontrarProjeto()
