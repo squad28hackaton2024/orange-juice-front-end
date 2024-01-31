@@ -14,7 +14,7 @@ const token = sessionStorage.getItem('token')
 
 async function consomeApiEncontrarProjeto() {
     
-    const dados = await fetch('http://localhost:8080/projetos/usuarios', {
+    const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/projetos/usuarios', {
         headers: {
             'Authorization': `Bearer ${token}`
         }
@@ -128,7 +128,7 @@ function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id) {
                 </ul>
             </nav>
             
-            <img src="http://localhost:8080/uploads/${imagens}" alt="" id="card-imagem" class="imagem-projeto-usuario">
+            <img src="https://orangeporfolio-fcfy.onrender.com/uploads/${imagens}" alt="" id="card-imagem" class="imagem-projeto-usuario">
             
             <div class="meus-projetos__card-info-usuario">
                 <div class="container-card-info-usuario">
@@ -149,7 +149,7 @@ function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id) {
 
 async function consomeApiDeletarProjeto(id) {
 
-    const dados = await fetch(`http://localhost:8080/projetos/${id}`, {
+    const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos/${id}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${token}`

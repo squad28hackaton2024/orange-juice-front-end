@@ -19,7 +19,7 @@ async function consomeApiCadastro(name, lastName, email, password) {
     senha: password
   }
 
-  const dados = await fetch('http://localhost:8080/usuarios', {
+  const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/usuarios', {
     method: "POST",
     headers: {
       "Content-type": "application/json"
@@ -41,7 +41,7 @@ async function consomeApiCadastro(name, lastName, email, password) {
   }
   
   
-  if(resposta.message = 'Usuário já existente') {
+  if(resposta.message == 'Usuário já existente') {
     alert('Usuário já existe com este email')
     return
   }
