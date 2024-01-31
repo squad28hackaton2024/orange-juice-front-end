@@ -7,6 +7,10 @@ const formulario = document.querySelector('#formulario-projeto')
 const modalMensagemSucesso = document.querySelector('#modal-mensagem-sucesso')
 const modalAddProjeto = document.querySelector('#modal-adc-img')
 
+//https://orangeporfolio-fcfy.onrender.com
+//http://localhost:8080
+
+
 formulario.addEventListener('submit', (e) => {
 
     e.preventDefault()
@@ -19,7 +23,7 @@ formulario.addEventListener('submit', (e) => {
     formData.append('tags', tags.value)
     formData.append('link', link.value)
 
-    fetch('https://orangeporfolio-fcfy.onrender.com/projetos', {
+    fetch('http://localhost:8080/projetos', {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${token}`
