@@ -79,6 +79,9 @@
   letter-spacing: 0.15px;
 }
 
+li:hover{
+background-color: #FFEECC;
+}
 .triangulo-balao {
   position: absolute;
   right: 3.5rem;
