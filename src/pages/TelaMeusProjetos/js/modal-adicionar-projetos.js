@@ -10,7 +10,6 @@ function fecharModalAdicionarProjeto(params) {
   modalAdicionarProjeto.close();
 }
 
-botaoCancelar.addEventListener("click", fecharModalAdicionarProjeto);
-
 
 botaoAdicionarProjeto.addEventListener("click", abrirModalAdicionarProjeto);
+botaoCancelar.addEventListener("click", fecharModalAdicionarProjeto);
