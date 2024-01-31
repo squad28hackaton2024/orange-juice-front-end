@@ -3,6 +3,8 @@ const cardImagem = document.querySelector('#card-imagem')
 const cardNome = document.querySelector('#card-nome')
 const cardData = document.querySelector('#card-data')
 
+//https://orangeporfolio-fcfy.onrender.com
+//http://localhost:8080
 
 async function consomeApiEncontrarProjeto() {
     const token = sessionStorage.getItem('token')
@@ -29,7 +31,8 @@ async function consomeApiEncontrarProjeto() {
             pj.usuarios.nome,
             pj.usuarios.sobrenome,
             data,
-            pj.tags
+            pj.tags,
+            pj.id
             )
             
         containerEncontrarProjeto.innerHTML += criarProjetos
@@ -50,9 +53,10 @@ function formataDataApi(dataAtual) {
     return `${formatandoMes}/${formatandoAno}`
 }
 
-function secaoCardProjetos(imagens, nome, sobrenome, data, tags) {
+function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id) {
+
     return `
-        <div id="card-encontrar-projeto" class="card-encontrar-projeto">
+        <div id="card-encontrar-projeto-${id}" class="card-encontrar-projeto">
             <img src="./assets/icon_edit.png" alt="" id="icone-abre-dropdown" class="icone-lapis">
             <div class="triangulo-balao esconder" id="triangulo"></div>
 
@@ -68,10 +72,10 @@ function secaoCardProjetos(imagens, nome, sobrenome, data, tags) {
             <div class="meus-projetos__card-info-usuario">
                 <div class="container-card-info-usuario">
                     <img src="./assets/Circle.svg" alt="" >
-                    <p id="card-nome">${nome} ${sobrenome}</p>
+                    <p id="card-nome-${id}">${nome} ${sobrenome}</p>
                     <p id="card-data">${data}</p>
                     </div>
-                    
+                
                 <div class="meus-projetos__card-info-usuario--tags">
                     <p class="tag-card-usuario">${tags}</p>
                 </div>
