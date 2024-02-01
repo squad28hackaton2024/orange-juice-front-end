@@ -1,3 +1,4 @@
+
 @media (max-width: 1000px) {
   .row{
     --bs-gutter-x: none;
@@ -46,18 +47,6 @@
       line-height: 2.4rem;
     }
   
-    .form-login {
-      display: flex;
-
-      max-width: 517px;
-      padding-bottom: 3px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 18px;
-      flex-shrink: 0;
-    }
-  
     .text-begin {
       color: var(
         --Color-Brand-Primria-Primary-90,
@@ -96,6 +85,9 @@
     .form-control {
       width: 100%;
     }
+    .form-sign-in{
+      width:31.2rem;
+    }
     #password {
       justify-self: flex-end;
       display: flex;
@@ -121,6 +113,7 @@
     }
     .input-field {
       position: relative;
+      width: 100%;
     }
   
     .input-field input {
@@ -161,7 +154,7 @@
     }
     
     .btn-submit {
-      width: 49.8rem;
+      width: 31.2rem;
     }
 
     .input-field .form-label {
