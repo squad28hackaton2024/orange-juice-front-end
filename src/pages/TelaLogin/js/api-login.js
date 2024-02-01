@@ -21,7 +21,6 @@ async function consomeApiAuth(email, password) {
     })
 
     const resposta = await dados.json()
-    console.log(resposta)
 
     if(resposta.message === 'Usuário Logado') {
         armazernaToken(resposta.token)
