@@ -174,3 +174,8 @@ input:hover {
   margin-bottom: 32px;
 }
 
+.login-voltar {
+  color: var(--Neutral-Colors-Neutral-100, #818388);
+  font-size: 1.5rem;
+}
+

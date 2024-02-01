@@ -1,15 +1,13 @@
 .container-mensagem-sucesso {
   display: flex;
   align-items: center;
-  background-color: #28a745;
-  gap: 1.2rem; 
-  border-radius: 2px;
+  justify-content: center;
+  background-color: #2E7D32;
+  width: 32rem;
+  gap: 1rem; 
+  border-radius: 4px;
   padding: .7rem 1.6rem;
   margin-bottom: 14rem;
-}
-
-.container-mensagem-sucesso img {
-  display: inline-block;
 }
 
 .mensagem-sucesso {
@@ -18,14 +16,16 @@
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 500;
+  margin-top: 1rem;
 }
 
 .mensagem-desaparecer {
   display: none;
 }
 
-@media (max-width:100px) {
+@media (max-width: 1000px) {
   .container-mensagem-sucesso {
     width: 100%;
+    margin-bottom: 5.6rem;
   }
 }
