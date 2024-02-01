@@ -16,6 +16,7 @@
     transform: translate(-50%,-50%);
     display: none;
     padding: 45px 90px;
+
 }
 
 div.imgprojeto{
@@ -80,6 +81,11 @@ div.imgprojeto{
     display: none;
 }
 
+.imagem-projeto-usuarios{
+    width: 838px;
+    height: 586px;
+}
+
 @media only screen and (max-width: 768px) {
     #pop{
         padding: 20px 40px;
@@ -96,5 +102,10 @@ div.imgprojeto{
 
     #imagemperfilpop{
         width: 30px;
+    }
+
+    .imagem-projeto-usuarios{
+        width: 312px;
+        height: 258px;
     }
 }
