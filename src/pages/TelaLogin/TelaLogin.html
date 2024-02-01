@@ -2,12 +2,11 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="responsive.css"
-      media="screen and (max-width:360px)"
+    <meta
+      name="google-signin-client_id"
+      content="414036471424-i2accnpsbjitfiji6b177eqgthr9mm2n.apps.googleusercontent.com"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="./css/style.css" />
     <title>Login</title>
   </head>
@@ -30,9 +30,8 @@
       <!-- container login -->
       <div class="container-login">
         <h3 class="text-begin my-4">Entre no Orange Portifólio</h3>
-        <button class="g-signin2" data-onsuccess="onSignIn" type="button">
-          <div>Entrar com Google</div>
-        </button>
+        <!--BOTÃO LOGIN GOOGLE-->
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <!--INICIO FORMULARIO-->
         <form class="my-4 form-login">
           <!--LABEL EMAIL-->
@@ -84,10 +83,7 @@
         </form>
       </div>
     </main>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-
-   <script src="https://cdn.jsdelivr.net/npm/jsonwebtoken@4.0.0"></script> 
-  
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="./js/api-login-google.js"></script>
     <script src="./js/api-login.js"></script>
   </body>
