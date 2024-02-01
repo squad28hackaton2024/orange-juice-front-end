@@ -34,9 +34,6 @@ async function consomeApiCadastro(name, lastName, email, password) {
     containerMensagemSucesso.classList.remove('mensagem-desaparecer')
     mensagem.innerHTML = resposta.message
 
-    setTimeout(() => {
-      window.location.href = 'http://127.0.0.1:5500/src/pages/TelaLogin/TelaLogin.html'
-    }, 500)
     return
   }
   

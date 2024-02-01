@@ -42,8 +42,6 @@ function armazernaToken(token) {
 botaoLogin.addEventListener('click', async (e) => {
     e.preventDefault()
 
-    console.log("botao")
-
     const valueEmail = emailLogin.value.toLowerCase()
     const valuePassword = passwordLogin.value 
 
