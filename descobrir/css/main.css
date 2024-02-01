@@ -54,21 +54,16 @@ main{
 }
 
 .container{
-    padding-left: 20px;
+    padding: 20px;
 }
 
 @media (max-width: 1256px){
     .container{
-        padding-left: 0px;
-        max-width: 795px;
-        margin: auto;
+        padding: 24px;
     }
+
 }
 
 @media (max-width: 832px){
-    .container{
-        padding-left: 0px;
-        max-width: 430px;
-        margin: auto;
-    }
+
 }
