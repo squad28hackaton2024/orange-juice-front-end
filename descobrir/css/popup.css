@@ -9,14 +9,28 @@
     width: 90%;
     max-width: 1042px;
     background-color: rgb(255, 255, 255);
-    position: absolute;
+    position: fixed;
     z-index: 2;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     display: none;
     padding: 45px 90px;
+}
 
+#datapop{
+    color: #515255;
+}
+
+#titulopop{
+    font-size: 24px;
+}
+
+#linkPop{
+    color: rgb(255, 255, 255);
+    padding: 8px 22px;
+    background-color: #FF5522;
+    border-radius: 5px;
 }
 
 div.imgprojeto{
@@ -73,7 +87,7 @@ div.imgprojeto{
     background-color: rgba(0, 0, 0, 0.43);
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);

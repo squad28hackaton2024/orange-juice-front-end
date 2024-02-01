@@ -24,6 +24,12 @@ function abrirpop(ele){
     let descricaoPop = document.getElementById('descri');
     let linkProjeto = ele.children[3];
     let linkPop = document.getElementById('linkPop');
+    let tituloPop = document.getElementById('titulopop');
+    let tituloProjeto = ele.children[4];
+    tituloPop.innerText = tituloProjeto.innerText;
+    let dataPop = document.getElementById('datapop');
+    let dataProjeto = ele.children[1].children[2];
+    dataPop.innerText = dataProjeto.innerText;
     pop.style.display = 'block';
     imagemperfilpop.src = imagemPerfilProjeto.src;
     imagempop.src = imagemProjeto.src;
