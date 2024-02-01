@@ -36,7 +36,6 @@
   color: var(--Neutral-Colors-Neutral-120, #303133);
 
   /* [Orange P] Style Guide/Body 2 */
-  font-family: Roboto;
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 400;
@@ -214,11 +213,7 @@ textarea::placeholder{
     display: flex;
     flex-direction: column-reverse;
   }
-  body {
-    display: flex;
-    height: 100vh;
-    align-items: center;
-  }
+
   html {
     border-radius: var(--none, 0px);
     background: #fff;

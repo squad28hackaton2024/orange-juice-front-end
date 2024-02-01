@@ -6,7 +6,6 @@
 .meus-projetos p {
   color: var(--color-neutral-130);
 
-  font-family: Roboto;
   font-size: 2rem;
   font-style: normal;
   font-weight: 500;
@@ -17,7 +16,6 @@
 .meus-projetos input {
   width: 48.9rem;
 
-  font-family: Roboto;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
@@ -31,20 +29,27 @@
 }
 
 .meus-projetos__cards {
-  display: flex;
-  gap: 1.6rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 4rem;
 }
 
 .meus-projetos__card {
-  height: 25.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 29.8rem;
   width: 39rem;
   background-color: var(--color-neutral-70);
   opacity: 0.8;
+  gap: 1.6rem;
 }
 
-.card-encontrar-projeto {
+.meus-projetos__card--ativado {
   position: relative;
+  height: 29.8rem;
+  width: 39rem;
 }
 
 .icone-lapis {
@@ -71,7 +76,6 @@
 
   padding: 1rem;
 
-  font-family: Roboto;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
@@ -80,8 +84,9 @@
 }
 
 li:hover{
-background-color: #FFEECC;
+  background-color: #FFEECC;
 }
+
 .triangulo-balao {
   position: absolute;
   right: 3.5rem;
@@ -98,8 +103,7 @@ background-color: #FFEECC;
 
   color: var(--text-primary);
 
-  font-family: Roboto;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.8rem;
@@ -107,25 +111,14 @@ background-color: #FFEECC;
 
 }
 
-
 .imagem-projeto-usuario {
   height: 25.8rem;
   width: 39rem;
 }
 
-.meus-projetos__card--ativado {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-  padding: 6rem;
-}
-
 .meus-projetos__card--ativado p:nth-child(2) {
   color: var(--color-principal-130);
 
-  font-family: Roboto;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
@@ -148,12 +141,23 @@ background-color: #FFEECC;
 .meus-projetos__card--ativado p:nth-child(3) {
   color: var(--color-principal-130);
 
-  font-family: Roboto;
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.4rem; /* 100% */
   letter-spacing: 0.5px;
+}
+
+.card-nome-usuario::after {
+  content: '\00B7'; 
+  margin-left: .5rem;
+  font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  .meus-projetos__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 800px) {
@@ -162,7 +166,8 @@ background-color: #FFEECC;
   }
 
   .meus-projetos__cards {
-    gap: 2.7rem;
+    grid-template-columns: 1fr;
+    row-gap: 2.4rem;
   }
 
   .meus-projetos__card--ativado {
