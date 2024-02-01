@@ -28,7 +28,8 @@ async function consomeApiEncontrarProjeto() {
                 pj.tags,
                 pj.id,
                 pj.link,
-                pj.descricao
+                pj.descricao,
+                pj.titulo
             )
             console.log(pj)
             
@@ -53,7 +54,7 @@ function formataDataApi(dataBancoDeDados) {
 }
 
 
-function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descricao) {
+function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descricao, titulo) {
     const htmlCard = `
     <div class="projeto" onclick="abrirpop(this)">
         <img src="https://orangeporfolio-fcfy.onrender.com/uploads/${imagens}" alt="">
@@ -61,6 +62,8 @@ function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descr
             <img src="assets/perfil.png" alt="">
             <p>${nome}</p>
         </div>
+        <p style="display: none;">${descricao}</p>
+        <a href="${link}" style="display: none;">link</a>
     </div>
     `
     return htmlCard
