@@ -16,7 +16,7 @@ async function consomeApiEncontrarProjeto() {
 
     resposta.projetos.forEach(pj => {
         let data
-        
+
         if(pj.updatedAt != null){
             data = formataDataApi(pj.updatedAt)
         }
@@ -61,7 +61,7 @@ function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descr
         <img src="https://orangeporfolio-fcfy.onrender.com/uploads/${imagens}" alt="">
         <div class="rodapeProjeto">
             <img src="assets/perfil.png" alt="">
-            <p>${nome} ${sobrenome}</p>
+            <p class="nome-descobrir">${nome} ${sobrenome}</p>
             <p>${data}</p>
         </div>
         <p style="display: none;">${descricao}</p>
