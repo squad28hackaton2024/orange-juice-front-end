@@ -45,7 +45,7 @@ async function renderizaSecoesCardsUsuarios() {
         iconeCard.forEach((icone) => {
             icone.addEventListener('click', () => {
                 dropdownEditarExcluir.forEach(dropdown => {
-                    
+
                     if(dropdown.classList.contains('esconder') && dropdown.id === icone.name) {
                     apareceDropdown(dropdown)
 
@@ -182,7 +182,7 @@ async function consomeApiEditarImagemProjeto(evento, id) {
 function criaSecaoCardProjetos(imagens, nome, sobrenome, data, tags, id) {
 
     const htmlCard = `
-        <div id="card-encontrar-projeto" class="card-encontrar-projeto">
+        <div id="card-encontrar-projeto" class="meus-projetos__card--ativado">
             <img src="./assets/icon_edit.png" alt="" id="icone-abre-dropdown" name="${id}" class="icone-lapis">
             <div class="triangulo-balao esconder" id="triangulo"></div>
 
@@ -198,7 +198,7 @@ function criaSecaoCardProjetos(imagens, nome, sobrenome, data, tags, id) {
             <div class="meus-projetos__card-info-usuario">
                 <div class="container-card-info-usuario">
                     <img src="./assets/Circle.svg" alt="" >
-                    <p id="card-nome-${id}">${nome} ${sobrenome}</p>
+                    <p id="card-nome-${id}" class="card-nome-usuario">${nome} ${sobrenome}</p>
                     <p id="card-data">${data}</p>
                     </div>
                 
