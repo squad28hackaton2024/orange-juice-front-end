@@ -53,6 +53,9 @@
 @media (max-width: 832px){
     .exibirprojetos{
         grid-template-columns: repeat(1,1fr);
-        justify-content: center;
+    }
+
+    .projeto > img{
+        width: 312px;
     }
 }
