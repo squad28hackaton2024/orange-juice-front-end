@@ -25,7 +25,7 @@ async function consomeApiAuth(email, password) {
 
     if(resposta.message === 'Usuário Logado') {
         armazernaToken(resposta.token)
-        window.location.href = "http://127.0.0.1:5500/src/pages/TelaMeusProjetos/projetos.html"
+        window.location.href = "http://127.0.0.1:5500/orange-juice-front-end/projetos/projetos.html"
         return
     } 
 
