@@ -15,7 +15,14 @@ async function consomeApiEncontrarProjeto() {
 
 
     resposta.projetos.forEach(pj => {
-        const data = formataDataApi(pj.createdAt)
+        let data
+        
+        if(pj.updatedAt != null){
+            data = formataDataApi(pj.updatedAt)
+        }
+        else{
+            data = formataDataApi(pj.createdAt)
+        }
         
         const criarProjetos = secaoCardProjetos(
                 pj.imagens,
@@ -30,8 +37,6 @@ async function consomeApiEncontrarProjeto() {
             )
             
         containerEncontrarProjeto.innerHTML += criarProjetos
-
-        
 
     })
 
@@ -57,6 +62,7 @@ function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descr
         <div class="rodapeProjeto">
             <img src="assets/perfil.png" alt="">
             <p>${nome} ${sobrenome}</p>
+            <p>${data}</p>
         </div>
         <p style="display: none;">${descricao}</p>
         <a href="${link}" style="display: none;">link</a>
