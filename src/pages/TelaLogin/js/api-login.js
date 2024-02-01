@@ -21,16 +21,16 @@ async function consomeApiAuth(email, password) {
     })
 
     const resposta = await dados.json()
-    console.log(resposta)
 
     if(resposta.message === 'Usuário Logado') {
         armazernaToken(resposta.token)
         window.location.href = "http://127.0.0.1:5500/src/pages/TelaMeusProjetos/projetos.html"
         return
-    }
+    } 
 
-    return sessionStorage.removeItem('token')
-
+    alert(resposta.message)
+    sessionStorage.removeItem('token')
+    
 }
 
 function armazernaToken(token) {
