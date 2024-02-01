@@ -149,7 +149,7 @@
   
     .input-field input {
       display: flex;
-      width: 312px;
+      width: 100%;
       padding: var(--none, 0px) 12px;
       flex-direction: column;
       align-items: flex-start;
@@ -183,19 +183,11 @@
     .input-field {
       position: relative;
     }
-  
-    .input-field input {
-      height: 60px;
-      border-radius: 6px;
-      font-size: 18px;
-      padding: 0 15px;
-      border-radius: var(--borderRadius, 4px);
-      border: var(--none, 1px) solid
-        var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
-      color: #fff;
-      outline: none;
+    
+    .btn-submit {
+      width: 100%;
     }
-  
+
     .input-field .form-label {
       position: absolute;
       top: -10px; /* Ajuste o valor conforme necessário para posicionar acima da borda */
