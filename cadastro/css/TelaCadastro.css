@@ -170,3 +170,9 @@ input:hover {
   line-height: 4rem;
   margin-bottom: 3.2rem;
 }
+
+
+.login-voltar {
+  color: var(--Neutral-Colors-Neutral-100, #818388);
+  font-size: 1.5rem;
+}

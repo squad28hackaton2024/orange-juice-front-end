@@ -45,32 +45,25 @@ main{
 /* configuração do input de buscar tag*/
 .buscatag > input{
     padding: 10px 5px;
-    outline: none;
     border: 1px solid rgb(192, 192, 192);
     border-radius: 5px;
-    max-width: 723px; 
     width: 50%;
     
 }
 
 .container{
-    max-width: 1300px;
-    margin: auto;
-    padding-left: 20px;
+    padding: 20px;
 }
 
 @media (max-width: 1256px){
     .container{
-        padding-left: 0px;
-        max-width: 795px;
-        margin: auto;
+        padding: 24px;
     }
+
 }
 
 @media (max-width: 832px){
-    .container{
-        padding-left: 0px;
-        max-width: 430px;
-        margin: auto;
+    .buscatag > input{
+        width: 100%;
     }
 }
