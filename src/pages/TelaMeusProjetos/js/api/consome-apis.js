@@ -45,7 +45,7 @@ async function renderizaSecoesCardsUsuarios() {
         iconeCard.forEach((icone) => {
             icone.addEventListener('click', () => {
                 dropdownEditarExcluir.forEach(dropdown => {
-                    
+
                     if(dropdown.classList.contains('esconder') && dropdown.id === icone.name) {
                     apareceDropdown(dropdown)
 

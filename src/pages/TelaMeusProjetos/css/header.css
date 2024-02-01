@@ -48,7 +48,7 @@
         position: relative;
     }
 
-    nav {
+    .cabecalho__lista-nav {
         display: none;
     }
 
