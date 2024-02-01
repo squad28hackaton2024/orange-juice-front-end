@@ -1,4 +1,7 @@
 @media (max-width: 640px) {
+  .row{
+    --bs-gutter-x: none;
+  }
     #name-lastname {
       display: flex;
       flex-direction: column;
@@ -46,20 +49,15 @@
         var(--Color-Brand-Primria-Primary-90, #224)
       );
       text-align: center;
-  
-      /* [Orange P] Style Guide/H5 */
-      font-family: Roboto;
       font-size: 2.4rem;
       font-style: normal;
       font-weight: 400;
-      line-height: 2.4rem; /* 100% */
+      line-height: 2.4rem;
     }
   
     .form-login {
       display: flex;
-      /*width: 517px;
-                height: 271px; */
-      width: 80%;
+
       max-width: 517px;
       padding-bottom: 3px;
       flex-direction: column;
@@ -122,13 +120,6 @@
       font-family: "Poppins", sans-serif;
     }
   
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #fff;
-    }
     .title {
       color: var(
         --Color-Brand-Primria-Primary-90,
@@ -185,7 +176,7 @@
     }
     
     .btn-submit {
-      width: 100%;
+      width: 49.8rem;
     }
 
     .input-field .form-label {

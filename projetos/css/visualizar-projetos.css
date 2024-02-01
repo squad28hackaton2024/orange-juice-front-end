@@ -71,10 +71,10 @@
   background: var(--action-selected, rgba(0, 0, 0, 0.08));
 }
 
-.container-img-visualizar {
+/* .container-img-visualizar {
   width: 100%;
   height: 585px;
-}
+} */
 
 .imagem-vizualizar {
   width: 100%;

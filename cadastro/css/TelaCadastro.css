@@ -15,20 +15,17 @@ body {
 /*Container imagem*/
 .container-img {
   display: flex;
-  width: 41.02%;
-  max-width: 525px;
-  height: 100vh;
+  width: 54.9rem;
+  height: 83.2rem;
   border-radius: var(--none, 0px);
   background:
     url("\orange-juice-front-end\src\pages\TelaLogin\assets\img_login.png"),
     lightgray 50% / cover no-repeat;
   flex-shrink: 0;
 }
-
-
 .btn-submit {
   display: flex;
-  width: 51.7rem;
+  width: 50.2rem;
   height: 4.2rem;
   overflow: hidden;
   padding: 0.8rem 2.2rem;
@@ -54,10 +51,14 @@ body {
     0px 4px 5px 0px rgba(0, 0, 0, 0.14),
     0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
+
+.btn-primary:active {
+  --bs-btn-active-bg: #ff5522;
+}
 /*Container login*/
 .container-form {
-  display: flex;
   width: 100%;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -66,13 +67,12 @@ body {
   display: flex;
   /*width: 517px;
   height: 271px; */
-  width: 80%;
   max-width: 517px;
-  padding-bottom: 3px;
+  padding-bottom: 0.3rem;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 18px;
+  gap: 1.12rem;
   flex-shrink: 0;
 }
 
@@ -81,7 +81,6 @@ body {
     --Color-Brand-Primria-Primary-90,
     var(--Color-Brand-Primria-Primary-90, #224)
   );
-  font-family: Roboto;
   font-size: 4.8rem;
   font-style: normal;
   font-weight: 400;
@@ -95,7 +94,7 @@ body {
 .text-login {
   align-self: stretch;
   color: var(--Neutral-Colors-Neutral-110, #515255);
-  font-family: Roboto;
+
   font-size: 2.4rem;
   font-style: normal;
   font-weight: 400;
@@ -104,12 +103,12 @@ body {
 
 .link-cadastro {
   color: var(--Neutral-Colors-Neutral-100, #818388);
-  font-family: Roboto;
+
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6rem;
-  letter-spacing: 0.15px;
+  letter-spacing: 0.015rem;
 }
 #password {
   justify-self: flex-end;
@@ -119,16 +118,15 @@ body {
   background-repeat: no-repeat;
 }
 
-
 .input-field {
   position: relative;
   width: 100%;
 }
 
 .input-field input {
-  height: 60px;
-  border-radius: 6px;
-  font-size: 18px;
+  height: 6rem;
+  border-radius: 0.6rem;
+  font-size: 1.8rem;
   padding: 0 15px;
   border-radius: var(--borderRadius, 4px);
   border: var(--none, 1px) solid
@@ -140,8 +138,8 @@ body {
   position: absolute;
   top: -10px; /* Ajuste o valor conforme necessário para posicionar acima da borda */
   left: 15px;
-  font-size: 16px;
-  padding: 0 2px;
+  font-size: 1.6rem;
+  padding: 0 0.2rem;
   background: #fff;
   color: var(--Neutral-Colors-Neutral-110, #515255);
   transition: 0.3s;
@@ -166,11 +164,9 @@ input:hover {
   color: var(--Color-Brand-Primria-Primary-90, #224);
   text-align: center;
   /* [Orange P] Style Guide/H3 */
-  font-family: Roboto;
-  font-size: 48px;
+  font-size: 4.8rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 40px;
-  margin-bottom: 32px;
+  line-height: 4rem;
+  margin-bottom: 3.2rem;
 }
-
