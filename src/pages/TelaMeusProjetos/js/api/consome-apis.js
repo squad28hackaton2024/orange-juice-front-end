@@ -5,7 +5,6 @@ const cardData = document.querySelector('#card-data')
 const triangulo = document.querySelector('#triangulo')
 
 const modalExcluirOProjeto = document.querySelector("#modal-excluir-projeto")
-const modalEditarOProjeto = document.querySelector("#modal-editar-projeto")
 const botaoModalExcluirProjeto = document.querySelector("#botao-excluir")
 const modalMensagemSucessoExcluirProjeto = document.querySelector("#modal-mensagem-sucesso-excluir")
 
@@ -15,6 +14,8 @@ const linkEditarProjeto = document.querySelector('#link-projeto-editar')
 const descricaoEditarProjeto = document.querySelector('#descricao-projeto-editar')
 const tagEditarProjeto = document.querySelector('#tag-projeto-editar')
 const botaoEditarProjeto = document.querySelector('#button-editar-projeto')
+const modalMensagemSucessoEditarProjeto = document.querySelector('#modal-mensagem-sucesso-editar')
+const modalEditarOProjeto = document.querySelector("#modal-editar-projeto")
 
 
 const token = sessionStorage.getItem('token')
@@ -68,7 +69,7 @@ async function renderizaSecoesCardsUsuarios() {
                         const linkEditar = linkEditarProjeto.value == "" ? pj.link : linkEditarProjeto.value
                         const tagEditar = tagEditarProjeto.value == "" ? pj.tags : tagArray
         
-                        await consomeApiEditarProjeto(
+                        const editarCamposProjetos = await consomeApiEditarProjeto(
                             tituloEditar,
                             descricaoEditar,
                             tagEditar,
@@ -76,7 +77,14 @@ async function renderizaSecoesCardsUsuarios() {
                             dropdown.id
                         )
                         
-                        await consomeApiEditarImagemProjeto(e, dropdown.id)
+                        const editarImagemProjetos = await consomeApiEditarImagemProjeto(e, dropdown.id)
+
+                        if(editarCamposProjetos.message === 'Edição concluída com sucesso' || editarImagemProjetos.message === 'Edição concluída com sucesso') {
+                            apareceModalMensagemEditadoComSucesso()
+                            return
+                        }
+
+                        alert('Erro ao editar projeto')
                     })
 
                     return
@@ -147,12 +155,7 @@ async function consomeApiEditarProjeto(titulo, descricao, tags, link, id) {
 
     const resposta = await dados.json()
     
-    if(resposta.message === 'Edição concluída com sucesso') {
-        alert('deu bom')
-        return resposta
-    } 
-
-    alert('Erro ao editar projeto')
+   return resposta
 
 }
 
@@ -162,7 +165,6 @@ async function consomeApiEditarImagemProjeto(evento, id) {
     if(evento.target[0].files[0] != undefined) {
         formData.append('imagens', evento.target[0].files[0])
     }
-    console.log(evento.target[0].files[0])
 
     const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos/${id}`, {
         method: 'PATCH',
@@ -174,7 +176,6 @@ async function consomeApiEditarImagemProjeto(evento, id) {
 
     const resposta = await dados.json()
 
-    console.log(resposta)
     return resposta
 }
 
@@ -248,6 +249,11 @@ function apareceModalEditarProjeto() {
 function apareceModalMensagemExcluirComSucesso() {
     modalExcluirOProjeto.close()
     modalMensagemSucessoExcluirProjeto.showModal()
+}
+
+function apareceModalMensagemEditadoComSucesso() {
+    modalEditarOProjeto.close()
+    modalMensagemSucessoEditarProjeto.showModal()
 }
 
 function apareceDropdown(dropdown) {
