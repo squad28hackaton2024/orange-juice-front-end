@@ -55,7 +55,7 @@ function formataDataApi(dataBancoDeDados) {
 }
 
 
-function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descricao) {
+function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descricao, titulo) {
     const htmlCard = `
     <div class="projeto" onclick="abrirpop(this)">
         <img src="https://orangeporfolio-fcfy.onrender.com/uploads/${imagens}" alt="">
@@ -66,6 +66,7 @@ function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descr
         </div>
         <p style="display: none;">${descricao}</p>
         <a href="${link}" style="display: none;">link</a>
+        <p style="display: none;">${titulo}</p>
     </div>
     `
     return htmlCard
