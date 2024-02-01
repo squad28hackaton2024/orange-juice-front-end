@@ -230,7 +230,7 @@ textarea::placeholder{
     padding: 2rem;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: 31.2rem;
     height: 85.9rem;
     overflow-y: visible;
     border-radius: var(--none, 0px);
