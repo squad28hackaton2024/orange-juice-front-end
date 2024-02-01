@@ -7,25 +7,23 @@
 
 /* configuração da div que e pai das divs que vão exibir os projetos*/
 .exibirprojetos{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    row-gap: 15px;
-    column-gap: 15px;
-    justify-content: start;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 40px;
+    column-gap: 24px;
 }
 
 /* configuração da div que vai receber os projetos */
 .projeto{
     width: 389px;
-    background-color: #ffffff;
+    height: 290px;
 }
 
 
 /* imagem dentro da div projeto*/
 .projeto > img{
-    width: 100%;
-
+    width: 389px;
+    height: 290px;
 }
 
 .rodapeProjeto{
@@ -44,4 +42,26 @@
 
 .rodapeProjeto > p{
     color: #515255;
+}
+
+.nome-descobrir::after {
+    content: '\00B7'; 
+    margin-left: .5rem;
+    font-weight: bold;
+  }
+
+@media (max-width: 1256px){
+    .exibirprojetos{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 832px){
+    .exibirprojetos{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .projeto > img{
+        width: 312px;
+    }
 }

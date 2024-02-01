@@ -4,9 +4,7 @@ const cardNome = document.querySelector('#card-nome')
 const cardData = document.querySelector('#card-data')
 const token = sessionStorage.getItem('token')
 
-
 async function consomeApiEncontrarProjeto() {
-    // retirei /usuarios
     const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/projetos', {
         headers: {
             'Authorization': `Bearer ${token}`
@@ -14,11 +12,17 @@ async function consomeApiEncontrarProjeto() {
     })
     
     const resposta = await dados.json()
-    console.log(resposta)
 
 
     resposta.projetos.forEach(pj => {
-        const data = formataDataApi(pj.createdAt)
+        let data
+
+        if(pj.updatedAt != null){
+            data = formataDataApi(pj.updatedAt)
+        }
+        else{
+            data = formataDataApi(pj.createdAt)
+        }
         
         const criarProjetos = secaoCardProjetos(
                 pj.imagens,
@@ -31,11 +35,8 @@ async function consomeApiEncontrarProjeto() {
                 pj.descricao,
                 pj.titulo
             )
-            console.log(pj)
             
         containerEncontrarProjeto.innerHTML += criarProjetos
-
-        
 
     })
 
@@ -54,13 +55,14 @@ function formataDataApi(dataBancoDeDados) {
 }
 
 
-function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descricao, titulo) {
+function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descricao) {
     const htmlCard = `
     <div class="projeto" onclick="abrirpop(this)">
         <img src="https://orangeporfolio-fcfy.onrender.com/uploads/${imagens}" alt="">
         <div class="rodapeProjeto">
             <img src="assets/perfil.png" alt="">
-            <p>${nome}</p>
+            <p class="nome-descobrir">${nome} ${sobrenome}</p>
+            <p>${data}</p>
         </div>
         <p style="display: none;">${descricao}</p>
         <a href="${link}" style="display: none;">link</a>
