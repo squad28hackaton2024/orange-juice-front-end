@@ -25,6 +25,7 @@ inputArquivo.addEventListener('change', e => {
 
             const img = document.createElement('img')
             img.src = readerTarget.result
+            img.classList.add('tamanho-imagem')
             img.classList.add('imagem-arquivo')
             imagemVizualizar.classList.add('imagem-vizualizar')
 

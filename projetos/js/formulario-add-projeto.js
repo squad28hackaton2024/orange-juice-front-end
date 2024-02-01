@@ -10,6 +10,8 @@ const descricaoVisualizar = document.querySelector('#descricao-vizualizar')
 const tagVisualizar = document.querySelector('#tag-vizualizar')
 const dataVisualizar = document.querySelector('#data-vizualizar')
 
+const iconeFecharProjeto = document.querySelector('#icone-close');
+
 botaoVisualizar.addEventListener('click', () => {
 
     const tagValue = inputTag.value
@@ -19,7 +21,7 @@ botaoVisualizar.addEventListener('click', () => {
     const dataFormatada = formataMesEDia()
 
     transformandoTagArray.map(tag => {
-        divTag.innerHTML += tag
+        divTag.innerHTML = tag
         divTag.classList.add('tag')
         tagVisualizar.append(divTag)
     })
@@ -42,5 +44,12 @@ function formataMesEDia() {
     return `${dataDia}/${dataMes}`
 }
 
+iconeFecharProjeto.addEventListener('click', () => {
+    tagVisualizar.innerHTML = ""
+   
+    fecharModalVisualizarProjeto()
+});
+
+  
 
 

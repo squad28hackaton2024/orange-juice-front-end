@@ -28,7 +28,7 @@
   width: 38.9rem;
   height: 30.4rem;
   padding: var(--none, 91px) var(--none, 59px) var(--none, 91px)
-    var(--none, 60px);
+  var(--none, 60px);
   border-radius: 4px;
   background: var(--Neutral-Colors-Neutral-70, #e6e9f2);
   justify-content: center;
@@ -52,6 +52,11 @@
   height: 30.4rem;
 }
 
+.tamanho-imagem {
+  width: 38.9rem;
+  height: 30.4rem;
+}
+
 img {
   padding: 0.2rem;
 }
@@ -67,7 +72,7 @@ input {
   align-self: stretch;
   border-radius: var(--borderRadius, 4px);
   border: var(--none, 1px) solid
-    var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
+  var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
 }
 .button-salvar {
   border: none;
