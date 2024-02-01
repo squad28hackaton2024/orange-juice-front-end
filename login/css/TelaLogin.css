@@ -62,11 +62,23 @@ main {
     0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
+.btn-submit:focus {
+  border-radius: var(--borderRadius, 4px);
+  background: var(--Color-Brand-Secundria-Secondary-110, #ff5522);
+  /* elevation/4 */
+  box-shadow:
+    0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.btn-primary:active {
+  animation: flashAnimation 2s ;
+  --bs-btn-active-bg: #ff5522;
+}
 .button-google-sign-in {
   display: flex;
   border: none;
 }
-
 
 /*Container login*/
 .container-login {
