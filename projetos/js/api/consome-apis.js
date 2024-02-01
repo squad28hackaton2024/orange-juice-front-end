@@ -17,7 +17,6 @@ const botaoEditarProjeto = document.querySelector('#button-editar-projeto')
 const modalMensagemSucessoEditarProjeto = document.querySelector('#modal-mensagem-sucesso-editar')
 const modalEditarOProjeto = document.querySelector("#modal-editar-projeto")
 
-
 const token = sessionStorage.getItem('token')
 
 //https://orangeporfolio-fcfy.onrender.com
@@ -98,13 +97,13 @@ async function renderizaSecoesCardsUsuarios() {
 }
 
 async function consomeApiEncontrarProjetosUsuarios() {
-    
+   
     const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/projetos/usuarios', {
         headers: {
             'Authorization': `Bearer ${token}`
         }
     })
-    
+
     const resposta = await dados.json()
 
     if(resposta.projeto.length === 0) {
@@ -114,6 +113,7 @@ async function consomeApiEncontrarProjetosUsuarios() {
     }
 
     return resposta
+
 }
 
 async function consomeApiDeletarProjeto(id) {
@@ -266,10 +266,4 @@ function desapareceDropdown(dropdown) {
     dropdown.classList.add('esconder')
 }
 
-
 renderizaSecoesCardsUsuarios()
-
-
-
-
-

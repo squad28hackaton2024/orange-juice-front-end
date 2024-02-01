@@ -2,3 +2,25 @@
 @import url(./TelaCadastro.css);
 @import url(./responsive.css);
 @import url(./msg-sucesso.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+
+html {
+    border-radius: var(--none, 0px);
+    background: #fff;
+    font-size: 50%;
+  }

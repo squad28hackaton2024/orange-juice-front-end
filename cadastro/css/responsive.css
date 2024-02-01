@@ -1,4 +1,4 @@
-@media (max-width: 640px) {
+@media (max-width: 1000px) {
   .row{
     --bs-gutter-x: none;
   }
@@ -6,16 +6,7 @@
       display: flex;
       flex-direction: column;
     }
-    body {
-      display: flex;
-      height: 100vh;
-      align-items: center;
-    }
-    html {
-      border-radius: var(--none, 0px);
-      background: #fff;
-      font-size: 50%;
-    }
+
     main {
       order: -1;
       display: flex;
@@ -113,13 +104,7 @@
       background-repeat: no-repeat;
     }
   
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-  
+    
     .title {
       color: var(
         --Color-Brand-Primria-Primary-90,
@@ -206,4 +191,14 @@
       border-color: var(--components-input-standard-hoverBorder, #000);
     }
   }
+
+@media (max-width: 600px) {
+  .form-sign-in {
+    width: 37.2rem;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}
   
