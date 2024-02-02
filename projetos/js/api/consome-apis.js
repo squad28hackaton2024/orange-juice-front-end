@@ -101,7 +101,7 @@ async function consomeApiEncontrarProjetosUsuarios() {
     const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/projetos/usuarios', {
         headers: {
             'Authorization': `Bearer ${token}`
-        }
+        },
     })
 
     const resposta = await dados.json()
