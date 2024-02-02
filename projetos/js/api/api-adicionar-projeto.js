@@ -18,13 +18,14 @@ formulario.addEventListener('submit', (e) => {
     const regex = /[\W\s]+/g;
 
     const tag = tags.value.replace(regex, ',');
+    const tagsEmMinusculo = tag.toLowerCase()
 
     const token = sessionStorage.getItem('token')
     const formData = new FormData()
     formData.append('imagens', e.target[0].files[0])
     formData.append('titulo', titulo.value)
     formData.append('descricao', descricao.value)
-    formData.append('tags', tag)
+    formData.append('tags', tagsEmMinusculo)
     formData.append('link', link.value)
 
     fetch('https://orangeporfolio-fcfy.onrender.com/projetos', {

@@ -62,11 +62,14 @@ async function renderizaSecoesCardsUsuarios() {
                     formularioEditarProjeto.addEventListener('submit',async (e) => {
                         e.preventDefault()
                         
-                        const tagArray = tagEditarProjeto.value.split(" ")
+                        const regex = /[\W\s]+/g;
+
+                        const tag = tagEditarProjeto.value.replace(regex, ',');
+                        const tagsEmMinusculo = tag.toLowerCase().split(" ")
                         const tituloEditar = tituloEditarProjeto.value == "" ? pj.titulo : tituloEditarProjeto.value
                         const descricaoEditar = descricaoEditarProjeto.value == "" ? pj.descricao : descricaoEditarProjeto.value
                         const linkEditar = linkEditarProjeto.value == "" ? pj.link : linkEditarProjeto.value
-                        const tagEditar = tagEditarProjeto.value == "" ? pj.tags : tagArray
+                        const tagEditar = tagEditarProjeto.value == "" ? pj.tags : tagsEmMinusculo
         
                         const editarCamposProjetos = await consomeApiEditarProjeto(
                             tituloEditar,

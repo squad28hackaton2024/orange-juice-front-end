@@ -13,7 +13,6 @@ async function consomeApiEncontrarProjeto() {
     
     const resposta = await dados.json()
 
-
     resposta.projetos.forEach(pj => {
         let data
 
