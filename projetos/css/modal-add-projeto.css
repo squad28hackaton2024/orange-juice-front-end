@@ -210,9 +210,6 @@ textarea {
 textarea::placeholder {
   padding-top: 1rem;
 }
-li:hover {
-  background-color: #ffeecc;
-}
 
 @media (max-width: 800px) {
   .container {
