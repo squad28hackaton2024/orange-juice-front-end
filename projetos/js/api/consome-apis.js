@@ -86,7 +86,7 @@ async function renderizaTodasAsTagsUsuario() {
         const queryString = `?tag=${busca}&tag=`;
         
         projetosUsuarios = await consomeApiEncontrarProjetosUsuarios(queryString)
-        console.log(queryString.length)
+    
         if(queryString.length < 11) {
             renderizaTodasAsApisUsuario()
             return
@@ -344,8 +344,5 @@ function desapareceDropdown(dropdown) {
     dropdown.classList.remove('aparecer')
     dropdown.classList.add('esconder')
 }
-
-
-
 
 renderizaSecoesCardsUsuarios()

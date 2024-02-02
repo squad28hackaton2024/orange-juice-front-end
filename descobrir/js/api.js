@@ -2,16 +2,22 @@ const containerEncontrarProjeto = document.querySelector('#container-projetos')
 const cardImagem = document.querySelector('#card-imagem')
 const cardNome = document.querySelector('#card-nome')
 const cardData = document.querySelector('#card-data')
+const inputTagsDescobrir = document.querySelector('#buscar-tags-descobrir')
+
 const token = sessionStorage.getItem('token')
 
-async function consomeApiEncontrarProjeto() {
-    const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/projetos', {
-        headers: {
-            'Authorization': `Bearer ${token}`
-        }
-    })
+async function renderizaSecoesCardDescobrir() {
     
-    const resposta = await dados.json()
+    if(inputTagsDescobrir.value.length === 0) {
+        renderizaTodosCards()
+    }
+
+    renderizaTodosCardsPorTags()
+
+}
+
+async function renderizaTodosCards() {
+    resposta = await consomeApiEncontrarTodosProjetos()
 
     resposta.projetos.forEach(pj => {
         let data
@@ -38,9 +44,63 @@ async function consomeApiEncontrarProjeto() {
         containerEncontrarProjeto.innerHTML += criarProjetos
 
     })
-
 }
 
+async function renderizaTodosCardsPorTags() {
+   inputTagsDescobrir.addEventListener('input', async () => {
+    const busca = encodeURIComponent(inputTagsDescobrir.value);
+    const queryString = `?tag=${busca}&tag=`;
+
+    resposta = await consomeApiEncontrarTodosProjetos(queryString)
+
+    if(queryString.length < 11) {
+        renderizaTodosCards()
+        return
+    }
+
+    containerEncontrarProjeto.innerHTML = ""
+
+    resposta.projetos.forEach(pj => {
+        let data
+
+        if(pj.updatedAt != null){
+            data = formataDataApi(pj.updatedAt)
+        }
+        else{
+            data = formataDataApi(pj.createdAt)
+        }
+        
+        const criarProjetos = secaoCardProjetos(
+                pj.imagens,
+                pj.usuarios.nome,
+                pj.usuarios.sobrenome,
+                data,
+                pj.tags,
+                pj.id,
+                pj.link,
+                pj.descricao,
+                pj.titulo
+            )
+            
+        containerEncontrarProjeto.innerHTML += criarProjetos
+
+    })
+   })
+}
+
+async function consomeApiEncontrarTodosProjetos(query) {
+    const param = query == undefined ? "" : query
+
+    const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos${param}`, {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    
+    const resposta = await dados.json()
+
+    return resposta
+}
 
 function formataDataApi(dataBancoDeDados) {
     const data = new Date(dataBancoDeDados)
@@ -52,7 +112,6 @@ function formataDataApi(dataBancoDeDados) {
     
     return `${formatandoMes}/${formatandoAno}`
 }
-
 
 function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descricao, titulo) {
     const htmlCard = `
@@ -72,4 +131,4 @@ function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descr
 }
 
 
-consomeApiEncontrarProjeto()
+renderizaSecoesCardDescobrir()
