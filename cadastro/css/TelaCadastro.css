@@ -88,7 +88,7 @@
   line-height: 1.6rem;
   letter-spacing: 0.015rem;
 }
-#password {
+.password {
   justify-self: flex-end;
   display: flex;
   background-position: 95% center;

@@ -28,7 +28,7 @@
   width: 38.9rem;
   height: 30.4rem;
   padding: var(--none, 91px) var(--none, 59px) var(--none, 91px)
-  var(--none, 60px);
+    var(--none, 60px);
   border-radius: 4px;
   background: var(--Neutral-Colors-Neutral-70, #e6e9f2);
   justify-content: center;
@@ -72,7 +72,7 @@ input {
   align-self: stretch;
   border-radius: var(--borderRadius, 4px);
   border: var(--none, 1px) solid
-  var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
+    var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
 }
 .button-salvar {
   border: none;
@@ -193,12 +193,11 @@ form {
   letter-spacing: 0.025rem;
 }
 textarea {
-  padding: 2rem;
+  padding: 1rem;
   resize: none;
   display: flex;
   width: 38.9rem;
   height: 12rem;
-  padding: var(--none, 0px) 1.2rem;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--none, 0px);
@@ -207,16 +206,19 @@ textarea {
   border-radius: var(--borderRadius, 0.4rem);
   border: var(--none, 0.1rem) solid
     var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
-  
 }
-textarea::placeholder{
+textarea::placeholder {
   padding-top: 1rem;
+}
+li:hover {
+  background-color: #ffeecc;
 }
 
 @media (max-width: 800px) {
   .container {
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
   }
 
   html {
@@ -232,7 +234,7 @@ textarea::placeholder{
     flex-direction: column;
   }
   .adicionar-imagem {
-    padding: 2rem;
+    padding: 0 2.5rem 0 2.1rem;
     flex-direction: column;
     justify-content: center;
     width: 31.2rem;
@@ -244,6 +246,8 @@ textarea::placeholder{
     border: none;
   }
   .texto-adicionar {
+    margin-bottom: 1.6rem;
+    width: 100%;
     padding: 0.2rem;
     color: var(--Neutral-Colors-Neutral-110, #515255);
     flex-shrink: 0;
@@ -254,6 +258,9 @@ textarea::placeholder{
     line-height: 2.4rem;
   }
   .texto-selecione {
+    width: 100%;
+    display: block;
+    white-space: normal;
     text-align: left;
     position: relative;
     color: var(--Neutral-Colors-Neutral-110, #515255);
@@ -264,7 +271,28 @@ textarea::placeholder{
     letter-spacing: 0.015rem;
     top: 285px;
   }
+  .quebra-de-linha {
+    word-wrap: break-word;
+  }
   .texto-visualizar {
     margin-top: 3rem;
+  }
+  form {
+    width: 100%;
+  }
+  .container-img {
+    width: 26.6rem;
+    height: 30.4rem;
+    border-radius: 0.4rem;
+  }
+  input {
+    width: 26.3rem;
+  }
+  textarea {
+    margin-bottom: 1.6rem;
+    width: 26.3rem;
+  }
+  form {
+    gap: 1.6rem;
   }
 }
