@@ -16,19 +16,27 @@ const tagEditarProjeto = document.querySelector('#tag-projeto-editar')
 const botaoEditarProjeto = document.querySelector('#button-editar-projeto')
 const modalMensagemSucessoEditarProjeto = document.querySelector('#modal-mensagem-sucesso-editar')
 const modalEditarOProjeto = document.querySelector("#modal-editar-projeto")
+const inputEnviaTags = document.querySelector('#input-tags')
 
 const token = sessionStorage.getItem('token')
 
-//https://orangeporfolio-fcfy.onrender.com
-//http://localhost:8080
-
 async function renderizaSecoesCardsUsuarios() {
+
+    if(inputEnviaTags.value.length === 0) {
+        renderizaTodasAsApisUsuario()
+    } 
+
+    renderizaTodasAsTagsUsuario()
     
-    const projetosUsuarios = await consomeApiEncontrarProjetosUsuarios()
-    
+}
+
+async function renderizaTodasAsApisUsuario() {
+    projetosUsuarios = await consomeApiEncontrarProjetosUsuarios()
+
     projetosUsuarios.projeto.forEach(pj => {
+    
         const data = formataDataApi(pj.createdAt)
-        
+            
         criaSecaoCardProjetos(
             pj.imagens,
             pj.usuarios.nome,
@@ -37,83 +45,122 @@ async function renderizaSecoesCardsUsuarios() {
             pj.tags,
             pj.id
         )
-
+    
         const dropdownEditarExcluir = document.querySelectorAll('.dropdown-editar-excluir')
         const iconeCard = document.querySelectorAll('.icone-lapis')
-
+    
         iconeCard.forEach((icone) => {
             icone.addEventListener('click', () => {
                 dropdownEditarExcluir.forEach(dropdown => {
-
-                    if(dropdown.classList.contains('esconder') && dropdown.id === icone.name) {
+    
+                if(dropdown.classList.contains('esconder') && dropdown.id === icone.name) {
                     apareceDropdown(dropdown)
-
+    
                     const botaoDropdownExcluir = document.getElementById(`abrir-modal-excluir-${dropdown.id}`)
                     const botaoDropdownEditar = document.getElementById(`abrir-modal-editar-${dropdown.id}`)
-            
+                
                     botaoDropdownExcluir.addEventListener('click', apareceModalExcluirProjeto)
-
+    
                     botaoDropdownEditar.addEventListener('click', apareceModalEditarProjeto)
-
+    
                     botaoModalExcluirProjeto.addEventListener('click',async () => {
-                        await consomeApiDeletarProjeto(dropdown.id)
+                            await consomeApiDeletarProjeto(dropdown.id)
                     })
-
-                    formularioEditarProjeto.addEventListener('submit',async (e) => {
-                        e.preventDefault()
                         
-                        const tagArray = tagEditarProjeto.value.split(" ")
-                        const tituloEditar = tituloEditarProjeto.value == "" ? pj.titulo : tituloEditarProjeto.value
-                        const descricaoEditar = descricaoEditarProjeto.value == "" ? pj.descricao : descricaoEditarProjeto.value
-                        const linkEditar = linkEditarProjeto.value == "" ? pj.link : linkEditarProjeto.value
-                        const tagEditar = tagEditarProjeto.value == "" ? pj.tags : tagArray
-        
-                        const editarCamposProjetos = await consomeApiEditarProjeto(
-                            tituloEditar,
-                            descricaoEditar,
-                            tagEditar,
-                            linkEditar,
-                            dropdown.id
-                        )
-                        
-                        const editarImagemProjetos = await consomeApiEditarImagemProjeto(e, dropdown.id)
-
-                        if(editarCamposProjetos.message === 'Edição concluída com sucesso' || editarImagemProjetos.message === 'Edição concluída com sucesso') {
-                            apareceModalMensagemEditadoComSucesso()
-                            return
-                        }
-
-                        alert('Erro ao editar projeto')
-                    })
-
+                    formularioEditar()
+    
                     return
                 } 
+                
                 desapareceDropdown(dropdown)
-                   
+                       
+                })
             })
-           })
         })
     })
 }
 
-async function consomeApiEncontrarProjetosUsuarios() {
-   
-    const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/projetos/usuarios', {
+async function renderizaTodasAsTagsUsuario() {
+    inputEnviaTags.addEventListener('input', async () => {
+        const busca = encodeURIComponent(inputEnviaTags.value);
+        const queryString = `?tag=${busca}&tag=`;
+        
+        projetosUsuarios = await consomeApiEncontrarProjetosUsuarios(queryString)
+        console.log(queryString.length)
+        if(queryString.length < 11) {
+            renderizaTodasAsApisUsuario()
+            return
+        }
+
+        containerEncontrarProjeto.innerHTML = ""
+
+        projetosUsuarios.projeto.forEach(pj => {
+    
+            const data = formataDataApi(pj.createdAt)
+            
+            criaSecaoCardProjetos(
+                pj.imagens,
+                pj.usuarios.nome,
+                pj.usuarios.sobrenome,
+                data,
+                pj.tags,
+                pj.id
+            )
+    
+            const dropdownEditarExcluir = document.querySelectorAll('.dropdown-editar-excluir')
+            const iconeCard = document.querySelectorAll('.icone-lapis')
+    
+            iconeCard.forEach((icone) => {
+                icone.addEventListener('click', () => {
+                    dropdownEditarExcluir.forEach(dropdown => {
+    
+                        if(dropdown.classList.contains('esconder') && dropdown.id === icone.name) {
+                        apareceDropdown(dropdown)
+    
+                        const botaoDropdownExcluir = document.getElementById(`abrir-modal-excluir-${dropdown.id}`)
+                        const botaoDropdownEditar = document.getElementById(`abrir-modal-editar-${dropdown.id}`)
+                
+                        botaoDropdownExcluir.addEventListener('click', apareceModalExcluirProjeto)
+    
+                        botaoDropdownEditar.addEventListener('click', apareceModalEditarProjeto)
+    
+                        botaoModalExcluirProjeto.addEventListener('click',async () => {
+                            await consomeApiDeletarProjeto(dropdown.id)
+                        })
+    
+                       formularioEditar()
+    
+                        return
+                    } 
+                    desapareceDropdown(dropdown)
+                       
+                })
+               })
+            })
+        })
+    })
+}
+
+async function consomeApiEncontrarProjetosUsuarios(query) {
+    const param = query == undefined ? "" : query
+
+    const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos/usuarios${param}`, {
         headers: {
             'Authorization': `Bearer ${token}`
         },
     })
-
+    
     const resposta = await dados.json()
-
-    if(resposta.projeto.length === 0) {
+    
+    if(resposta.projeto.length === 0 && query == undefined) {
         const placeholder = placeholderCardProjetos()
         containerEncontrarProjeto.innerHTML = placeholder
         return
     }
-
+    
     return resposta
-
+    
+   
 }
 
 async function consomeApiDeletarProjeto(id) {
@@ -177,6 +224,38 @@ async function consomeApiEditarImagemProjeto(evento, id) {
     const resposta = await dados.json()
 
     return resposta
+}
+
+function formularioEditar() {
+    formularioEditarProjeto.addEventListener('submit',async (e) => {
+        e.preventDefault()
+        
+        const regex = /[\W\s]+/g;
+
+        const tag = tagEditarProjeto.value.replace(regex, ',');
+        const tagsEmMinusculo = tag.toLowerCase().split(" ")
+        const tituloEditar = tituloEditarProjeto.value == "" ? pj.titulo : tituloEditarProjeto.value
+        const descricaoEditar = descricaoEditarProjeto.value == "" ? pj.descricao : descricaoEditarProjeto.value
+        const linkEditar = linkEditarProjeto.value == "" ? pj.link : linkEditarProjeto.value
+        const tagEditar = tagEditarProjeto.value == "" ? pj.tags : tagsEmMinusculo
+
+        const editarCamposProjetos = await consomeApiEditarProjeto(
+            tituloEditar,
+            descricaoEditar,
+            tagEditar,
+            linkEditar,
+            dropdown.id
+        )
+        
+        const editarImagemProjetos = await consomeApiEditarImagemProjeto(e, dropdown.id)
+
+        if(editarCamposProjetos.message === 'Edição concluída com sucesso' || editarImagemProjetos.message === 'Edição concluída com sucesso') {
+            apareceModalMensagemEditadoComSucesso()
+            return
+        }
+
+        alert('Erro ao editar projeto')
+    })
 }
 
 function criaSecaoCardProjetos(imagens, nome, sobrenome, data, tags, id) {
@@ -265,5 +344,8 @@ function desapareceDropdown(dropdown) {
     dropdown.classList.remove('aparecer')
     dropdown.classList.add('esconder')
 }
+
+
+
 
 renderizaSecoesCardsUsuarios()
