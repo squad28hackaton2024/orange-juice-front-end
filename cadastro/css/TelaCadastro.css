@@ -17,6 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1.5rem;
   flex-shrink: 0;
   text-transform: uppercase;
 }
@@ -30,6 +31,11 @@
     0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
+.btn-submit:disabled {
+  background-color: rgba(0,0,0, 0.12);
+  color: rgba(0,0,0, 0.38);
+}
+
 .btn-primary:active {
   --bs-btn-active-bg: #ff5522;
 }
@@ -41,6 +47,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .form-sign-in {
   display: flex;
   /*width: 517px;
@@ -92,7 +99,7 @@
   justify-self: flex-end;
   display: flex;
   background-position: 95% center;
-  background-image: url(/public/images/visibility.svg);
+  background-image: url(../assets/icone-password.svg);
   background-repeat: no-repeat;
 }
 
@@ -152,5 +159,5 @@ input:hover {
 
 .login-voltar {
   color: var(--Neutral-Colors-Neutral-100, #818388);
-  font-size: 1.5rem;
+  font-size: 2rem;
 }

@@ -61,3 +61,20 @@
     border: none;
     background: rgba(0, 0, 0, 0.12);
 }
+
+.botao-excluir:hover {
+    transition: all .5s;
+    background-color: #CC4400;
+    cursor: pointer;
+}
+
+.botao-excluir:disabled {
+    background-color: rgba(0,0,0, 0.12);
+    color: rgba(0,0,0, 0.38);
+}
+
+.botao-cancelar:hover {
+    transition: all .5s;
+    background-color: rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}

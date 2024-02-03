@@ -89,11 +89,6 @@ input {
   justify-content: center;
   align-items: center;
   color: var(--Neutral-Colors-Neutral-60, #fcfdff);
-  font-feature-settings:
-    "clig" off,
-    "liga" off;
-
-  /* [Orange P] Style Guide/Button */
   font-family: Roboto;
   font-size: 1.5rem;
   font-style: normal;
@@ -102,6 +97,18 @@ input {
   letter-spacing: 0.46px;
   text-transform: uppercase;
 }
+
+.button-salvar:hover {
+  transition: all .5s;
+  background-color: #CC4400;
+  cursor: pointer;
+}
+
+.button-salvar:disabled {
+  background-color: rgba(0,0,0, 0.12);
+  color: rgba(0,0,0, 0.38);
+}
+
 .button-cancelar {
   border: none;
   display: flex;
@@ -113,9 +120,6 @@ input {
   justify-content: center;
   align-items: center;
   color: var(--action-disabled, rgba(0, 0, 0, 0.38));
-  font-feature-settings:
-    "clig" off,
-    "liga" off;
   font-family: Roboto;
   font-size: 1.5rem;
   font-style: normal;
@@ -124,6 +128,13 @@ input {
   letter-spacing: 0.46px;
   text-transform: uppercase;
 }
+
+.button-cancelar:hover {
+  transition: all .5s;
+  background-color: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
 form {
   position: relative;
   top: -3.1rem;
