@@ -85,72 +85,89 @@ async function renderizaTodasAsApisUsuario() {
     })
 }
 
+let timer = null
+function debounce(callback, value) {
+
+    clearTimeout(timer)
+
+    timer = setTimeout(async () => {
+
+        const resposta = await consomeApiEncontrarProjetosUsuarios(value)
+        return callback(resposta)
+    }, 300)
+}
+
 async function renderizaTodasAsTagsUsuario() {
-    inputEnviaTags.addEventListener('input', async () => {
-
-        const busca = encodeURIComponent(inputEnviaTags.value);
+    inputEnviaTags.addEventListener('input', async (event) => {
+        const busca = encodeURIComponent(event.target.value.toLowerCase());
         const queryString = `?tag=${busca}&tag=`;
+
         
-        const projetosUsuarios = await consomeApiEncontrarProjetosUsuarios(queryString)
-    
-        if(queryString.length < 11) {
-            renderizaTodasAsApisUsuario()
-            return
-        }
-
-        containerEncontrarProjeto.innerHTML = ""
-
-        projetosUsuarios.projeto.forEach(pj => {
-    
-            const data = formataDataApi(pj.createdAt)
+        debounce((projetosUsuarios) => {
+            if(queryString.length < 11) {
+                containerEncontrarProjeto.innerHTML = ""
+                renderizaTodasAsApisUsuario()
+                return
+            }
             
-            criaSecaoCardProjetos(
-                pj.imagens,
-                pj.usuarios.nome,
-                pj.usuarios.sobrenome,
-                data,
-                pj.tags,
-                pj.id
-            )
     
-            const dropdownEditarExcluir = document.querySelectorAll('.dropdown-editar-excluir')
-            const iconeCard = document.querySelectorAll('.icone-lapis')
+            containerEncontrarProjeto.innerHTML = ""
     
-            iconeCard.forEach((icone) => {
-                icone.addEventListener('click', () => {
-                    dropdownEditarExcluir.forEach(dropdown => {
-    
-                        if(dropdown.classList.contains('esconder') && dropdown.id === icone.name) {
-                        apareceDropdown(dropdown)
-    
-                        const botaoDropdownExcluir = document.getElementById(`abrir-modal-excluir-${dropdown.id}`)
-                        const botaoDropdownEditar = document.getElementById(`abrir-modal-editar-${dropdown.id}`)
+            projetosUsuarios.projeto.forEach(pj => {
+        
+                const data = formataDataApi(pj.createdAt)
                 
-                        botaoDropdownExcluir.addEventListener('click', apareceModalExcluirProjeto)
-    
-                        botaoDropdownEditar.addEventListener('click', apareceModalEditarProjeto)
-    
-                        botaoModalExcluirProjeto.addEventListener('click',async () => {
-                            await consomeApiDeletarProjeto(dropdown.id)
-                        })
-    
-                       formularioEditar(
-                            pj.titulo,
-                            pj.descricao,
-                            pj.link,
-                            pj.tags,
-                            dropdown.id
-                       )
-    
-                        return
-                    } 
-                    desapareceDropdown(dropdown)
-                       
+                criaSecaoCardProjetos(
+                    pj.imagens,
+                    pj.usuarios.nome,
+                    pj.usuarios.sobrenome,
+                    data,
+                    pj.tags,
+                    pj.id
+                )
+        
+                const dropdownEditarExcluir = document.querySelectorAll('.dropdown-editar-excluir')
+                const iconeCard = document.querySelectorAll('.icone-lapis')
+        
+                iconeCard.forEach((icone) => {
+                    icone.addEventListener('click', () => {
+                        dropdownEditarExcluir.forEach(dropdown => {
+        
+                            if(dropdown.classList.contains('esconder') && dropdown.id === icone.name) {
+                            apareceDropdown(dropdown)
+        
+                            const botaoDropdownExcluir = document.getElementById(`abrir-modal-excluir-${dropdown.id}`)
+                            const botaoDropdownEditar = document.getElementById(`abrir-modal-editar-${dropdown.id}`)
+                    
+                            botaoDropdownExcluir.addEventListener('click', apareceModalExcluirProjeto)
+        
+                            botaoDropdownEditar.addEventListener('click', apareceModalEditarProjeto)
+        
+                            botaoModalExcluirProjeto.addEventListener('click',async () => {
+                                await consomeApiDeletarProjeto(dropdown.id)
+                            })
+        
+                           formularioEditar(
+                                pj.titulo,
+                                pj.descricao,
+                                pj.link,
+                                pj.tags,
+                                dropdown.id
+                           )
+        
+                            return
+                        } 
+                        desapareceDropdown(dropdown)
+                           
+                    })
+                   })
                 })
-               })
             })
-        })
+        }, queryString)
+        
     })
+        
+    
 }
 
 async function consomeApiEncontrarProjetosUsuarios(query) {
