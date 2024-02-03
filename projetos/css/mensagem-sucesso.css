@@ -1,4 +1,5 @@
 .dialog-add-projeto {
+    overflow: hidden;
     margin: auto;
     border: none;
     width: 35rem;
@@ -52,3 +53,4 @@
     letter-spacing: 0.46px;
     text-transform: uppercase;
 }
+
