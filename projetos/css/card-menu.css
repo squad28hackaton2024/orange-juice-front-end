@@ -35,7 +35,7 @@
     margin: 2.4rem 0 1.6rem 0;
 }
 
-.card-menu__info button {
+.botao-adicionar-projetos {
     color: rgba(0, 0, 0, 0.38);
 
     font-size: 1.5rem;
@@ -49,6 +49,12 @@
     border: none;
     border: 2px;
 }
+
+.botao-adicionar-projetos:hover {
+    transition: all .5s;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+} 
 
 @media (max-width: 450px) {
     .card-menu__card {

@@ -149,8 +149,11 @@
   margin-left: 0.5rem;
   font-weight: bold;
 }
+
 .li-hover:hover{
+  transition: all .5s;
   background: #FFEECC;
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {
