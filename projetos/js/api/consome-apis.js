@@ -2,7 +2,7 @@ const containerEncontrarProjeto = document.querySelector('#container-projetos-us
 const cardImagem = document.querySelector('#card-imagem')
 const cardNome = document.querySelector('#card-nome')
 const cardData = document.querySelector('#card-data')
-const triangulo = document.querySelector('#triangulo')
+const inputEnviaTags = document.querySelector('#input-tags')
 
 const modalExcluirOProjeto = document.querySelector("#modal-excluir-projeto")
 const botaoModalExcluirProjeto = document.querySelector("#botao-excluir")
@@ -19,16 +19,23 @@ const modalEditarOProjeto = document.querySelector("#modal-editar-projeto")
 
 const token = sessionStorage.getItem('token')
 
-//https://orangeporfolio-fcfy.onrender.com
-//http://localhost:8080
-
 async function renderizaSecoesCardsUsuarios() {
+
+    if(inputEnviaTags.value.length === 0) {
+        renderizaTodasAsApisUsuario()
+    } 
+
+    renderizaTodasAsTagsUsuario()
     
-    const projetosUsuarios = await consomeApiEncontrarProjetosUsuarios()
-    
+}
+
+async function renderizaTodasAsApisUsuario() {
+    projetosUsuarios = await consomeApiEncontrarProjetosUsuarios()
+
     projetosUsuarios.projeto.forEach(pj => {
+    
         const data = formataDataApi(pj.createdAt)
-        
+            
         criaSecaoCardProjetos(
             pj.imagens,
             pj.usuarios.nome,
@@ -37,113 +44,186 @@ async function renderizaSecoesCardsUsuarios() {
             pj.tags,
             pj.id
         )
-
+    
         const dropdownEditarExcluir = document.querySelectorAll('.dropdown-editar-excluir')
         const iconeCard = document.querySelectorAll('.icone-lapis')
-
+    
         iconeCard.forEach((icone) => {
             icone.addEventListener('click', () => {
                 dropdownEditarExcluir.forEach(dropdown => {
-
-                    if(dropdown.classList.contains('esconder') && dropdown.id === icone.name) {
+    
+                if(dropdown.classList.contains('esconder') && dropdown.id === icone.name) {
                     apareceDropdown(dropdown)
-
+    
                     const botaoDropdownExcluir = document.getElementById(`abrir-modal-excluir-${dropdown.id}`)
                     const botaoDropdownEditar = document.getElementById(`abrir-modal-editar-${dropdown.id}`)
-            
+                
                     botaoDropdownExcluir.addEventListener('click', apareceModalExcluirProjeto)
-
+    
                     botaoDropdownEditar.addEventListener('click', apareceModalEditarProjeto)
-
+    
                     botaoModalExcluirProjeto.addEventListener('click',async () => {
-                        await consomeApiDeletarProjeto(dropdown.id)
+                            await consomeApiDeletarProjeto(dropdown.id)
                     })
-
-                    formularioEditarProjeto.addEventListener('submit',async (e) => {
-                        e.preventDefault()
                         
-                        const tagArray = tagEditarProjeto.value.split(" ")
-                        const tituloEditar = tituloEditarProjeto.value == "" ? pj.titulo : tituloEditarProjeto.value
-                        const descricaoEditar = descricaoEditarProjeto.value == "" ? pj.descricao : descricaoEditarProjeto.value
-                        const linkEditar = linkEditarProjeto.value == "" ? pj.link : linkEditarProjeto.value
-                        const tagEditar = tagEditarProjeto.value == "" ? pj.tags : tagArray
-        
-                        const editarCamposProjetos = await consomeApiEditarProjeto(
-                            tituloEditar,
-                            descricaoEditar,
-                            tagEditar,
-                            linkEditar,
-                            dropdown.id
-                        )
-                        
-                        const editarImagemProjetos = await consomeApiEditarImagemProjeto(e, dropdown.id)
-
-                        if(editarCamposProjetos.message === 'Edição concluída com sucesso' || editarImagemProjetos.message === 'Edição concluída com sucesso') {
-                            apareceModalMensagemEditadoComSucesso()
-                            return
-                        }
-
-                        alert('Erro ao editar projeto')
-                    })
-
+                    formularioEditar(
+                        pj.titulo,
+                        pj.descricao,
+                        pj.link,
+                        pj.tags,
+                        dropdown.id
+                    )
+    
                     return
                 } 
+                
                 desapareceDropdown(dropdown)
-                   
+                       
+                })
             })
-           })
         })
     })
 }
 
-async function consomeApiEncontrarProjetosUsuarios() {
-   
-    const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/projetos/usuarios', {
+let timer = null
+function debounce(callback, value) {
+
+    clearTimeout(timer)
+
+    timer = setTimeout(async () => {
+
+        const resposta = await consomeApiEncontrarProjetosUsuarios(value)
+        return callback(resposta)
+    }, 300)
+}
+
+async function renderizaTodasAsTagsUsuario() {
+    inputEnviaTags.addEventListener('input', async (event) => {
+        const busca = encodeURIComponent(event.target.value.toLowerCase());
+        const queryString = `?tag=${busca}&tag=`;
+
+        
+        debounce((projetosUsuarios) => {
+            if(queryString.length < 11) {
+                containerEncontrarProjeto.innerHTML = ""
+                renderizaTodasAsApisUsuario()
+                return
+            }
+            
+    
+            containerEncontrarProjeto.innerHTML = ""
+    
+            projetosUsuarios.projeto.forEach(pj => {
+        
+                const data = formataDataApi(pj.createdAt)
+                
+                criaSecaoCardProjetos(
+                    pj.imagens,
+                    pj.usuarios.nome,
+                    pj.usuarios.sobrenome,
+                    data,
+                    pj.tags,
+                    pj.id
+                )
+        
+                const dropdownEditarExcluir = document.querySelectorAll('.dropdown-editar-excluir')
+                const iconeCard = document.querySelectorAll('.icone-lapis')
+        
+                iconeCard.forEach((icone) => {
+                    icone.addEventListener('click', () => {
+                        dropdownEditarExcluir.forEach(dropdown => {
+        
+                            if(dropdown.classList.contains('esconder') && dropdown.id === icone.name) {
+                            apareceDropdown(dropdown)
+        
+                            const botaoDropdownExcluir = document.getElementById(`abrir-modal-excluir-${dropdown.id}`)
+                            const botaoDropdownEditar = document.getElementById(`abrir-modal-editar-${dropdown.id}`)
+                    
+                            botaoDropdownExcluir.addEventListener('click', apareceModalExcluirProjeto)
+        
+                            botaoDropdownEditar.addEventListener('click', apareceModalEditarProjeto)
+        
+                            botaoModalExcluirProjeto.addEventListener('click',async () => {
+                                await consomeApiDeletarProjeto(dropdown.id)
+                            })
+        
+                           formularioEditar(
+                                pj.titulo,
+                                pj.descricao,
+                                pj.link,
+                                pj.tags,
+                                dropdown.id
+                           )
+        
+                            return
+                        } 
+                        desapareceDropdown(dropdown)
+                           
+                    })
+                   })
+                })
+            })
+        }, queryString)
+        
+    })
+        
+    
+}
+
+async function consomeApiEncontrarProjetosUsuarios(query) {
+    const param = query == undefined ? "" : query
+
+    const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos/usuarios${param}`, {
         headers: {
             'Authorization': `Bearer ${token}`
         },
     })
-
+    
     const resposta = await dados.json()
-
-    if(resposta.projeto.length === 0) {
+    
+    if(resposta.projeto.length === 0 && query == undefined) {
         const placeholder = placeholderCardProjetos()
         containerEncontrarProjeto.innerHTML = placeholder
         return
     }
-
+    
     return resposta
-
+    
+   
 }
 
 async function consomeApiDeletarProjeto(id) {
-
+    botaoModalExcluirProjeto.disabled = true
+    
     const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos/${id}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${token}`
         }
     })
-
+    
     const resposta = await dados.json()
-
+    
     if(resposta.message === "Projeto deletado com sucesso!") {
+        botaoModalExcluirProjeto.disabled = false
         apareceModalMensagemExcluirComSucesso()
         return
     } else {
+        botaoModalExcluirProjeto.disabled = false
         alert("Erro ao deletar projeto")
     }
 }
 
 async function consomeApiEditarProjeto(titulo, descricao, tags, link, id) {
-
+    
+    
     const dadosProjetosEditar = {
         titulo: titulo,
         descricao: descricao,
         tags: tags,
         link: link,
     }
- 
+    
     const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos/${id}`, {
         method: 'PUT',
         headers: {
@@ -152,11 +232,11 @@ async function consomeApiEditarProjeto(titulo, descricao, tags, link, id) {
         },
         body: JSON.stringify(dadosProjetosEditar)
     })
-
-    const resposta = await dados.json()
     
-   return resposta
-
+    const resposta = await dados.json()
+ 
+    return resposta
+     
 }
 
 async function consomeApiEditarImagemProjeto(evento, id) {
@@ -177,6 +257,40 @@ async function consomeApiEditarImagemProjeto(evento, id) {
     const resposta = await dados.json()
 
     return resposta
+}
+
+function formularioEditar(titulo, descricao, link, tags, id) {
+    formularioEditarProjeto.addEventListener('submit',async (e) => {
+        botaoEditarProjeto.disabled = true
+        e.preventDefault()
+        
+        const regex = /[\W\s]+/g;
+
+        const tag = tagEditarProjeto.value.replace(regex, ',');
+        const tagsEmMinusculo = tag.toLowerCase().split(" ")
+        const tituloEditar = tituloEditarProjeto.value == "" ? titulo : tituloEditarProjeto.value
+        const descricaoEditar = descricaoEditarProjeto.value == "" ? descricao : descricaoEditarProjeto.value
+        const linkEditar = linkEditarProjeto.value == "" ? link : linkEditarProjeto.value
+        const tagEditar = tagEditarProjeto.value == "" ? tags : tagsEmMinusculo
+
+        const editarCamposProjetos = await consomeApiEditarProjeto(
+            tituloEditar,
+            descricaoEditar,
+            tagEditar,
+            linkEditar,
+            id
+        )
+        
+        const editarImagemProjetos = await consomeApiEditarImagemProjeto(e, id)
+
+        if(editarCamposProjetos.message === 'Edição concluída com sucesso' || editarImagemProjetos.message === 'Edição concluída com sucesso') {
+            botaoEditarProjeto.disabled = false 
+            apareceModalMensagemEditadoComSucesso()
+            return
+        }
+
+        alert('Erro ao editar projeto')
+    })
 }
 
 function criaSecaoCardProjetos(imagens, nome, sobrenome, data, tags, id) {

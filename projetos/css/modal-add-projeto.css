@@ -211,7 +211,6 @@ textarea::placeholder {
   padding-top: 1rem;
 }
 
-
 @media (max-width: 800px) {
   .container {
     display: flex;
