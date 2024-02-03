@@ -46,45 +46,61 @@ async function renderizaTodosCards() {
     })
 }
 
+let timer = null
+function debounce(callback, value) {
+
+    clearTimeout(timer)
+
+    timer = setTimeout(async () => {
+
+        const resposta = await consomeApiEncontrarTodosProjetos(value)
+        return callback(resposta)
+    }, 300)
+}
+
+
 async function renderizaTodosCardsPorTags() {
-   inputTagsDescobrir.addEventListener('input', async () => {
-    const busca = encodeURIComponent(inputTagsDescobrir.value);
+   inputTagsDescobrir.addEventListener('input', async (event) => {
+    const busca = encodeURIComponent(event.target.value.toLowerCase());
     const queryString = `?tag=${busca}&tag=`;
 
-    resposta = await consomeApiEncontrarTodosProjetos(queryString)
-
-    if(queryString.length < 11) {
-        renderizaTodosCards()
-        return
-    }
-
-    containerEncontrarProjeto.innerHTML = ""
-
-    resposta.projetos.forEach(pj => {
-        let data
-
-        if(pj.updatedAt != null){
-            data = formataDataApi(pj.updatedAt)
+    debounce((todosProjetos) => {
+    
+        if(queryString.length < 11) {
+            containerEncontrarProjeto.innerHTML = ""
+            renderizaTodosCards()
+            return
         }
-        else{
-            data = formataDataApi(pj.createdAt)
-        }
-        
-        const criarProjetos = secaoCardProjetos(
-                pj.imagens,
-                pj.usuarios.nome,
-                pj.usuarios.sobrenome,
-                data,
-                pj.tags,
-                pj.id,
-                pj.link,
-                pj.descricao,
-                pj.titulo
-            )
+    
+        containerEncontrarProjeto.innerHTML = ""
+    
+        todosProjetos.projetos.forEach(pj => {
+            let data
+    
+            if(pj.updatedAt != null){
+                data = formataDataApi(pj.updatedAt)
+            }
+            else{
+                data = formataDataApi(pj.createdAt)
+            }
             
-        containerEncontrarProjeto.innerHTML += criarProjetos
+            const criarProjetos = secaoCardProjetos(
+                    pj.imagens,
+                    pj.usuarios.nome,
+                    pj.usuarios.sobrenome,
+                    data,
+                    pj.tags,
+                    pj.id,
+                    pj.link,
+                    pj.descricao,
+                    pj.titulo
+                )
+                
+            containerEncontrarProjeto.innerHTML += criarProjetos
+    
+        })
+    }, queryString)
 
-    })
    })
 }
 
