@@ -6,6 +6,7 @@ const passwordLogin = document.querySelector('#password-login')
 //http://localhost:8080
 
 async function consomeApiAuth(email, password) {
+    botaoLogin.disabled = true
 
     const dadosAuth = {
         email: email,
@@ -25,11 +26,13 @@ async function consomeApiAuth(email, password) {
     if(resposta.message === 'Usuário Logado') {
         armazernaToken(resposta.token)
         window.location.href = "http://127.0.0.1:5500/orange-juice-front-end/projetos/projetos.html"
+        botaoLogin.disabled = false
         return
     } 
-
+    
     alert(resposta.message)
     sessionStorage.removeItem('token')
+    botaoLogin.disabled = false
     
 }
 

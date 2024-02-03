@@ -3,15 +3,14 @@ const descricao = document.querySelector('#descricao-projeto')
 const tags = document.querySelector('#tag-projeto')
 const link = document.querySelector('#link-projeto')
 const formulario = document.querySelector('#formulario-projeto')
+const botaoSalvarAdicionarProjeto = document.querySelector('#botao-salvar-adicionar-projeto')
 
 const modalMensagemSucesso = document.querySelector('#modal-mensagem-sucesso')
 const modalAddProjeto = document.querySelector('#modal-adc-img')
 
-//https://orangeporfolio-fcfy.onrender.com
-//http://localhost:8080
-
 
 formulario.addEventListener('submit', (e) => {
+    botaoSalvarAdicionarProjeto.disabled = true
 
     e.preventDefault()
 
@@ -37,10 +36,13 @@ formulario.addEventListener('submit', (e) => {
     })
     .then(res => res.json())
     .then(dados => {
-        fecharEAbrirModal()   
+        if(dados.message == 'Projeto adicionado com sucesso! ') {
+            botaoSalvarAdicionarProjeto.disabled = false
+            fecharEAbrirModal()   
+        }
     })
-    .catch((e) => console.log(e))
-
+    .catch((e) => console.error(e))
+    
 })
 
 function abrirModalMensagemSucesso() {
