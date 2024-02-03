@@ -71,10 +71,14 @@ main {
     0px 4px 5px 0px rgba(0, 0, 0, 0.14),
     0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
-.btn-primary:active {
-  animation: flashAnimation 2s ;
+.btn-primary:active{
   --bs-btn-active-bg: #ff5522;
+
 }
+.btn-primary:disabled .btn:disabled .btn-submit:disabled{
+  --bs-btn-disable-bg: #ff5522!important;
+}
+
 .button-google-sign-in {
   display: flex;
   border: none;

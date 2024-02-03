@@ -302,8 +302,8 @@ function criaSecaoCardProjetos(imagens, nome, sobrenome, data, tags, id) {
 
             <nav class="dropdown-editar-excluir esconder"  id="${id}">
                 <ul>
-                    <li id="abrir-modal-editar-${id}">Editar</li>
-                    <li id="abrir-modal-excluir-${id}" class="botao-excluir-projeto">Excluir</li>
+                    <li class="li-hover" id="abrir-modal-editar-${id}">Editar</li>
+                    <li class="li-hover" id="abrir-modal-excluir-${id}" class="botao-excluir-projeto">Excluir</li>
                 </ul>
             </nav>
             
