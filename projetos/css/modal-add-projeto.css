@@ -210,9 +210,7 @@ textarea {
 textarea::placeholder {
   padding-top: 1rem;
 }
-li:hover {
-  background-color: #ffeecc;
-}
+
 
 @media (max-width: 800px) {
   .container {
@@ -246,7 +244,7 @@ li:hover {
     border: none;
   }
   .texto-adicionar {
-    margin-bottom: 1.6rem;
+    margin:1.6rem 0;
     width: 100%;
     padding: 0.2rem;
     color: var(--Neutral-Colors-Neutral-110, #515255);
@@ -280,11 +278,17 @@ li:hover {
   form {
     width: 100%;
   }
-  .container-img {
+  .container-img  {
     width: 26.6rem;
     height: 30.4rem;
     border-radius: 0.4rem;
   }
+
+  .tamanho-imagem{
+    width: 31.2rem;
+    padding: 0 2.5rem 0 2.1rem;
+  }
+
   input {
     width: 26.3rem;
   }
@@ -294,5 +298,8 @@ li:hover {
   }
   form {
     gap: 1.6rem;
+  }
+  .buttons{
+    margin-bottom: 4rem;
   }
 }

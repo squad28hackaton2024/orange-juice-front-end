@@ -121,7 +121,7 @@
             <input type="text" placeholder="Tags" id="tag-projeto" required />
             <input type="text" placeholder="Link" id="link-projeto" required />
             <textarea
-            class="textarea-descricao"
+              class="textarea-descricao"
               name="descricao"
               id="descricao-projeto"
               cols="30"
@@ -144,37 +144,43 @@
         </div>
       </dialog>
       <!-- MODAL VISUALIZAR IMAGEM-->
-      <dialog id="modal-ver-img" class="preview">
+      <dialog id="modal-ver-img" class="preview ">
         <p class="icone-close" id="icone-close">
           <img src="./assets/close.svg" alt="ícone close" />
         </p>
-
-        <header class="header-modal-visualizar">
+        <div class="container-preview">
+          <div class="title-modal-visualizar-projeto ">
+            <p id="titulo-vizualizar" class="titulo-vizualizar"></p>
+          </div>
+        
+        <header class="header-modal-visualizar header-grid">
+          <div class="imagem-tag">
           <div class="icon-perfil">
             <img src="./assets/Circle-camila-soares.svg" alt="" />
             <div class="text-name">
               <p>Camila Soares</p>
               <p id="data-vizualizar"></p>
+          
             </div>
           </div>
 
-          <div class="title-modal-visualizar-projeto">
-            <p id="titulo-vizualizar"></p>
-          </div>
 
           <div class="tag-container" id="tag-vizualizar"></div>
+        </div>
         </header>
 
-        <main class="main-ver-img">
+        <main class="main-ver-img main-grid">
           <div class="container-img-visualizar">
             <img src="" alt="" id="imagem-vizualizar" />
           </div>
 
+
+        </main>
+        <footer class="footer-ver-img footer-grid">
+          
           <div class="text-modal-visualizar-projeto">
             <p id="descricao-vizualizar"></p>
           </div>
-        </main>
-        <footer class="footer-ver-img">
           <div class="text-download">
             <p>Download</p>
             <a href="#" id="link-vizualizar"></a>
@@ -209,15 +215,14 @@
         <div><img src="./assets/Text input.svg" alt="ícone de ok" /></div>
 
         <button><a href="./projetos.html">Voltar para projetos</a></button>
+      </div>
       </dialog>
 
       <!-- modal editar projetos -->
       <dialog id="modal-editar-projeto" class="adicionar-imagem">
         <div class="texto-adicionar">Editar Projetos</div>
         <div class="texto-selecione">
-          <p>
-            Selecione o conteúdo que você deseja fazer upload
-          </p>
+          <p>Selecione o conteúdo que você deseja fazer upload</p>
         </div>
         <div class="container">
           <label
@@ -276,7 +281,6 @@
             Cancelar
           </button>
         </div>
-        
       </dialog>
 
       <dialog id="modal-mensagem-sucesso-editar" class="dialog-add-projeto">
@@ -298,6 +302,5 @@
     <script src="./js/modal-adicionar-projetos.js"></script>
     <script src="./js/modal-excluir-projeto.js"></script>
     <script src="./js/valida-token.js"></script>
-    
   </body>
 </html>
