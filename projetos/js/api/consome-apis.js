@@ -2,7 +2,7 @@ const containerEncontrarProjeto = document.querySelector('#container-projetos-us
 const cardImagem = document.querySelector('#card-imagem')
 const cardNome = document.querySelector('#card-nome')
 const cardData = document.querySelector('#card-data')
-const triangulo = document.querySelector('#triangulo')
+const inputEnviaTags = document.querySelector('#input-tags')
 
 const modalExcluirOProjeto = document.querySelector("#modal-excluir-projeto")
 const botaoModalExcluirProjeto = document.querySelector("#botao-excluir")
@@ -16,7 +16,6 @@ const tagEditarProjeto = document.querySelector('#tag-projeto-editar')
 const botaoEditarProjeto = document.querySelector('#button-editar-projeto')
 const modalMensagemSucessoEditarProjeto = document.querySelector('#modal-mensagem-sucesso-editar')
 const modalEditarOProjeto = document.querySelector("#modal-editar-projeto")
-const inputEnviaTags = document.querySelector('#input-tags')
 
 const token = sessionStorage.getItem('token')
 
@@ -67,7 +66,13 @@ async function renderizaTodasAsApisUsuario() {
                             await consomeApiDeletarProjeto(dropdown.id)
                     })
                         
-                    formularioEditar()
+                    formularioEditar(
+                        pj.titulo,
+                        pj.descricao,
+                        pj.link,
+                        pj.tags,
+                        dropdown.id
+                    )
     
                     return
                 } 
@@ -82,10 +87,11 @@ async function renderizaTodasAsApisUsuario() {
 
 async function renderizaTodasAsTagsUsuario() {
     inputEnviaTags.addEventListener('input', async () => {
+
         const busca = encodeURIComponent(inputEnviaTags.value);
         const queryString = `?tag=${busca}&tag=`;
         
-        projetosUsuarios = await consomeApiEncontrarProjetosUsuarios(queryString)
+        const projetosUsuarios = await consomeApiEncontrarProjetosUsuarios(queryString)
     
         if(queryString.length < 11) {
             renderizaTodasAsApisUsuario()
@@ -128,7 +134,13 @@ async function renderizaTodasAsTagsUsuario() {
                             await consomeApiDeletarProjeto(dropdown.id)
                         })
     
-                       formularioEditar()
+                       formularioEditar(
+                            pj.titulo,
+                            pj.descricao,
+                            pj.link,
+                            pj.tags,
+                            dropdown.id
+                       )
     
                         return
                     } 
@@ -164,33 +176,37 @@ async function consomeApiEncontrarProjetosUsuarios(query) {
 }
 
 async function consomeApiDeletarProjeto(id) {
-
+    botaoModalExcluirProjeto.disabled = true
+    
     const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos/${id}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${token}`
         }
     })
-
+    
     const resposta = await dados.json()
-
+    
     if(resposta.message === "Projeto deletado com sucesso!") {
+        botaoModalExcluirProjeto.disabled = false
         apareceModalMensagemExcluirComSucesso()
         return
     } else {
+        botaoModalExcluirProjeto.disabled = false
         alert("Erro ao deletar projeto")
     }
 }
 
 async function consomeApiEditarProjeto(titulo, descricao, tags, link, id) {
-
+    
+    
     const dadosProjetosEditar = {
         titulo: titulo,
         descricao: descricao,
         tags: tags,
         link: link,
     }
- 
+    
     const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos/${id}`, {
         method: 'PUT',
         headers: {
@@ -199,11 +215,11 @@ async function consomeApiEditarProjeto(titulo, descricao, tags, link, id) {
         },
         body: JSON.stringify(dadosProjetosEditar)
     })
-
-    const resposta = await dados.json()
     
-   return resposta
-
+    const resposta = await dados.json()
+ 
+    return resposta
+     
 }
 
 async function consomeApiEditarImagemProjeto(evento, id) {
@@ -226,30 +242,32 @@ async function consomeApiEditarImagemProjeto(evento, id) {
     return resposta
 }
 
-function formularioEditar() {
+function formularioEditar(titulo, descricao, link, tags, id) {
     formularioEditarProjeto.addEventListener('submit',async (e) => {
+        botaoEditarProjeto.disabled = true
         e.preventDefault()
         
         const regex = /[\W\s]+/g;
 
         const tag = tagEditarProjeto.value.replace(regex, ',');
         const tagsEmMinusculo = tag.toLowerCase().split(" ")
-        const tituloEditar = tituloEditarProjeto.value == "" ? pj.titulo : tituloEditarProjeto.value
-        const descricaoEditar = descricaoEditarProjeto.value == "" ? pj.descricao : descricaoEditarProjeto.value
-        const linkEditar = linkEditarProjeto.value == "" ? pj.link : linkEditarProjeto.value
-        const tagEditar = tagEditarProjeto.value == "" ? pj.tags : tagsEmMinusculo
+        const tituloEditar = tituloEditarProjeto.value == "" ? titulo : tituloEditarProjeto.value
+        const descricaoEditar = descricaoEditarProjeto.value == "" ? descricao : descricaoEditarProjeto.value
+        const linkEditar = linkEditarProjeto.value == "" ? link : linkEditarProjeto.value
+        const tagEditar = tagEditarProjeto.value == "" ? tags : tagsEmMinusculo
 
         const editarCamposProjetos = await consomeApiEditarProjeto(
             tituloEditar,
             descricaoEditar,
             tagEditar,
             linkEditar,
-            dropdown.id
+            id
         )
         
-        const editarImagemProjetos = await consomeApiEditarImagemProjeto(e, dropdown.id)
+        const editarImagemProjetos = await consomeApiEditarImagemProjeto(e, id)
 
         if(editarCamposProjetos.message === 'Edição concluída com sucesso' || editarImagemProjetos.message === 'Edição concluída com sucesso') {
+            botaoEditarProjeto.disabled = false 
             apareceModalMensagemEditadoComSucesso()
             return
         }

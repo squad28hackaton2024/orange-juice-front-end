@@ -11,6 +11,7 @@ const containerMensagemSucesso = document.querySelector('#mensagem-sucesso')
 
 
 async function consomeApiCadastro(name, lastName, email, password) {
+  botaoCasdastrar.disabled = true
 
   const dadosUsuario = {
     nome: name,
@@ -30,19 +31,23 @@ async function consomeApiCadastro(name, lastName, email, password) {
 
   const resposta = await dados.json()
 
+
   if(resposta.message == 'Cadastro feito com sucesso') {
     containerMensagemSucesso.classList.remove('mensagem-desaparecer')
     mensagem.innerHTML = resposta.message
 
+    botaoCasdastrar.disabled = false
     return
   }
   
   
   if(resposta.message == 'Usuário já existente') {
     alert('Usuário já existe com este email')
+    botaoCasdastrar.disabled = false
     return
   }
- 
+  
+  botaoCasdastrar.disabled = false
   alert("Email inválido ou senha com no mínimo 8 caracteres")
 
 }
