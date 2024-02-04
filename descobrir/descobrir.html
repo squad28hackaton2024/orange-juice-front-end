@@ -16,33 +16,26 @@
 <body>
 
     <header>
-        <!-- parte inicial do header -->
         <div class="inicioheader">
             <div class="menu" onclick="menu()"> <img src="assets/menu.png" alt=""> </div>
             <div class="logo"> <img src="assets/logo.png" alt=""> </div>
-            <!-- botão de projetos -->
             <a href="../projetos/projetos.html">
                 <h6 class="botaoprojetos">Meus Projetos</h6>
             </a>
-            <!-- botão de Descobrir -->
             <a href="#">
                 <h6 class="descobrir">Descobrir</h6>
             </a>
         </div>
-        <!-- parte final do header -->
         <div class="fimheader">
             <div class="foto"> <img src="assets/perfil.png" alt=""> </div>
             <div class="notificacao"><img src="assets/sino_notificacao.png" alt=""></div>
         </div>
 
-        <!-- menu da pagina mobile -->
         <div id="menu">
-            <!-- exibe as informações do usuario -->
             <div class="informacoes">
                 <p>Nome</p>
                 <p style="color: rgb(185, 185, 185); font-size: 14px; margin-top: 4px;">Email</p>
             </div>
-            <!-- botões do menu -->
             <div class="infoMenu">
                 <a href="../projetos/projetos.html">
                     <div class="butinfoMenu">Meus Projetos</div>
@@ -51,7 +44,6 @@
                     <div class="butinfoMenu">Descobrir</div>
                 </a>
             </div>
-            <!-- botão de sair -->
             <a href="#">
                 <div class="sair" id="logout">
                     <img src="assets/_Icon_sair.png" alt=""><p style="color: black;">Sair</p>
@@ -59,25 +51,19 @@
             </a>
         </div>
     </header>
-    <!-- inicio do main -->
     <main onclick="fechaMenu()">
-        <!-- texto principal da pagina -->
         <div class="texto">
             <h4>Junte-se à comunidade de inovação, inspiração e descobertas, transformando experiências em conexões inesquecíveis</h4>
         </div>
 
-        <!-- container principal -->
         <div class="container">
-            <!-- input de buscar tags -->
             <div class="buscatag">
                 <input class="tags-descobrir" type="text" name="" id="buscar-tags-descobrir" placeholder="Buscar tags">
             </div>
-            <!-- lugar de exibir os projetos -->
             <div class="exibirprojetos" id="container-projetos">
         </div>
     </main>
 
-    <!-- -- popup que abre ao clicar no projeto -- -->
     <div id="pop">
         <div class="headerpop">
             <div class="fotoEnome">
@@ -88,7 +74,7 @@
                 </div>
             </div>
             <p id="titulopop">titulo</p>
-            <div class="tag">tags</div>
+            <p id="tagpop">tags</p>
         </div> 
          <div class="imgprojeto">
             <img src="" alt="" id="imagempopProjeto" class="imagem-projeto-usuarios">
@@ -104,7 +90,6 @@
 
     <div id="telaescura" onclick="fecharpop()"></div>
 
-    <!-- código JS -->
     <script src="../projetos/js/valida-token.js"></script>
     <script src="./js/logout.js"></script>
     <script src="./js/menu.js"> </script>

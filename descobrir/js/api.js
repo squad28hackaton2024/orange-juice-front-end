@@ -141,6 +141,7 @@ function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descr
         <p style="display: none;">${descricao}</p>
         <a href="${link}" style="display: none;">link</a>
         <p style="display: none;">${titulo}</p>
+        <p style="display: none;">${tags}</p>
     </div>
     `
     return htmlCard
