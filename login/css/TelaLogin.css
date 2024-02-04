@@ -73,16 +73,14 @@ main {
     0px 4px 5px 0px rgba(0, 0, 0, 0.14),
     0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
-.btn-primary:active{
+.btn-primary:active {
   --bs-btn-active-bg: #ff5522;
-
 }
 
 .btn-submit:disabled {
-  background-color: rgba(0,0,0, 0.12);
-  color: rgba(0,0,0, 0.38);
+  background-color: rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.38);
 }
-
 
 .button-google-sign-in {
   display: flex;
@@ -186,6 +184,16 @@ body {
     var(--components-input-outlined-enabledBorder, rgba(0, 0, 0, 0.23));
   outline: none;
 }
+.google-btn {
+  background-color: #4285f4;
+  color: #ffffff;
+  border: 1px solid #4285f4;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 
 .input-field .form-label {
   position: absolute;
