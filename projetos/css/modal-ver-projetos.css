@@ -141,8 +141,16 @@
   .preview:hover::-webkit-scrollbar-thumb {
     background-color: transparent; /* Cor do polegar ao passar o mouse sobre o elemento */
   }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
 
+  
   .preview {
+    min-height: 100%;
+    box-sizing: border-box;
+
     top: 14.8rem;
     width: 36rem;
     height: 69.8rem;
