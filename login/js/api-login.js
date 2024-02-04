@@ -23,7 +23,7 @@ async function consomeApiAuth(email, password) {
 
     if(resposta.message === 'Usuário Logado') {
         armazernaToken(resposta.token)
-        window.location.href = "http://127.0.0.1:5500/orange-juice-front-end/projetos/projetos.html"
+        window.location.href = "https://squad28hackaton2024.github.io/orange-juice-front-end/projetos/projetos.html"
         botaoLogin.disabled = false
         return
     } 
