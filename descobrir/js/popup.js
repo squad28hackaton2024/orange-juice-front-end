@@ -30,15 +30,19 @@ function abrirpop(ele){
     tituloPop.innerText = tituloProjeto.innerText;
     let dataPop = document.getElementById('datapop');
     let dataProjeto = ele.children[1].children[2];
-    dataPop.innerText = dataProjeto.innerText;
+    let tagPop = document.getElementById('tagpop');
+    let tagProjeto = ele.children[5];
     pop.style.display = 'block';
+    telaescura.style.display = 'block';
     imagemperfilpop.src = imagemPerfilProjeto.src;
     imagempop.src = imagemProjeto.src;
     nomepop.innerText = nomeProjeto.innerText;
-    telaescura.style.display = 'block';
     descricaoPop.innerText = descricaoProjeto.innerText;
     linkPop.href = linkProjetoHref;
     linkPop.textContent = linkProjetoHref;
+    tituloPop.innerText = tituloProjeto.innerText;
+    dataPop.innerText = dataProjeto.innerText;
+    tagPop.innerText = tagProjeto.innerText;
 
 }
 
