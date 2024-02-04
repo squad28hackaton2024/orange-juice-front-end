@@ -13,7 +13,7 @@ async function handleCredentialResponse(response) {
 }
 
 window.onload = function () {
-  console.log('ai')
+  
   const clientID = "414036471424-i2accnpsbjitfiji6b177eqgthr9mm2n.apps.googleusercontent.com"
 
   google.accounts.id.initialize({
@@ -58,13 +58,13 @@ async function cadastroGoogle(nome, sobrenome, email, senha) {
 
   if(resposta.message == "Usuário já existente") {
     const login = await loginGoogle(email, senha)
-    console.log(login)
+    
     sessionStorage.setItem('token', login.token)
     window.location.href = 'http://localhost:5500/projetos/projetos.html'
   }
 
   if(resposta.message == "Cadastro feito com sucesso") {
-    alert('Usuário autenticado com o google')
+    alert('Usuário autenticado com sucesso, clique de novo no botão de login com o google para acessar o site !')
   }
   
   return resposta

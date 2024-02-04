@@ -6,9 +6,6 @@ const botaoCasdastrar = document.querySelector('#botao-cadastrar')
 const mensagem = document.querySelector('#mensagem')
 const containerMensagemSucesso = document.querySelector('#mensagem-sucesso')
 
-//https://orangeporfolio-fcfy.onrender.com
-//http://localhost:8080
-
 
 async function consomeApiCadastro(name, lastName, email, password) {
   botaoCasdastrar.disabled = true
