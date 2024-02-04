@@ -8,10 +8,9 @@ inputArquivoEditar.addEventListener('change', e => {
     const inputTarget = e.target
     const arquivo = inputTarget.files[0]
 
-    // Verifica se há uma imagem existente no container
     const imagemExistenteEditar = containerImgEditar.querySelector('.imagem-arquivo')
     if (imagemExistenteEditar) {
-        containerImgEditar.removeChild(imagemExistenteEditar); // Remove a imagem anterior
+        containerImgEditar.removeChild(imagemExistenteEditar); 
     }
 
     if (arquivo) {

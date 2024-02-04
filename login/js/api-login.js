@@ -2,8 +2,6 @@ const botaoLogin = document.querySelector('#botao-login')
 const emailLogin = document.querySelector('#email-login')
 const passwordLogin = document.querySelector('#password-login')
 
-//https://orangeporfolio-fcfy.onrender.com
-//http://localhost:8080
 
 async function consomeApiAuth(email, password) {
     botaoLogin.disabled = true

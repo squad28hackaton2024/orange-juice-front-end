@@ -1,4 +1,4 @@
-// Adicione este bloco de código ao seu arquivo JavaScript
+
 const modalEditarProjeto = document.getElementById("modal-editar-projeto");
 const btnSalvarEditar = document.getElementById("button-salvar-editar");
 const btnCancelarEditar = document.getElementById("button-cancelar-editar");
