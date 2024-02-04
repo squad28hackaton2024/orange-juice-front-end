@@ -24,6 +24,7 @@ function abrirpop(ele){
     let descricaoPop = document.getElementById('descri');
     let linkProjeto = ele.children[3];
     let linkPop = document.getElementById('linkPop');
+    let linkProjetoHref = 'https://' + linkProjeto.getAttribute('href');
     let tituloPop = document.getElementById('titulopop');
     let tituloProjeto = ele.children[4];
     tituloPop.innerText = tituloProjeto.innerText;
@@ -36,7 +37,8 @@ function abrirpop(ele){
     nomepop.innerText = nomeProjeto.innerText;
     telaescura.style.display = 'block';
     descricaoPop.innerText = descricaoProjeto.innerText;
-    linkPop.href = linkProjeto.href;
+    linkPop.href = linkProjetoHref;
+    linkPop.textContent = linkProjetoHref;
 
 }
 
