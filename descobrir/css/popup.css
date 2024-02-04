@@ -26,6 +26,18 @@
     font-size: 24px;
 }
 
+#tagpop {
+    display: flex;
+    width: auto;
+    height: auto;
+    padding: 0.4rem;
+    border-radius: 3rem;
+    background: #00000014;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
 #linkPop{
     color: blue;
 }
