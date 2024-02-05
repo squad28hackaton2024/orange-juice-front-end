@@ -60,7 +60,7 @@ async function cadastroGoogle(nome, sobrenome, email, senha) {
     const login = await loginGoogle(email, senha)
     
     sessionStorage.setItem('token', login.token)
-    window.location.href = 'http://localhost:5500/projetos/projetos.html'
+    window.location.href = 'https://squad28hackaton2024.github.io/orange-juice-front-end/projetos/projetos.html'
   }
 
   if(resposta.message == "Cadastro feito com sucesso") {
