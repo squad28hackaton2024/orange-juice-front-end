@@ -47,7 +47,7 @@ async function cadastroGoogle(nome, sobrenome, email, senha) {
     senha: senha
   }
 
-  const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/usuarios', {
+  const dados = await fetch('http://localhost:8080/usuarios', {
     method: 'POST',
     headers: {
       "Content-type": "application/json"
@@ -77,7 +77,7 @@ async function loginGoogle(email, senha) {
     senha: senha
   }
 
-  const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/usuarios/login', {
+  const dados = await fetch('http://localhost:8080/usuarios/login', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'

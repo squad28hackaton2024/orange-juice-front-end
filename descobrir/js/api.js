@@ -107,7 +107,7 @@ async function renderizaTodosCardsPorTags() {
 async function consomeApiEncontrarTodosProjetos(query) {
     const param = query == undefined ? "" : query
 
-    const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos${param}`, {
+    const dados = await fetch(`http://localhost:8080/projetos${param}`, {
         headers: {
             'Authorization': `Bearer ${token}`
         }
@@ -132,7 +132,7 @@ function formataDataApi(dataBancoDeDados) {
 function secaoCardProjetos(imagens, nome, sobrenome, data, tags, id, link, descricao, titulo) {
     const htmlCard = `
     <div class="projeto" onclick="abrirpop(this)">
-        <img src="https://orangeporfolio-fcfy.onrender.com/uploads/${imagens}" alt="">
+        <img src="http://localhost:8080/uploads/${imagens}" alt="">
         <div class="rodapeProjeto">
             <img src="assets/perfil.png" alt="">
             <p class="nome-descobrir">${nome} ${sobrenome}</p>

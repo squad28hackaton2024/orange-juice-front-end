@@ -27,7 +27,7 @@ formulario.addEventListener('submit', (e) => {
     formData.append('tags', tagsEmMinusculo)
     formData.append('link', link.value)
 
-    fetch('https://orangeporfolio-fcfy.onrender.com/projetos', {
+    fetch('http://localhost:8080/projetos', {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${token}`

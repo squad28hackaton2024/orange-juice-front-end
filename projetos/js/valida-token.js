@@ -1,3 +1,3 @@
 if(!sessionStorage.getItem("token")) {
-    window.location.href = "https://squad28hackaton2024.github.io/orange-juice-front-end/login/index.html"
+    window.location.href = "http://127.0.0.1:5500/orange-juice-front-end/login/index.html"
 }

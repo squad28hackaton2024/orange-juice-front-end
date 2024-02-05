@@ -17,7 +17,7 @@ async function consomeApiCadastro(name, lastName, email, password) {
     senha: password
   }
 
-  const dados = await fetch('https://orangeporfolio-fcfy.onrender.com/usuarios', {
+  const dados = await fetch('http://localhost:8080/usuarios', {
     method: "POST",
     headers: {
       "Content-type": "application/json"

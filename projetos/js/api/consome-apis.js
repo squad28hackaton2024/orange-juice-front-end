@@ -173,7 +173,7 @@ async function renderizaTodasAsTagsUsuario() {
 async function consomeApiEncontrarProjetosUsuarios(query) {
     const param = query == undefined ? "" : query
 
-    const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos/usuarios${param}`, {
+    const dados = await fetch(`http://localhost:8080/projetos/usuarios${param}`, {
         headers: {
             'Authorization': `Bearer ${token}`
         },
@@ -195,7 +195,7 @@ async function consomeApiEncontrarProjetosUsuarios(query) {
 async function consomeApiDeletarProjeto(id) {
     botaoModalExcluirProjeto.disabled = true
     
-    const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos/${id}`, {
+    const dados = await fetch(`http://localhost:8080/projetos/${id}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -224,7 +224,7 @@ async function consomeApiEditarProjeto(titulo, descricao, tags, link, id) {
         link: link,
     }
     
-    const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos/${id}`, {
+    const dados = await fetch(`http://localhost:8080/projetos/${id}`, {
         method: 'PUT',
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -246,7 +246,7 @@ async function consomeApiEditarImagemProjeto(evento, id) {
         formData.append('imagens', evento.target[0].files[0])
     }
 
-    const dados = await fetch(`https://orangeporfolio-fcfy.onrender.com/projetos/${id}`, {
+    const dados = await fetch(`http://localhost:8080/projetos/${id}`, {
         method: 'PATCH',
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -307,7 +307,7 @@ function criaSecaoCardProjetos(imagens, nome, sobrenome, data, tags, id) {
                 </ul>
             </nav>
             
-            <img src="https://orangeporfolio-fcfy.onrender.com/uploads/${imagens}" alt="" id="card-imagem" class="imagem-projeto-usuario">
+            <img src="http://localhost:8080/uploads/${imagens}" alt="" id="card-imagem" class="imagem-projeto-usuario">
             
             <div class="meus-projetos__card-info-usuario">
                 <div class="container-card-info-usuario">
